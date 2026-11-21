@@ -1,5 +1,5 @@
-# The Big Boy Rules · respaldo
+# The Big Boy Rules · web
 
-Copia de la web pública de The Big Boy Rules para cuando la dirección principal
-no carga (por ejemplo, durante los bloqueos de IP de los partidos de fútbol en España).
-Solo contiene los archivos ya publicados de la web. Se actualiza en cada versión.
+Archivos ya compilados de la web pública de The Big Boy Rules (thebigboyrules.com).
+El código fuente está en un repositorio privado; aquí solo se publica lo mismo que
+descarga cualquiera al abrir la web. Se actualiza en cada versión.
