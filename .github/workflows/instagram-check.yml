@@ -1,0 +1,26 @@
+# Temporary: checks that IG_TOKEN can read @thebigboyrules. Publishes nothing.
+name: Comprobar Instagram
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - name: Leer las últimas publicaciones
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+        run: |
+          node -e '
+            const url = "https://graph.facebook.com/v21.0/17841455562961211/media?fields=id,media_type,timestamp,permalink&limit=50&access_token=" + encodeURIComponent(process.env.IG_TOKEN);
+            fetch(url).then(r => r.json()).then(d => {
+              if (d.error) { console.log("Error de Meta:", d.error.message, "(código " + d.error.code + ")"); process.exit(1); }
+              console.log("Publicaciones leídas:", d.data.length);
+              for (const p of d.data.slice(0, 5)) console.log(p.timestamp, p.media_type, p.permalink);
+            });
+          '
