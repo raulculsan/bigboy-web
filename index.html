@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://open.spotify.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https: capacitor:; media-src 'self' data: blob: https: capacitor:; font-src 'self' data:; connect-src 'self' capacitor: https://api.open-meteo.com https://nfvggpgeypkkqceivkaq.supabase.co wss://nfvggpgeypkkqceivkaq.supabase.co https://raulculsan.github.io; frame-src https://open.spotify.com https://www.openstreetmap.org; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, interactive-widget=resizes-content" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="color-scheme" content="dark" />
+  <link rel="stylesheet" href="app-health.css?v=20261111-retos-626">
+  <script defer src="error-reports.js?v=20261111-errores-624"></script>
+  <script defer src="app-health.js?v=20261101-chota-pose-478"></script>
+  <script defer src="ui-motion.js?v=20261116-iphone-672"></script>
+  <style id="startup-paint">
+    html, body { background:#08090c; color:#f4f1e9; }
+    #pageLoader { position:fixed; inset:0; z-index:9999; display:grid; place-items:center; background:#08090c; }
+    #pageLoader.hidden { opacity:0; visibility:hidden; pointer-events:none; }
+    #pageLoader .loader-emblem { display:grid; place-items:center; gap:8px; color:#d3b46a; font-family:Georgia,serif; }
+    #pageLoader .loader-emblem strong { font-size:64px; }
+    #pageLoader .loader-emblem span, #pageLoader .loader-emblem small { font:10px system-ui; letter-spacing:3px; }
+  </style>
+  <meta name="application-name" content="The Big Boy Rules" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Big Boy Rules" />
+  <script>
+    (() => {
+      try {
+        const cachedProfile = JSON.parse(localStorage.getItem("bb-auth-profile") || "null");
+        const hasSupabaseSession = Object.keys(localStorage).some(key =>
+          key.startsWith("sb-") && key.endsWith("-auth-token") && localStorage.getItem(key)
+        );
+        const hasLocalSession = Boolean(localStorage.getItem("bb-auth-session"));
+        if ((cachedProfile?.profile && hasSupabaseSession) || hasLocalSession) {
+          document.documentElement.classList.add("auth-session-hint");
+        }
+      } catch {}
+    })();
+  </script>
+  <title>The Big Boy Rules</title>
+  <link rel="manifest" href="manifest.webmanifest?v=20260901-125" />
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <link rel="stylesheet" href="account-requests.css?v=20261030-neutral-interactions-444" />
+  <link rel="stylesheet" href="profile-account-sheet.css?v=20261102-theme-532" />
+  <link rel="stylesheet" href="account-security.css?v=20261102-theme-532" />
+  <link rel="preload" as="image" href="icons/clubhouse/club-room-v1.webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="icons/mascot/chota-v2/chota-poses.webp" />
+  <link rel="stylesheet" href="styles.css?v=20261112-inicio-627" />
+  <link rel="stylesheet" href="chat.css?v=20261117-audio-686" />
+  <link rel="stylesheet" href="chat-themes.css?v=20261116-epicos-v2-668" />
+  <link rel="stylesheet" href="tickets.css?v=20261102-theme-510" />
+  <link rel="stylesheet" href="chat-custom.css?v=20261117-audio-686" />
+  <link rel="stylesheet" href="packs.css?v=20261117-horillas-684" />
+  <link rel="stylesheet" href="achievement-admin.css?v=20261103-admin-557" />
+  <link rel="stylesheet" href="club.css?v=20261115-perfil-vitrina-646" />
+  <link rel="stylesheet" href="banner-shop.css?v=20261117-horillas-684" />
+  <link rel="stylesheet" href="dev-tools.css?v=20261117-horillas-684" />
+  <link rel="stylesheet" href="gif-picker.css?v=20261118-gifs-v2-688" />
+  <link rel="stylesheet" href="onboarding.css?v=20261030-neutral-interactions-444" />
+  <link rel="stylesheet" href="news.css?v=20261112-inicio-627" />
+  <link rel="stylesheet" href="pending-actions.css?v=20261016-release-322" />
+  <link rel="stylesheet" href="notifications.css?v=20261102-theme-532" />
+  <link rel="stylesheet" href="collection-social.css?v=20261111-retos-626" />
+  <link rel="stylesheet" href="card-economy.css?v=20261107-economy-chota-579" />
+  <link rel="stylesheet" href="group-interactions.css?v=20261118-encuestas-689" />
+  <link rel="stylesheet" href="visual-system.css?v=20261106-pwa-dock-564" />
+  <link rel="stylesheet" href="clubhouse.css?v=20261110-sede-viva-610" />
+  <link rel="stylesheet" href="chota-wardrobe.css?v=20261110-entrada-612" />
+  <link rel="stylesheet" href="chota-outdoor.css?v=20261030-outdoor-events-448" />
+  <link rel="stylesheet" href="chota-shop.css?v=20261111-retos-626" />
+  <link rel="stylesheet" href="club-store.css?v=20261110-zapatillas-616" />
+  <link rel="stylesheet" href="store-rooms.css?v=20261110-zapatillas-616" />
+  <link rel="stylesheet" href="store-sky.css?v=20261108-rain-v2-593" />
+  <link rel="stylesheet" href="coin-missions.css?v=20261102-theme-519" />
+  <link rel="stylesheet" href="club-day.css?v=20261112-inicio-627" />
+  <link rel="stylesheet" href="chota-decisions.css?v=20261109-tailored-v5-609" />
+  <link rel="stylesheet" href="club-life.css?v=20261108-rain-v2-593" />
+  <link rel="stylesheet" href="club-night.css?v=20261102-night-507" />
+  <link rel="stylesheet" href="club-social.css?v=20261115-vitrina-646" />
+  <link rel="stylesheet" href="club-live.css?v=20261102-theme-510" />
+  <link rel="stylesheet" href="chota-games.css?v=20261115-minijuegos-640" />
+  <link rel="stylesheet" href="club-experiences.css?v=20261102-theme-510" />
+  <link rel="stylesheet" href="app-update.css?v=20261116-lineas-674" />
+  <link rel="stylesheet" href="ui-motion.css?v=20261117-menu-685" />
+  <link rel="stylesheet" href="design-system.css?v=20261102-theme-509" />
+  <link rel="stylesheet" href="app-theme.css?v=20261116-nivel-wip-663" />
+</head>
+<body>
+  <!-- Service notice (2026-11-19): Supabase restricted the project for the free
+       plan's egress quota. It shows while the backend answers 402 and removes
+       itself as soon as the service is back, so no new deploy is needed. -->
+  <div id="serviceNotice" role="alertdialog" aria-modal="true" aria-labelledby="serviceNoticeTitle" style="position:fixed;inset:0;z-index:2147483647;display:flex;align-items:center;justify-content:center;padding:24px;background:#08090c;color:#f2f3f5;font-family:-apple-system,system-ui,'Segoe UI',Roboto,sans-serif;text-align:center">
+    <div style="max-width:360px">
+      <div aria-hidden="true" style="width:64px;height:64px;margin:0 auto 20px;border-radius:20px;background:#1c1f26;display:grid;place-items:center;font-size:30px">🛠️</div>
+      <h1 id="serviceNoticeTitle" style="margin:0 0 10px;font-size:22px;line-height:1.25;font-weight:700;letter-spacing:-.02em">App deshabilitada temporalmente</h1>
+      <p style="margin:0;color:#a4a8b0;font-size:15px;line-height:1.5">Por problemas técnicos, The Big Boy Rules está deshabilitada hasta el <strong style="color:#f2f3f5">29 de noviembre</strong>. Tus datos, cartas y monedas están a salvo.</p>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const notice = document.getElementById("serviceNotice");
+      const config = window.BIG_BOY_CONFIG || {};
+      const url = (config.supabaseUrl || "https://nfvggpgeypkkqceivkaq.supabase.co") + "/auth/v1/health";
+      const check = () => fetch(url, {headers: config.supabasePublishableKey ? {apikey: config.supabasePublishableKey} : {}, cache: "no-store"})
+        .then(response => { if (response.ok) notice.remove(); })
+        .catch(() => {});
+      if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", check, {once: true}); else check();
+    })();
+  </script>
+
+  <section class="login-screen bb-login" id="loginScreen">
+    <div class="bb-login-glow" aria-hidden="true"><i></i><i></i></div>
+    <div class="bb-login-shell">
+      <header class="bb-login-hero">
+        <span class="bb-login-chota" aria-hidden="true"></span>
+        <span class="bb-login-badge">Club privado</span>
+        <h1>The Big Boy Rules</h1>
+        <p>Entra con tu cuenta para volver al club.</p>
+      </header>
+      <form class="login-form bb-login-form" id="loginForm">
+        <label class="bb-field">
+          <span class="bb-visually-hidden">Usuario</span>
+          <svg class="bb-field-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+          <input id="loginUsername" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="Usuario" required>
+        </label>
+        <label class="bb-field">
+          <span class="bb-visually-hidden">Contraseña</span>
+          <svg class="bb-field-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+          <input id="loginPassword" name="password" type="password" autocomplete="current-password" placeholder="Contraseña" required>
+          <button type="button" id="togglePassword" class="bb-field-action" aria-label="Mostrar contraseña"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg></button>
+        </label>
+        <div class="login-error" id="loginError" role="alert"></div>
+        <button class="login-submit" type="submit">Entrar al club</button>
+        <div class="bb-login-divider" aria-hidden="true"><span>¿Aún no eres miembro?</span></div>
+        <button type="button" class="account-request-link" data-request-account>Solicitar una cuenta</button>
+        <button type="button" id="offlineAlbumAccess" class="offline-album-access" hidden><strong>Ver álbum guardado</strong><small>Última colección de este dispositivo · Solo lectura</small></button>
+        <p class="persistent-session-label">Tu sesión se queda guardada en este dispositivo.</p>
+      </form>
+    </div>
+  </section>
+
+  <div class="noise"></div>
+  <div class="aurora aurora-one"></div>
+  <div class="aurora aurora-two"></div>
+  <div class="gold-grid"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-emblem">
+      <span>THE BIG BOY</span>
+      <strong>BB</strong>
+      <small>RULES</small>
+    </div>
+  </div>
+
+  <a class="skip-link" href="#inicio">Saltar al contenido</a>
+  <main class="app">
+    <header class="topbar">
+      <div class="topbar-title">
+        <span class="eyebrow">COMUNIDAD PRIVADA</span>
+        <h1 id="pageTitle" translate="no">The Big Boy Rules</h1>
+      </div>
+      <div class="top-actions">
+        <button class="icon-button monochrome-top-button" type="button" data-go="calendario" aria-label="Abrir calendario" title="Calendario">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4M17 3v4M3 11h18"/></svg>
+        </button>
+        <div class="notifications-wrap">
+          <button class="icon-button notification-button monochrome-top-button" id="notificationsButton" type="button" aria-label="Abrir notificaciones" aria-expanded="false" title="Notificaciones">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg><span class="notification-count" id="notificationCount" hidden>0</span>
+          </button>
+          <div class="notifications-backdrop" id="notificationsBackdrop" hidden></div>
+          <section class="notifications-dropdown" id="notificationsDropdown" role="dialog" aria-modal="true" aria-labelledby="notificationsTitle" aria-hidden="true" inert>
+            <div class="notifications-heading">
+              <div><span class="eyebrow">AVISOS</span><h2 id="notificationsTitle">Notificaciones</h2><span id="notificationsUnreadSummary">Todo al día</span></div>
+              <button id="closeNotifications" class="notifications-close" type="button" aria-label="Cerrar notificaciones"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+            </div>
+            <div class="notifications-toolbar">
+              <div class="notifications-filters" role="group" aria-label="Filtrar notificaciones"><button type="button" data-notification-filter="all" aria-pressed="true">Todas</button><button type="button" data-notification-filter="unread" aria-pressed="false">No leídas <span id="notificationsFilterCount">0</span></button></div>
+              <div class="notifications-heading-actions"><button id="markAllNotificationsRead" type="button" aria-label="Marcar todas como leídas" title="Marcar todas como leídas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 12 5 5L19 6M12 17l9-9"/></svg></button><button id="clearAllNotifications" class="danger" type="button" aria-label="Limpiar todas las notificaciones" title="Limpiar todas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v5M14 11v5"/></svg></button></div>
+            </div>
+            <button type="button" class="notifications-pending-entry" data-pending-actions><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5h12M9 12h12M9 19h12M2 5l2 2 3-4M2 12l2 2 3-4M2 19l2 2 3-4"/></svg><span><strong>Pendientes</strong><small>Intercambios, encuestas y asistencia</small></span><b data-pending-count hidden>0</b></button>
+            <div class="notifications-list" id="notificationsList" aria-label="Actividad reciente"></div>
+            <details class="notifications-settings">
+              <summary><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg><span>Configurar mis avisos</span><span class="notifications-chevron" aria-hidden="true">⌄</span></summary>
+              <div class="push-notification-settings">
+                <small id="pushNotificationStatus">Comprueba si tu dispositivo es compatible.</small>
+                <div class="push-notification-actions"><button id="pushNotificationTestButton" type="button" hidden>Probar</button><button id="pushNotificationButton" type="button">Activar</button></div>
+              </div>
+              <div class="notification-preferences"><div class="notification-preferences-heading"><span>TUS CATEGORÍAS</span><small>En esta cuenta</small></div><div id="notificationPreferenceOptions"></div><p id="notificationPreferencesStatus" role="status" aria-live="polite">Cargando tus preferencias…</p><button id="retryNotificationPreferences" type="button" hidden>Reintentar</button></div>
+            </details>
+          </section>
+        </div>
+        <button class="icon-button admin-only admin-crown-button monochrome-top-button" id="adminPanelButton" type="button" aria-label="Abrir administración" title="Administración"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8l4 4 4-6 4 6 4-4-1.5 10h-13Z"/><path d="M6 21h12"/></svg></button>
+      </div>
+    </header>
+
+    <section class="page-section active club-home" id="inicio">
+      <div class="club-welcome">
+        <div><span class="eyebrow">THE BIG BOY RULES</span><h2>Inicio</h2></div>
+        <span class="status-pill" id="heroOnlineStatus"><i></i> Conectando</span>
+      </div>
+      <aside class="club-admin-announcement" id="clubAdminAnnouncement" aria-label="Aviso del club" hidden><span>CLUB</span><div><strong></strong><p></p></div></aside>
+      <div class="club-search">
+        <label class="search-hub-box" for="globalSearchInput">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+          <input id="globalSearchInput" name="globalSearchInput" type="search" placeholder="Buscar miembros…" aria-label="Buscar miembros" autocomplete="off">
+        </label>
+        <div class="search-results search-hub-results" id="searchResults" aria-live="polite" hidden></div>
+      </div>
+      <section class="home-news-section is-collapsed" id="noticias" aria-labelledby="clubNewsTitle">
+        <div class="club-news-heading">
+          <div><h3 id="clubNewsTitle">Al día</h3><p>Deportes, España y el mundo</p></div>
+          <button class="news-collapse-button" id="toggleNewsButton" type="button" aria-expanded="false" aria-controls="newsCollapsible"><span>Ver noticias</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        </div>
+        <div class="news-collapsible" id="newsCollapsible" hidden>
+          <div class="news-toolbar"><div class="news-tabs" aria-label="Categorías de noticias">
+            <button class="news-tab active" type="button" data-news-category="deportes">Deportes</button>
+            <button class="news-tab" type="button" data-news-category="espana">España</button>
+            <button class="news-tab" type="button" data-news-category="mundo">Mundo</button>
+          </div><button class="text-button" id="refreshNewsButton" type="button" aria-label="Actualizar noticias"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5M6.1 7a7 7 0 0 1 11.6-1L20 9M4 15l2.3 3A7 7 0 0 0 18 17"/></svg><span>Actualizar</span></button></div>
+          <div class="news-status" id="newsStatus" aria-live="polite"></div>
+          <div class="news-grid" id="newsGrid"></div>
+        </div>
+      </section>
+      <button class="club-day-entry" id="clubDayEntry" type="button" data-go="hoy"><span><strong>Hoy en el club</strong><small>Pregunta, porra y más</small></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>
+      <div class="club-dashboard">
+        <section class="clubhouse" aria-labelledby="clubhouseTitle">
+          <div class="clubhouse-heading"><h3 id="clubhouseTitle">La sede del club</h3><div class="clubhouse-heading-actions"><button type="button" data-club-memory-map>Pasaporte</button><span id="clubhouseTime">El Chota está en casa</span></div></div>
+          <div id="clubhouseContent" class="clubhouse-content"></div>
+        </section>
+        <article class="panel spotify-panel">
+          <div class="panel-heading"><div><span class="eyebrow">SPOTIFY</span><h3>Nuestra música</h3></div><button class="text-button admin-only" id="editSpotifyButton" type="button">Vincular playlist</button></div>
+          <div id="spotifyPlayer"></div>
+        </article>
+      </div>
+      <section class="home-members-section" id="miembros" aria-labelledby="clubMembersTitle">
+        <div class="panel-heading"><div><span class="eyebrow">EL CLUB</span><h3 id="clubMembersTitle">Miembros</h3></div></div>
+        <div class="members-grid" id="membersGrid"></div>
+      </section>
+    </section>
+
+    <section class="page-section club-day-page" id="hoy" aria-labelledby="clubDayTitle">
+      <header class="packs-heading">
+        <button class="packs-back" type="button" data-go="inicio" aria-label="Volver a Inicio"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button>
+        <div><h2 id="clubDayTitle" tabindex="-1">Hoy en el club</h2></div>
+      </header>
+      <div class="club-day" id="clubDay" hidden></div>
+    </section>
+
+    <section class="page-section packs-page col-page" id="sobres" aria-labelledby="packsTitle">
+      <header class="packs-heading">
+        <button class="packs-back" type="button" data-go="inicio" aria-label="Volver a Inicio"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button>
+        <div class="collection-overview-title"><span class="eyebrow">LOS NUESTROS · COLECCIÓN 01</span><h2 id="packsTitle" tabindex="-1">Colección</h2></div>
+      </header>
+      <div class="packs-layout col-layout">
+        <div class="packs-display col-stage">
+          <div class="col-stage-glow" aria-hidden="true"><i></i><i></i></div>
+          <div class="col-stage-top"><span class="col-edition">Los nuestros · 6 cartas por sobre</span><span class="col-count"><span id="packsCount" class="packs-count-badge" role="status" aria-label="Saldo de sobres pendiente de sincronización">—</span><small>sobres</small></span></div>
+          <div class="pack-carousel" id="packCarousel" role="group" aria-roledescription="carrusel" aria-label="Sobres. Desliza para ver los temáticos"><div class="pack-carousel-track" id="packCarouselTrack"><div class="pack-slide is-active" data-pack-slide="standard"><button class="packs-art-button" type="button" id="ownedPackOpen" aria-label="Abrir un sobre de Los nuestros" disabled><img class="packs-art" src="icons/cards/sobre-coleccion-01-v3.png" width="1024" height="1536" loading="lazy" decoding="async" alt="" draggable="false"><span class="pack-boost-badge" id="packBoostBadge" hidden>Mejorado</span></button><p class="pack-slide-label"><strong>Los nuestros</strong><span>6 cartas por sobre</span></p></div></div></div><div class="pack-carousel-dots" id="packCarouselDots" aria-hidden="true" hidden></div><p class="pack-themes-status" id="packThemesStatus" role="status"></p>
+          <p class="pack-luck" id="packLuck" hidden></p>
+          <button type="button" class="pack-choice-pending" id="packChoicePending" hidden>Tienes una carta por elegir</button>
+          <div class="col-chota"><span class="col-chota-sprite" aria-hidden="true"></span><p class="col-chota-bubble" data-pack-chota>Contando tus sobres…</p></div>
+          <div class="col-chota-level" data-chota-level hidden><span class="col-chota-level-badge">Nivel <b data-chota-level-number>1</b></span><span class="col-chota-level-bar" role="progressbar" aria-label="Experiencia del Chota" aria-valuemin="0" aria-valuemax="100"><i></i></span><small data-chota-level-xp></small><p class="col-chota-level-bonus" data-chota-level-bonus hidden></p></div>
+          <div class="col-stage-actions"><button type="button" class="col-open" data-pack-open disabled>Abrir sobre</button><button type="button" class="packs-info-trigger" id="packsInfoTrigger" aria-label="Información y saldo de sobres" aria-expanded="false" aria-controls="packsInfoPanel"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8h.01"/></svg></button></div>
+          <aside class="packs-info-panel" id="packsInfoPanel" hidden tabindex="0" aria-labelledby="packsInfoTitle"><strong id="packsInfoTitle">Información del sobre</strong><p><span>Sobres disponibles</span><b id="packsInfoBalance">—</b></p><p><span>Monedas</span><b id="packsInfoCoins">—</b></p><p class="pack-luck-rules">Con cada sobre abierto ganas un fragmento para tu carta objetivo (elígela en «La busco»). Los sobres de racha te dejan elegir una carta entre tres, y cualquier carta puede salir holográfica, metalizada o con tinta especial.</p><p class="pack-luck-rules">Tras 10 sobres sin legendaria o mejor, el siguiente la garantiza. Cada 20 aperturas ganas un sobre mejorado: una épica o mejor asegurada y el doble de opciones de legendaria.</p><p class="pack-rarity-odds" id="packRarityOdds">Actualiza para consultar las probabilidades.</p></aside>
+          <div id="ownedPackResult" class="owned-pack-result packs-screen-reader" aria-live="polite"></div>
+          
+        </div>
+        <div class="packs-information col-tiles">
+          <button type="button" class="bb2-album-entry col-album" data-card-album aria-label="Abrir mi álbum de cartas">
+            <span class="col-album-copy"><span class="col-tile-label">Tus cartas</span><strong>Mi álbum</strong><small data-album-progress-label>Tu colección</small><span class="col-progress" aria-hidden="true"><i data-album-progress-bar></i></span></span>
+            <span class="bb2-album-pages" aria-hidden="true"><span class="bb2-album-card"></span><span class="bb2-album-card"></span><span class="bb2-album-card"></span><span class="bb2-album-card"></span><span class="bb2-album-card"></span></span>
+          </button>
+          <button type="button" class="col-tile" data-go="catalogo" aria-label="Ver todas las cartas de la colección"><span class="col-tile-icon" style="--col-hue:210" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m4 6 9-3 4 13-9 3zM15 5h5v16H10v-2"/><path d="m7 9 5-1M8 12l5-1"/></svg></span><strong>Catálogo</strong><small>Todas las cartas</small></button>
+          <button type="button" class="col-tile" data-duplicates-open aria-label="Gestionar cartas repetidas" aria-haspopup="dialog"><span class="col-tile-icon" style="--col-hue:330" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h13v17H7zM4 7H2v15h13v-2"/></svg></span><strong>Repetidas</strong><small><span data-duplicates-count>0</span> para cambiar por monedas</small></button>
+          <button type="button" class="col-tile" data-forge-open aria-haspopup="dialog" aria-label="Fusionar cartas repetidas"><span class="col-tile-icon" style="--col-hue:30" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3c2 3 5 4.5 5 9a5 5 0 0 1-10 0c0-2 1-3.5 2-4.5.3 1.5 1 2.5 2 3 0-3 .5-5.5 1-7.5Z"/></svg></span><strong>Fusionar</strong><small>Repetidas → rareza superior</small></button>
+          <button type="button" class="col-tile" data-market-open aria-haspopup="dialog" aria-label="Abrir el mercado de cartas"><span class="col-tile-icon" style="--col-hue:150" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 9h16l-1.5-5h-13zM5 9v11h14V9M9 20v-6h6v6"/></svg></span><strong>Mercado</strong><small>Compra y vende repetidas</small></button>
+          <div class="col-next" role="group" aria-label="Colección 02, próximamente">
+            <span class="col-next-copy"><span class="col-tile-label">Colección 02</span><strong>Próximamente</strong><small>Nuevos miembros y nuevas cartas. Los sobres se abrirán aquí cuando salga.</small><span class="col-next-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Bloqueada</span></span>
+            <img class="col-next-art" src="icons/cards/sobre-coleccion-02-proximamente-v1.png" width="512" height="768" alt="" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="page-section collection-catalog-page" id="catalogo" aria-labelledby="collectionCatalogTitle">
+      <header class="packs-heading">
+        <button class="packs-back" type="button" data-go="sobres" aria-label="Volver a sobres"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button>
+        <div><span class="eyebrow">COLECCIÓN 01 · LOS NUESTROS</span><h2 id="collectionCatalogTitle" tabindex="-1">Cartas de la colección</h2></div>
+      </header>
+      <div class="catalog-chota"><i class="catalog-chota-sprite" aria-hidden="true"></i><p data-catalog-chota>Todas las cartas de Los nuestros, ordenadas por rareza y media.</p></div>
+      <nav class="catalog-jumps" id="catalogJumps" aria-label="Ir a una rareza"></nav>
+      <div class="collection-card-grid" id="collectionCardGrid"></div>
+    </section>
+
+    <section class="page-section" id="chat">
+      <div class="messages-hub reveal">
+        <aside class="panel chat-inbox">
+          <div class="inbox-tools">
+            <header class="bb2-inbox-heading"><span class="eyebrow">EL CLUB</span><h2>Chats</h2></header>
+            <div class="inbox-chota" data-mood="wave" hidden><i class="inbox-chota-sprite" aria-hidden="true"></i><p data-inbox-chota></p></div>
+            <label class="inbox-search" for="inboxSearchInput">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+              <input id="inboxSearchInput" name="inboxSearchInput" type="search" placeholder="Buscar conversación…" aria-label="Buscar conversación o miembro" autocomplete="off">
+            </label>
+            <div class="inbox-filters" role="group" aria-label="Filtrar conversaciones">
+              <button type="button" data-inbox-filter="all" aria-pressed="true">Todos</button>
+              <button type="button" data-inbox-filter="unread" aria-pressed="false">No leídos</button>
+              <button type="button" data-inbox-filter="favorites" aria-pressed="false">Favoritos</button>
+              <button type="button" data-inbox-filter="groups" aria-pressed="false">Grupos</button>
+              <button type="button" data-inbox-filter="new" aria-pressed="false">Nuevo chat</button>
+            </div>
+          </div>
+          <section class="online-strip" id="onlineMembers" hidden></section>
+          <div id="privateContacts" class="unified-chat-list"></div>
+          <p class="inbox-empty" id="inboxEmpty" role="status" hidden></p>
+          <div class="inbox-context-menu" id="inboxContextMenu" role="menu" hidden>
+            <button id="inboxFavoriteAction" type="button" role="menuitem"></button>
+          </div>
+        </aside>
+
+        <article class="panel chat-panel group-conversation">
+          <div class="chat-channel-bar">
+            <div class="chat-channels" id="chatChannels"></div>
+            <button class="channel-add-button admin-only" id="addChatChannelButton" type="button" title="Añadir sección">＋ Sección</button><button type="button" id="editChatChannelButton" class="channel-add-button channel-settings-button" aria-label="Configurar esta sección" hidden>Configurar</button>
+          </div>
+          <div class="chat-header">
+            <div class="chat-header-main">
+              <button class="chat-back-button" type="button" data-chat-back aria-label="Volver atrás"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5-7 7 7 7"/></svg></button>
+              <button class="group-header-avatar" id="editGroupAvatarButton" type="button" aria-label="Foto del grupo" title="Foto del grupo">
+                <span class="chat-group-avatar" data-group-avatar aria-hidden="true"><b>BB</b><i></i></span>
+              </button>
+              <div>
+                <h3 id="activeChannelName"># general</h3>
+                <p id="activeChannelDescription" class="channel-description" hidden></p><span class="online-label" id="chatOnlineStatus"><i></i> 0 conectados</span>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" id="groupEventNotice" class="group-event-notice" aria-label="Ver próximo evento y asistencia" aria-haspopup="dialog" hidden></button>
+          <div id="groupPolls" class="group-polls-shelf" aria-label="Encuestas del grupo"></div>
+          <div class="messages" id="messages">
+            <div class="empty-state">Accede para consultar el chat.</div>
+          </div>
+
+          <form class="message-form" id="messageForm">
+            <button type="button" class="composer-tool-button composer-camera-button" id="captureMessageCameraButton" aria-label="Abrir cámara" title="Cámara">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6.5 9.4 4h5.2L16 6.5h2.5A2.5 2.5 0 0 1 21 9v8.5a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5V9a2.5 2.5 0 0 1 2.5-2.5Z"/><circle cx="12" cy="13" r="3.5"/></svg>
+            </button>
+            <input id="messageInput" name="messageInput" aria-label="Escribe un mensaje" type="text" placeholder="Mensaje…" autocomplete="off" autocapitalize="sentences" enterkeyhint="send" />
+            <button type="button" class="composer-tool-button record-audio-button" id="recordGroupAudioButton" aria-label="Grabar nota de voz" title="Grabar nota de voz">
+              <svg class="record-microphone-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M8 21h8"/></svg>
+              <svg class="record-send-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 16-8-5 16-3.5-6.5Z"/><path d="m11.5 13.5 4-4"/></svg>
+            </button>
+            <button type="button" class="composer-tool-button" id="attachMessageMediaButton" aria-label="Abrir galería" title="Galería">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="2"/><path d="m5 18 5-5 3 3 2-2 4 4"/></svg>
+            </button>
+            <button type="button" class="attach-button composer-tool-button" id="attachMessageButton" aria-label="Archivos y GIFs" title="Archivos y GIFs" aria-haspopup="menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M7 12h10"/></svg></button>
+            <button class="send-button composer-send-button" type="submit" aria-label="Enviar mensaje"><span>Enviar</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 14-7-4 14-3.4-5.6Z"/><path d="m11.6 13.4 3.3-3.3"/></svg></button>
+            <button type="button" class="recording-action recording-delete" id="cancelGroupAudioButton" aria-label="Descartar nota de voz" title="Descartar" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M7 7l1 13h8l1-13M10 11v5M14 11v5"/></svg></button>
+            <span class="recording-time" id="groupRecordingTime" hidden>00:00</span>
+            <span class="recording-wave" id="groupRecordingWave" aria-hidden="true" hidden><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+            <button type="button" class="recording-action recording-pause" id="pauseGroupAudioButton" aria-label="Pausar grabación" title="Pausar" hidden><svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7v10M15 7v10"/></svg><svg class="resume-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 7 9 5-9 5Z"/></svg></button>
+            <input id="messageCameraAttachment" aria-label="Hacer una foto" type="file" accept="image/*,video/*" capture="environment" hidden>
+            <input id="messageAttachment" aria-label="Adjuntar archivo" type="file" accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.xls,.xlsx,.txt,.zip" hidden>
+            <input id="messageGifAttachment" aria-label="Adjuntar GIF" type="file" accept="image/gif,.gif" hidden>
+            <input id="messageMediaAttachment" aria-label="Adjuntar foto o vídeo" type="file" accept="image/*,video/*" hidden>
+          </form>
+          <div class="chat-send-status" id="messageSendStatus" hidden>
+            <span data-send-label role="status" aria-live="polite" aria-atomic="true"></span>
+            <button type="button" data-retry-send hidden>Reintentar</button>
+            <button type="button" data-dismiss-send aria-label="Ocultar aviso de envío" hidden>×</button>
+          </div>
+          <div class="attachment-preview" id="messageAttachmentPreview" hidden></div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="page-section channel-setup-page" id="seccion-chat" aria-labelledby="channelSetupTitle">
+      <header class="channel-setup-heading"><button type="button" id="channelSetupBack" class="channel-back" aria-label="Volver al chat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5-7 7 7 7"/></svg></button><span>BIGBOYS · SECCIONES</span></header>
+      <div class="channel-setup-intro"><div class="channel-setup-symbol" aria-hidden="true">#</div><h2 id="channelSetupTitle">Nueva sección</h2><p>Un espacio del grupo, con sus propias reglas.</p></div>
+      <form id="channelSetupForm" class="channel-setup-form">
+        <div class="channel-setup-card"><span class="channel-card-step">Identidad</span><label>Nombre de la sección<input name="channelName" maxlength="32" placeholder="avisos-del-club" required autocomplete="off"><small>Se mostrará con #. Usa un nombre corto y reconocible.</small></label><label>Descripción<textarea name="description" maxlength="500" rows="3" placeholder="¿Qué se comparte en esta sección?"></textarea></label></div>
+        <div class="channel-setup-card"><span class="channel-card-step">Permisos</span><label class="channel-switch"><span><strong>Solo visualización</strong><small>Los miembros pueden leer. Solo administración puede enviar mensajes, archivos y audios.</small></span><input name="readOnly" type="checkbox" role="switch"></label></div>
+        <div class="channel-automation-heading"><span class="channel-card-step">Automatizaciones</span><h3>Mensajes que llegan a tiempo</h3><p>Se publican aunque la aplicación esté cerrada. Horarios recurrentes de Madrid.</p></div>
+<div class="channel-setup-card channel-rule" data-automation="once"><label class="channel-switch"><span><strong>Programar un mensaje</strong><small>Un envío en la fecha y hora que elijas.</small></span><input type="checkbox" data-rule="enabled" role="switch"></label><div class="channel-rule-fields"><label>Fecha y hora<input type="datetime-local" data-rule="date"></label><label>Mensaje<textarea data-rule="body" maxlength="1200" rows="3" placeholder="Escribe el mensaje…"></textarea></label></div></div><div class="channel-setup-card channel-rule" data-automation="recurring"><label class="channel-switch"><span><strong>Mensaje recurrente</strong><small>Una rutina diaria o semanal para esta sección.</small></span><input type="checkbox" data-rule="enabled" role="switch"></label><div class="channel-rule-fields"><div class="channel-rule-grid"><label>Frecuencia<select data-rule="cadence"><option value="daily">Cada día</option><option value="weekly">Cada semana</option></select></label><label>Hora · Madrid<input type="time" data-rule="time" value="09:00"></label><label hidden>Día<select data-rule="weekday"><option value="1">Lunes</option><option value="2">Martes</option><option value="3">Miércoles</option><option value="4">Jueves</option><option value="5">Viernes</option><option value="6">Sábado</option><option value="0">Domingo</option></select></label></div><label>Mensaje<textarea data-rule="body" maxlength="1200" rows="3" placeholder="Escribe el mensaje…"></textarea></label></div></div><div class="channel-setup-card channel-rule" data-automation="visit"><label class="channel-switch"><span><strong>Al entrar en la aplicación</strong><small>Se publica una vez al día por miembro al abrir la app. Usa {nombre} para saludarle.</small></span><input type="checkbox" data-rule="enabled" role="switch"></label><div class="channel-rule-fields"><label>Mensaje<textarea data-rule="body" maxlength="1200" rows="3" placeholder="Escribe el mensaje…"></textarea></label></div></div><p id="channelSetupStatus" class="channel-setup-status" role="status" aria-live="polite"></p><button type="submit" class="channel-save">Guardar sección</button><p class="channel-setup-footnote">Los mensajes automáticos aparecen identificados como tales.</p></form></section>
+    <section class="page-section" id="privados">
+      <div class="private-chat-layout">
+        <article class="panel private-conversation">
+          <div class="chat-header" id="privateChatHeader">
+            <div><span class="eyebrow">MENSAJE DIRECTO</span><h3>Elige un miembro</h3></div>
+          </div>
+          <div class="messages" id="privateMessages">
+            <div class="empty-state">Selecciona un miembro para comenzar una conversación privada.</div>
+          </div>
+          <form class="message-form" id="privateMessageForm">
+            <button type="button" class="composer-tool-button composer-camera-button" id="capturePrivateMessageCameraButton" aria-label="Abrir cámara" title="Cámara" disabled>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6.5 9.4 4h5.2L16 6.5h2.5A2.5 2.5 0 0 1 21 9v8.5a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5V9a2.5 2.5 0 0 1 2.5-2.5Z"/><circle cx="12" cy="13" r="3.5"/></svg>
+            </button>
+            <input id="privateMessageInput" name="privateMessageInput" aria-label="Escribe un mensaje" type="text" maxlength="1200" placeholder="Mensaje…" autocomplete="off" autocapitalize="sentences" enterkeyhint="send" disabled>
+            <button type="button" class="composer-tool-button record-audio-button" id="recordPrivateAudioButton" aria-label="Grabar nota de voz" title="Grabar nota de voz" disabled>
+              <svg class="record-microphone-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M8 21h8"/></svg>
+              <svg class="record-send-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 16-8-5 16-3.5-6.5Z"/><path d="m11.5 13.5 4-4"/></svg>
+            </button>
+            <button type="button" class="composer-tool-button" id="attachPrivateMessageMediaButton" aria-label="Abrir galería" title="Galería" disabled>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="2"/><path d="m5 18 5-5 3 3 2-2 4 4"/></svg>
+            </button>
+            <button type="button" class="attach-button composer-tool-button" id="attachPrivateMessageButton" aria-label="Archivos y GIFs" title="Archivos y GIFs" aria-haspopup="menu" aria-expanded="false" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M7 12h10"/></svg></button>
+            <button class="send-button composer-send-button" type="submit" aria-label="Enviar mensaje" disabled><span>Enviar</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 14-7-4 14-3.4-5.6Z"/><path d="m11.6 13.4 3.3-3.3"/></svg></button>
+            <button type="button" class="recording-action recording-delete" id="cancelPrivateAudioButton" aria-label="Descartar nota de voz" title="Descartar" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M7 7l1 13h8l1-13M10 11v5M14 11v5"/></svg></button>
+            <span class="recording-time" id="privateRecordingTime" hidden>00:00</span>
+            <span class="recording-wave" id="privateRecordingWave" aria-hidden="true" hidden><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+            <button type="button" class="recording-action recording-pause" id="pausePrivateAudioButton" aria-label="Pausar grabación" title="Pausar" hidden><svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7v10M15 7v10"/></svg><svg class="resume-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 7 9 5-9 5Z"/></svg></button>
+            <input id="privateMessageCameraAttachment" aria-label="Hacer una foto" type="file" accept="image/*,video/*" capture="environment" hidden>
+            <input id="privateMessageAttachment" aria-label="Adjuntar archivo" type="file" accept="image/*,video/*,audio/*,.pdf,.doc,.docx,.xls,.xlsx,.txt,.zip" hidden>
+            <input id="privateMessageGifAttachment" aria-label="Adjuntar GIF" type="file" accept="image/gif,.gif" hidden>
+            <input id="privateMessageMediaAttachment" aria-label="Adjuntar foto o vídeo" type="file" accept="image/*,video/*" hidden>
+          </form>
+          <div class="chat-send-status" id="privateMessageSendStatus" hidden>
+            <span data-send-label role="status" aria-live="polite" aria-atomic="true"></span>
+            <button type="button" data-retry-send hidden>Reintentar</button>
+            <button type="button" data-dismiss-send aria-label="Ocultar aviso de envío" hidden>×</button>
+          </div>
+          <div class="attachment-preview" id="privateMessageAttachmentPreview" hidden></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="page-section" id="perfil">
+      <button class="back-button" type="button" data-profile-back>← Volver a miembros</button>
+      <div id="profileContent"></div>
+    </section>
+
+    <section class="page-section club-calendar-page" id="calendario">
+      <div class="club-calendar-heading"><div class="calendar-heading-copy"><span class="eyebrow">AGENDA DEL CLUB</span><h2>Calendario</h2></div><button class="secondary-button" id="calendarTodayButton" type="button">Hoy</button></div>
+      <div class="calendar-actions">
+        <button class="secondary-button" id="addBirthdayButton" type="button">Añadir mi cumpleaños</button>
+        <button class="primary-button admin-only" id="addEventButton" type="button">＋ Crear un plan</button>
+      </div>
+      <div class="calendar-layout">
+        <div class="calendar-month-panel panel">
+          <div class="calendar-toolbar"><div class="calendar-navigation">
+            <button class="icon-button" id="previousMonthButton" type="button" aria-label="Mes anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button>
+            <h3 id="calendarMonthTitle"></h3>
+            <button class="icon-button" id="nextMonthButton" type="button" aria-label="Mes siguiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button>
+          </div></div>
+          <div class="calendar-grid" id="calendarGrid"></div>
+          <p class="calendar-legend"><span><i></i>Planes</span><span><i class="birthday"></i>Cumpleaños</span></p>
+        </div>
+        <aside class="panel calendar-agenda-panel">
+          <div class="calendar-agenda-heading"><span class="calendar-section-label">Día seleccionado</span><span id="calendarDayCount" class="calendar-count"></span></div>
+          <h3 id="calendarSelectedTitle"></h3>
+          <div id="calendarSelectedEvents" class="calendar-selected-events"></div>
+          <div class="calendar-month-agenda"><div class="calendar-agenda-heading"><h4 class="calendar-section-label">Este mes</h4><span id="calendarMonthCount" class="calendar-count"></span></div><div id="calendarEventList"></div></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="page-section" id="administracion">
+      <div id="superAdminConsole" hidden></div>
+      <button type="button" class="control-diagnostics admin-account-security" id="adminSecurityButton"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z"/><path d="m8 12 3 3 5-6"/></svg><span><strong>Seguridad de la cuenta</strong><small>Verifica tu correo o vincula Google y configura el autenticador.</small></span><b>Gestionar</b></button>
+      <div id="standardAdminPanel">
+      <div class="admin-summary" id="adminSummary"></div>
+      <button type="button" class="request-admin-entry" data-open-account-requests><span><strong>Solicitudes de cuenta</strong><small>Revisa nuevos accesos al club.</small></span><span data-request-count hidden></span><svg class="admin-settings-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+      <div class="section-intro">
+        <div>
+          <span class="eyebrow">CONTROL DEL CLUB</span>
+          <h2>Administración.</h2>
+        </div>
+        <div class="admin-heading-actions"><button class="admin-settings-gear admin-only" type="button" data-go="admin-configuracion" aria-label="Configuración de administración" title="Configuración"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9.5 3-.7 2.3-2 .9-2.2-.6-2 3.4L4.2 11v2L2.6 15l2 3.4 2.2-.6 2 .9.7 2.3h4.9l.7-2.3 2-.9 2.2.6 2-3.4-1.6-2v-2l1.6-2-2-3.4-2.2.6-2-.9-.7-2.3Z"/><circle cx="12" cy="12" r="3.2"/></svg></button></div>
+      </div>
+
+      <button class="secondary-button admin-help-entry" type="button" data-go="ayuda"><span><strong>Atender ayuda</strong><small>Mensajes y tickets de los miembros.</small></span><svg class="admin-settings-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+      </div>
+    </section>
+
+    <section class="page-section achievement-admin-page admin-settings-page" id="admin-configuracion">
+      <header class="achievement-page-header"><button class="achievement-back" type="button" data-go="administracion" aria-label="Volver a administración"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5-7 7 7 7"/></svg></button><div><small>ADMINISTRACIÓN</small><h2>Configuración</h2></div><span aria-hidden="true"></span></header>
+      <div class="achievement-page-content"><div class="admin-settings-list"><button class="admin-settings-entry" type="button" data-go="admin-diagnostico"><span class="admin-settings-symbol"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg></span><span><strong>Rendimiento y diagnóstico</strong><small>Tiempos de carga, pausas y estado de la app.</small></span><svg class="admin-settings-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+<button class="admin-settings-entry" type="button" data-go="admin-logros"><span class="admin-settings-symbol"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h8v5a4 4 0 0 1-8 0V3Zm0 2H4v2a4 4 0 0 0 4 4m8-6h4v2a4 4 0 0 1-4 4m-4 1v6m-4 3h8"/></svg></span><span><strong>Configuración de logros</strong><small>Crear, asignar y gestionar los logros del club.</small></span><svg class="admin-settings-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+<button class="admin-settings-entry" type="button" data-go="admin-cuentas"><span class="admin-settings-symbol"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M2 21v-3a7 7 0 0 1 14 0v3m3-14v6m-3-3h6"/></svg></span><span><strong>Control de cuentas</strong><small>Crear usuarios y gestionar perfiles, sobres y monedas.</small></span><svg class="admin-settings-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+</div></div>
+    </section>
+
+    <section class="page-section achievement-admin-page admin-settings-page" id="admin-diagnostico">
+      <header class="achievement-page-header"><button class="achievement-back" type="button" data-go="admin-configuracion" aria-label="Volver a configuración"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5-7 7 7 7"/></svg></button><div><small>ADMINISTRACIÓN</small><h2>Rendimiento y diagnóstico</h2></div><span aria-hidden="true"></span></header>
+      <div class="achievement-page-content health-tools">
+        <div class="health-dashboard-heading"><div><span class="eyebrow">EN ESTE DISPOSITIVO</span><p>Mediciones locales durante el uso de la app.</p></div><button type="button" class="secondary-button" onclick="ClubHealth.show()">Actualizar</button></div>
+        <section class="admin-errors" id="adminErrors" aria-live="polite"></section>
+        <div id="healthDashboard"></div>
+        <p class="health-note">Las pausas se estiman mientras la app está visible. Los tamaños de imágenes externas pueden no estar disponibles. Solo se guardan datos técnicos; nunca mensajes, contraseñas ni direcciones.</p>
+        <div class="health-actions"><button type="button" class="secondary-button" onclick="ClubHealth.export()">Compartir diagnóstico</button><button type="button" class="text-button" onclick="ClubHealth.clear()">Limpiar registro</button></div>
+        <p id="healthSummary" role="status" aria-live="polite"></p><details class="health-json"><summary>Ver datos técnicos</summary><textarea id="healthReport" name="healthReport" readonly rows="10" aria-label="Diagnóstico local"></textarea></details>
+      </div>
+    </section>
+
+    <section class="page-section achievement-admin-page admin-settings-page" id="admin-cuentas">
+      <header class="achievement-page-header"><button class="achievement-back" type="button" data-go="admin-configuracion" aria-label="Volver a configuración"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5-7 7 7 7"/></svg></button><div><small>ADMINISTRACIÓN</small><h2>Control de cuentas</h2></div><span aria-hidden="true"></span></header>
+      <div class="achievement-page-content acc-page">
+        <div class="acc-summary" id="accSummary" aria-live="polite"></div>
+        <div class="acc-toolbar">
+          <label class="acc-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><input id="adminUsersSearch" type="search" name="adminUsersSearch" placeholder="Buscar por nombre o @usuario" aria-label="Buscar usuarios" autocomplete="off" autocapitalize="none" spellcheck="false"></label>
+          <div class="acc-filters" id="adminUsersFilters" role="group" aria-label="Filtrar usuarios">
+            <button type="button" data-account-filter="all" aria-pressed="true">Todos <span></span></button>
+            <button type="button" data-account-filter="online" aria-pressed="false">En línea <span></span></button>
+            <button type="button" data-account-filter="admin" aria-pressed="false">Admins <span></span></button>
+          </div>
+        </div>
+        <details class="acc-create" id="superAdminTools">
+          <summary><span class="acc-create-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span><span><strong>Crear usuario</strong><small>Con contraseña temporal; la cambia al entrar.</small></span><svg class="acc-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></summary>
+          <form class="acc-create-form" id="createUserForm">
+            <label><span>Usuario</span><input id="newUsername" name="username" required minlength="3" maxlength="32" pattern="[A-Za-z0-9._-]+" autocomplete="off" autocapitalize="none" spellcheck="false"></label>
+            <label><span>Nombre</span><input id="newDisplayName" name="displayName" required maxlength="60" autocomplete="off"></label>
+            <label><span>Contraseña temporal</span><input id="newUserPassword" name="password" type="password" required minlength="8" maxlength="128" aria-describedby="newPasswordRules" autocomplete="new-password"></label>
+            <small id="newPasswordRules">Entre 8 y 128 caracteres, un símbolo (!, @, #) y sin el nombre, apellidos ni usuario.</small>
+            <button class="acc-primary" type="submit">Crear usuario</button>
+          </form>
+          <p class="acc-feedback" id="createUserFeedback" aria-live="polite"></p>
+        </details>
+        <div class="acc-list" id="adminUsersTable"></div>
+        <p class="acc-empty" id="adminUsersEmpty" hidden>Ningún usuario coincide con la búsqueda.</p>
+      </div>
+    </section>
+
+    <section class="page-section admin-account-page" id="editar-usuario" aria-label="Editar usuario"></section>
+
+    <section class="page-section achievement-admin-page" id="admin-logros">
+      <header class="achievement-page-header"><button class="achievement-back" type="button" data-go="admin-configuracion" aria-label="Volver a configuración"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5-7 7 7 7"/></svg></button><div><small>ADMINISTRACIÓN</small><h2>Configuración de logros</h2></div><span aria-hidden="true"></span></header>
+      <div class="achievement-page-content">
+        <div class="achievement-library-intro"><div><span class="eyebrow">CADA RECONOCIMIENTO CUENTA</span><h3>Un lugar para destacar.</h3><p>Reconoce a un miembro o crea un objetivo que el club pueda conquistar.</p></div><button class="primary-button" id="newAchievementButton" type="button"><span aria-hidden="true">＋</span> Crear logro</button></div>
+        <div class="achievement-library-stats" id="achievementLibraryStats"></div>
+        <div class="achievement-library-tools"><label class="achievement-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 5 5"/></svg><input type="search" id="achievementLibrarySearch" name="achievementLibrarySearch" placeholder="Buscar un logro…" aria-label="Buscar un logro" autocomplete="off"></label><select id="achievementLibraryTier" aria-label="Filtrar por rango"><option value="all">Todos los rangos</option><option value="bronze">Bronce</option><option value="silver">Plata</option><option value="gold">Oro</option><option value="platinum">Platino</option></select></div>
+        <p class="form-feedback" id="achievementLibraryFeedback" role="status"></p>
+        <div class="achievement-library" id="adminAchievementsList"></div>
+      </div>
+    </section>
+
+    <section class="page-section achievement-admin-page" id="crear-logro">
+      <header class="achievement-page-header"><button class="achievement-back" id="cancelAchievementCreate" type="button" aria-label="Volver a los logros"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5-7 7 7 7"/></svg></button><div><small>CONFIGURACIÓN DE LOGROS</small><h2>Crear un logro</h2></div><span aria-hidden="true"></span></header>
+      <form class="achievement-page-content achievement-editor-layout" id="achievementForm">
+        <aside class="achievement-editor-preview" id="achievementCreatePreview" aria-label="Vista previa del logro"></aside>
+        <fieldset class="achievement-editor-fields" id="achievementCreateFields">
+          <div class="achievement-form-section"><div class="achievement-step"><span>01</span><div><h3>Dale una identidad</h3><p>Un nombre y una historia que merezcan recordarse.</p></div></div>
+            <label class="achievement-field" for="achievementName">Nombre<input id="achievementName" name="achievementName" minlength="2" maxlength="70" required placeholder="Ej. Leyenda de la temporada" autocomplete="off"></label>
+            <label class="achievement-field" for="achievementDescription">Descripción<textarea id="achievementDescription" name="achievementDescription" maxlength="240" rows="3" placeholder="¿Qué hace especial este reconocimiento?"></textarea><small id="achievementDescriptionCount">0 / 240</small></label>
+            <fieldset class="achievement-rank-picker"><legend>Elige el rango</legend><div id="achievementTierChoices"></div></fieldset>
+          </div>
+          <div class="achievement-form-section"><div class="achievement-step"><span>02</span><div><h3>Cómo se consigue</h3><p>Un reconocimiento personal o un reto para todos.</p></div></div>
+            <fieldset class="achievement-mode-picker"><legend>Tipo de logro</legend>
+              <label><input type="radio" name="achievementMode" value="manual" checked><span><strong>Asignación manual</strong><small>Tú decides quién lo merece.</small></span></label>
+              <label><input type="radio" id="achievementAutomaticMode" name="achievementMode" value="automatic"><span><strong>Objetivo automático</strong><small>Se consigue con la actividad en la app.</small></span></label>
+            </fieldset>
+            <p id="achievementAutomationStatus" class="achievement-section-hint" role="status"></p>
+            <button type="button" class="achievement-connection-check" id="achievementCheckConnection" hidden>Comprobar de nuevo</button>
+            <div id="achievementAutomaticFields" hidden>
+              <label class="achievement-field" for="achievementMetric">Actividad<select id="achievementMetric" disabled><option value="group_messages">Mensajes en el grupo</option><option value="group_active_days">Días de participación</option><option value="profile_completed">Completar el perfil</option></select></label>
+              <p id="achievementMetricHint" class="achievement-section-hint"></p>
+              <div id="achievementAcquisitionScope" class="achievement-acquisition-scope" hidden>
+                <label class="achievement-field" for="achievementCollection">Colección<select id="achievementCollection"><option value="">Todas las colecciones</option></select></label>
+                <label class="achievement-field" for="achievementEdition">Rareza<select id="achievementEdition"><option value="">Todas las rarezas</option><option value="common">Común</option><option value="special">Especial</option><option value="epic">Épica</option><option value="legendary">Legendaria</option><option value="retro">Retro</option><option value="full_art">Full Art</option><option value="vice_city">Vice City</option></select></label>
+                <label class="achievement-field" for="achievementKind">Tipo de carta<select id="achievementKind"><option value="">Todos los tipos</option><option value="member">Miembros</option><option value="object">Objetos</option><option value="location">Ubicaciones</option></select></label>
+              </div>
+              <label class="achievement-field" for="achievementTarget">Meta<input id="achievementTarget" name="achievementTarget" type="number" inputmode="numeric" min="1" max="100000" step="1" value="10" disabled required></label>
+              <p class="achievement-rule-note">Para todos los miembros, también los nuevos. Mensajes y participación suman como máximo una vez al día, desde la creación del logro. Las cartas conseguidas y los días registrados también cuentan para los objetivos nuevos. La meta queda fijada al crearlo.</p>
+            </div>
+          </div>
+          <div class="achievement-form-section" id="achievementManualRecipients"><div class="achievement-step"><span>03</span><div><h3>Elige a quién reconocer</h3><p>Puedes seleccionar uno o varios miembros.</p></div></div>
+            <div class="achievement-people-picker" id="achievementCreatePicker"><label class="achievement-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 5 5"/></svg><input type="search" placeholder="Buscar por nombre o usuario…" aria-label="Buscar miembros para el nuevo logro" data-picker-search autocomplete="off"></label><div class="achievement-picker-tools"><button type="button" data-picker-all>Seleccionar visibles</button><button type="button" data-picker-clear>Limpiar selección</button><span data-picker-count role="status"></span></div><div class="achievement-people-list" id="achievementMembers"></div><p class="achievement-picker-empty" data-picker-empty hidden>No hay miembros que coincidan con tu búsqueda.</p></div>
+          </div>
+          <footer class="achievement-editor-footer"><p class="form-feedback" id="achievementFeedback" role="status"></p><button class="primary-button" type="submit">Crear y asignar logro</button></footer>
+        </fieldset>
+      </form>
+    </section>
+
+    <section class="page-section achievement-admin-page" id="asignar-logro">
+      <header class="achievement-page-header"><button class="achievement-back" id="closeAchievementAssignment" type="button" aria-label="Volver a los logros"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5-7 7 7 7"/></svg></button><div><small>CONFIGURACIÓN DE LOGROS</small><h2>Asignar logro</h2></div><span aria-hidden="true"></span></header>
+      <form class="achievement-page-content achievement-assignment-layout" id="achievementAssignmentForm">
+        <div class="achievement-assignment-summary" id="achievementAssignmentSummary"></div>
+        <fieldset class="achievement-editor-fields" id="achievementAssignmentFields">
+          <div class="achievement-form-section"><h3>¿Quién se lo ha ganado?</h3><p class="achievement-section-hint">Marca los miembros que tendrán este logro. Desmarcar a alguien retirará su asignación al guardar.</p>
+            <div class="achievement-people-picker" id="achievementAssignPicker"><label class="achievement-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 5 5"/></svg><input type="search" placeholder="Buscar por nombre o usuario…" aria-label="Buscar miembros para asignar" data-picker-search autocomplete="off"></label><div class="achievement-picker-tools"><button type="button" data-picker-all>Seleccionar visibles</button><button type="button" data-picker-clear>Limpiar selección</button><span data-picker-count role="status"></span></div><div class="achievement-people-list" id="achievementAssignmentMembers"></div><p class="achievement-picker-empty" data-picker-empty hidden>No hay miembros que coincidan con tu búsqueda.</p></div>
+          </div>
+          <footer class="achievement-editor-footer"><p class="achievement-selection-review" id="achievementAssignmentReview" role="status"></p><p class="form-feedback" id="achievementAssignmentFeedback" role="status"></p><button class="primary-button" type="submit">Guardar asignaciones</button></footer>
+        </fieldset>
+      </form>
+    </section>
+
+    <section class="page-section" id="ayuda" data-ticket-view="list" aria-labelledby="ticketPageTitle">
+      <div class="ticket-page">
+        <header class="ticket-top">
+          <button class="ticket-round" type="button" data-ticket-back aria-label="Volver"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button>
+          <div><h2 id="ticketPageTitle" tabindex="-1">Ayuda</h2><p id="ticketIntro"></p></div>
+          <button class="ticket-primary ticket-primary-new" type="button" data-ticket-new>Nuevo ticket</button>
+        </header>
+        <div class="ticket-layout">
+          <div class="ticket-column">
+            <div class="ticket-filters" id="ticketFilters"></div>
+            <div class="ticket-list" id="ticketList"></div>
+          </div>
+          <div class="ticket-pane" id="ticketEmptyPane"><p class="ticket-note">Elige un ticket para ver la conversación.</p></div>
+          <section class="ticket-pane" id="ticketNew" hidden aria-label="Nuevo ticket">
+            <h3>Nuevo ticket</h3>
+            <form class="ticket-form" id="helpRequestForm">
+              <label>Tipo<select id="helpRequestType"><option value="help">Necesito ayuda</option><option value="suggestion">Sugerencia</option><option value="complaint">Queja</option></select></label>
+              <label>Asunto<input id="ticketSubject" name="ticketSubject" maxlength="80" minlength="3" required autocomplete="off" placeholder="Resúmelo en una frase"></label>
+              <label>Mensaje<textarea id="helpRequestMessage" name="helpRequestMessage" maxlength="2000" rows="5" required placeholder="Cuéntanos qué ha pasado o qué te gustaría mejorar"></textarea></label>
+              <label class="ticket-check"><input id="ticketUrgent" type="checkbox"> Es urgente</label>
+              <button class="ticket-primary" type="submit">Enviar ticket</button>
+            </form>
+          </section>
+          <section class="ticket-pane" id="ticketDetail" hidden aria-label="Ticket">
+            <div class="ticket-head" id="ticketHead"></div>
+            <div class="ticket-thread" id="ticketThread"></div>
+            <p class="ticket-note" id="ticketClosed" hidden>Este ticket está cerrado. Reábrelo si necesitas seguir.</p>
+            <form class="ticket-reply" id="helpReplyForm">
+              <textarea id="helpReplyMessage" name="helpReplyMessage" maxlength="2000" rows="2" required placeholder="Escribe una respuesta…" aria-label="Respuesta"></textarea>
+              <button class="ticket-primary" type="submit">Enviar</button>
+            </form>
+          </section>
+        </div>
+        <p class="ticket-feedback" id="ticketFeedback" role="status"></p>
+      </div>
+    </section>
+
+  </main>
+
+  <nav class="floating-tab-bar" id="floatingTabBar" aria-label="Navegación principal">
+    <span class="tab-selection-indicator" aria-hidden="true"></span>
+    <a class="app-tab active" href="#inicio" data-section="inicio" aria-label="Inicio" aria-current="page" title="Inicio">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 9-8 9 8v10h-6v-6H9v6H3Z"/></svg><span>Inicio</span>
+    </a>
+    <a class="app-tab packs-top-button" id="packsTopButton" href="#sobres" data-section="sobres" aria-label="Abrir mis sobres. Saldo pendiente de sincronización" title="Mis sobres">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="11" height="16" rx="2"/><path d="M19 7v12a2 2 0 0 1-2 2H9"/></svg><span id="packsHomeBalance" class="packs-top-count" role="status" aria-label="Saldo de sobres pendiente de sincronización">—</span><span>Cartas</span>
+    </a>
+    <a class="app-tab" href="#chat" data-section="chat" aria-label="Mensajes" title="Mensajes">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.5 9.7 9.7 0 0 1-4-.9L3 21l1.7-4.6A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8 9h8M8 13h5"/></svg><i class="tab-alert" id="chatTabAlert" aria-hidden="true" hidden></i><span>Chats</span>
+    </a>
+    <a class="app-tab profile-tab" href="#perfil" data-section="perfil" aria-label="Mi perfil" aria-haspopup="menu" aria-expanded="false" title="Mi perfil · mantén pulsado para más opciones">
+      <span class="profile-tab-photo" id="bottomNavAvatar" aria-hidden="true">U</span><span>Perfil</span>
+    </a>
+  </nav>
+
+  <dialog class="achievement-admin-confirm" id="achievementAdminConfirm" aria-labelledby="achievementConfirmTitle" aria-describedby="achievementConfirmDescription">
+    <span class="eyebrow">LOGROS DEL CLUB</span>
+    <h2 id="achievementConfirmTitle">Confirmar cambios</h2>
+    <p id="achievementConfirmDescription"></p>
+    <div>
+      <button class="secondary-button" id="achievementConfirmCancel" type="button" autofocus>Seguir editando</button>
+      <button class="primary-button" id="achievementConfirmAccept" type="button">Guardar cambios</button>
+    </div>
+  </dialog>
+
+  <dialog class="achievement-detail" id="achievementDetail" aria-labelledby="achievementDetailTitle" aria-describedby="achievementDetailDescription">
+    <button class="achievement-detail-close" id="closeAchievementDetail" type="button" aria-label="Cerrar detalle del logro">×</button>
+    <div id="achievementDetailContent" aria-live="polite"></div>
+  </dialog>
+
+  <dialog class="achievement-challenges-dialog" id="achievementChallengesDialog" aria-labelledby="achievementChallengesPanelTitle">
+    <header><div><span>PROGRESO PERSONAL</span><strong>Camino a tus próximos trofeos</strong></div><button type="button" id="closeAchievementChallenges" aria-label="Cerrar próximos logros">×</button></header>
+    <div id="achievementChallengesContent" aria-live="polite"></div>
+  </dialog>
+
+  <div class="profile-quick-menu" id="profileQuickMenu" role="menu" aria-label="Opciones de la cuenta" aria-hidden="true" hidden>
+    <div class="profile-quick-menu-heading"><span>MI CUENTA</span><strong>Opciones rápidas</strong></div>
+    <button type="button" role="menuitem" id="quickHelpButton"><span class="profile-quick-menu-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.6 9a2.5 2.5 0 0 1 4.8 1c0 1.6-2.4 2-2.4 3.5M12 17h.01"/></svg></span><span><strong>Ayuda y sugerencias</strong><small>Hablar con administración</small></span></button>
+    <button type="button" role="menuitem" id="quickSecurityButton"><span class="profile-quick-menu-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z"/><path d="m8 12 3 3 5-6"/></svg></span><span><strong>Seguridad de la cuenta</strong><small>Correo o Google y autenticador</small></span></button>
+    <button type="button" role="menuitem" class="danger" id="quickLogoutButton"><span class="profile-quick-menu-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 5H5v14h5M14 8l4 4-4 4M8 12h10"/></svg></span><span><strong>Cerrar sesión</strong><small>Salir de esta cuenta</small></span></button>
+    <div class="profile-quick-menu-tip">Mantén pulsado tu perfil para abrir este menú.</div>
+  </div>
+
+  <div class="modal-backdrop" id="profileEditor" aria-hidden="true">
+    <div class="profile-editor-modal" role="dialog" aria-modal="true" aria-labelledby="profileEditorTitle">
+      <form id="profileForm" class="profile-form">
+        <div class="modal-heading">
+          <button class="icon-button profile-editor-back" id="closeProfileEditor" type="button" aria-label="Volver al perfil"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+          <div>
+            <span class="eyebrow">MI PERFIL</span>
+            <h2 id="profileEditorTitle">Editar perfil</h2>
+          </div>
+          <button class="primary-button profile-editor-save" type="submit">Guardar</button>
+        </div>
+        <div class="avatar-editor">
+          <div class="avatar avatar-preview" id="avatarPreview">U</div>
+          <div class="avatar-actions">
+            <label class="secondary-button file-button">
+              Cambiar foto
+              <input id="profileAvatar" type="file" accept="image/jpeg,image/png,image/webp" hidden>
+            </label>
+            <button class="text-button danger-text" id="removeAvatarButton" type="button">Quitar foto</button>
+          </div>
+          <small>JPG, PNG o WebP · máximo 3 MB</small>
+          <div class="avatar-cropper" id="avatarCropper" hidden>
+            <div class="avatar-crop-stage" id="avatarCropStage">
+              <canvas id="avatarCropCanvas" width="480" height="480" aria-label="Encuadre de la foto de perfil"></canvas>
+              <span class="avatar-crop-guide" aria-hidden="true"></span>
+            </div>
+            <div class="avatar-crop-controls">
+              <label for="avatarZoom">
+                <span>Tamaño</span>
+                <input id="avatarZoom" type="range" min="1" max="3" value="1" step="0.01">
+              </label>
+              <button class="text-button" id="resetAvatarCrop" type="button">Centrar</button>
+              <small>Arrastra la foto para moverla y usa el control para acercarla.</small>
+            </div>
+          </div>
+        </div>
+        <label>
+          <span>Nombre</span>
+          <input id="profileName" name="profileName" maxlength="40" required>
+        </label>
+        <div class="admin-profile-fields" id="adminProfileFields" hidden>
+          <div class="admin-profile-fields-heading"><span>GESTIÓN DE CUENTA</span><small>Solo visible para administradores</small></div>
+          <label id="profileUsernameField">
+            <span>Usuario</span>
+            <input id="profileUsername" name="profileUsername" maxlength="32" autocomplete="off">
+            <small id="profileUsernameHelp">Entre 3 y 32 caracteres; letras, números, punto, guion o guion bajo.</small>
+          </label>
+          <label id="profileRoleField">
+            <span>Rango</span>
+            <select id="profileRole"><option value="member">Miembro</option><option value="admin">Administrador</option></select>
+          </label>
+        </div>
+        <label>
+          <span>Apodo</span>
+          <input id="profileNickname" name="profileNickname" maxlength="50" required>
+        </label>
+        <label>
+          <span>Bio</span>
+          <textarea id="profileBio" name="profileBio" maxlength="350" rows="5" required></textarea>
+          <small><span id="bioCount">0</span>/350</small>
+        </label>
+        <label>
+          <span>Intereses</span>
+          <input id="profileTags" name="profileTags" maxlength="120" placeholder="Música, viajes, deporte">
+        </label>
+        <label>
+          <span>País</span>
+          <select id="profileFlag">
+            <option value="">Sin bandera</option>
+            <option value="🇪🇸">🇪🇸 España</option>
+            <option value="🇬🇶">🇬🇶 Guinea Ecuatorial</option>
+            <option value="🇦🇷">🇦🇷 Argentina</option>
+            <option value="🇧🇴">🇧🇴 Bolivia</option>
+            <option value="🇨🇱">🇨🇱 Chile</option>
+            <option value="🇨🇴">🇨🇴 Colombia</option>
+            <option value="🇨🇷">🇨🇷 Costa Rica</option>
+            <option value="🇨🇺">🇨🇺 Cuba</option>
+            <option value="🇩🇴">🇩🇴 República Dominicana</option>
+            <option value="🇪🇨">🇪🇨 Ecuador</option>
+            <option value="🇸🇻">🇸🇻 El Salvador</option>
+            <option value="🇬🇹">🇬🇹 Guatemala</option>
+            <option value="🇭🇳">🇭🇳 Honduras</option>
+            <option value="🇲🇽">🇲🇽 México</option>
+            <option value="🇳🇮">🇳🇮 Nicaragua</option>
+            <option value="🇵🇦">🇵🇦 Panamá</option>
+            <option value="🇵🇾">🇵🇾 Paraguay</option>
+            <option value="🇵🇪">🇵🇪 Perú</option>
+            <option value="🇵🇷">🇵🇷 Puerto Rico</option>
+            <option value="🇺🇾">🇺🇾 Uruguay</option>
+            <option value="🇻🇪">🇻🇪 Venezuela</option>
+            <option value="🇵🇹">🇵🇹 Portugal</option>
+            <option value="🇫🇷">🇫🇷 Francia</option>
+            <option value="🇮🇹">🇮🇹 Italia</option>
+            <option value="🇩🇪">🇩🇪 Alemania</option>
+            <option value="🇬🇧">🇬🇧 Reino Unido</option>
+            <option value="🇺🇸">🇺🇸 Estados Unidos</option>
+          </select>
+        </label>
+        <fieldset class="profile-color-field">
+          <legend>Color de fondo del perfil</legend>
+          <div class="profile-color-swatches" role="radiogroup" aria-label="Color de fondo del perfil"><label class="profile-color-swatch" style="--swatch:transparent"><input type="radio" name="profileColor" value="" checked><span aria-hidden="true"></span><b>Sin color</b></label><label class="profile-color-swatch" style="--swatch:#d7263d"><input type="radio" name="profileColor" value="#d7263d"><span aria-hidden="true"></span><b>Rojo</b></label><label class="profile-color-swatch" style="--swatch:#f46036"><input type="radio" name="profileColor" value="#f46036"><span aria-hidden="true"></span><b>Naranja</b></label><label class="profile-color-swatch" style="--swatch:#e0a526"><input type="radio" name="profileColor" value="#e0a526"><span aria-hidden="true"></span><b>Ámbar</b></label><label class="profile-color-swatch" style="--swatch:#2bb673"><input type="radio" name="profileColor" value="#2bb673"><span aria-hidden="true"></span><b>Verde</b></label><label class="profile-color-swatch" style="--swatch:#14b8a6"><input type="radio" name="profileColor" value="#14b8a6"><span aria-hidden="true"></span><b>Turquesa</b></label><label class="profile-color-swatch" style="--swatch:#2f6bff"><input type="radio" name="profileColor" value="#2f6bff"><span aria-hidden="true"></span><b>Azul</b></label><label class="profile-color-swatch" style="--swatch:#5b4bff"><input type="radio" name="profileColor" value="#5b4bff"><span aria-hidden="true"></span><b>Índigo</b></label><label class="profile-color-swatch" style="--swatch:#9b5de5"><input type="radio" name="profileColor" value="#9b5de5"><span aria-hidden="true"></span><b>Morado</b></label><label class="profile-color-swatch" style="--swatch:#f15bb5"><input type="radio" name="profileColor" value="#f15bb5"><span aria-hidden="true"></span><b>Rosa</b></label><label class="profile-color-swatch" style="--swatch:#6b7280"><input type="radio" name="profileColor" value="#6b7280"><span aria-hidden="true"></span><b>Grafito</b></label></div>
+        </fieldset>
+        <section class="profile-banner-settings" id="profileBannerSettings" hidden>
+          <button class="profile-banner-row" id="profileBannerToggle" type="button" aria-expanded="false" aria-controls="profileBannerPicker"><span><strong>Banners</strong><small id="profileBannerSelection">Sin banner</small></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+          <div id="profileBannerPicker" class="profile-banner-picker" hidden>
+            <p class="profile-banner-help">Elige uno de tus banners comprados. Se aplica al seleccionarlo.</p>
+            <p id="profileBannerStatus" role="status" aria-live="polite"></p>
+            <div id="profileBannerOptions" class="profile-banner-options"></div>
+            <button id="profileBannerRetry" class="text-button" type="button" hidden>Reintentar</button>
+          </div>
+        </section>
+        <section class="profile-admin-actions" id="profileAdminActions" hidden>
+          <div class="profile-admin-actions-heading"><span>Administración</span><small>Gestiona esta cuenta desde aquí</small></div>
+          <div class="profile-admin-action-grid">
+            <button class="secondary-button" id="adminViewProfileButton" type="button">Ver perfil público</button>
+            <button class="secondary-button" id="adminMessageProfileButton" type="button">Enviar mensaje</button>
+            <button class="secondary-button" id="adminResetProfilePasswordButton" type="button">Gestionar cuenta</button>
+            <button class="secondary-button danger" id="adminDeleteProfileButton" type="button">Eliminar usuario</button>
+          </div>
+        </section>
+        <div class="form-feedback" id="profileFeedback" role="status"></div>
+        <button id="cancelProfileEditor" type="button" hidden>Cancelar</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-backdrop required-password-backdrop" id="requiredPasswordChange" aria-hidden="true">
+    <div class="profile-editor-modal required-password-modal" role="dialog" aria-modal="true" aria-labelledby="requiredPasswordTitle">
+      <div class="modal-heading">
+        <div>
+          <span class="eyebrow">SEGURIDAD DE LA CUENTA</span>
+          <h2 id="requiredPasswordTitle">Crea tu propia contraseña</h2>
+        </div>
+      </div>
+      <p class="required-password-intro">Has iniciado sesión con la contraseña provisional. Para continuar, escribe una nueva contraseña y confírmala por segunda vez.</p>
+      <form id="requiredPasswordChangeForm" class="profile-form">
+        <label>
+          <span>Nueva contraseña</span>
+          <input id="requiredNewPassword" name="requiredNewPassword" type="password" minlength="8" maxlength="128" aria-describedby="requiredPasswordRules" autocomplete="new-password" required>
+        </label>
+        <label>
+          <span>Confirma de nuevo la contraseña</span>
+          <input id="requiredNewPasswordConfirmation" name="requiredNewPasswordConfirmation" type="password" minlength="8" maxlength="128" autocomplete="new-password" required>
+        </label>
+        <small id="requiredPasswordRules">Entre 8 y 128 caracteres, al menos un símbolo (!, @, #) y sin tu nombre, apellidos ni usuario.</small>
+        <div class="form-feedback" id="requiredPasswordFeedback" role="status" aria-live="polite"></div>
+        <button class="primary-button required-password-submit" type="submit">Confirmar y continuar</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="shareMediaModal" aria-hidden="true">
+    <div class="profile-editor-modal share-media-modal" role="dialog" aria-modal="true" aria-labelledby="shareMediaTitle">
+      <div class="modal-heading">
+        <div><span class="eyebrow">COMPARTIR EN UN CHAT</span><h2 id="shareMediaTitle">Compartir noticia</h2></div>
+        <button class="icon-button" id="closeShareMediaModal" type="button" aria-label="Cerrar">×</button>
+      </div>
+      <form id="shareMediaForm" class="profile-form">
+        <label><span>Enviar a</span><select id="shareDestinationType"><option value="group">Chat grupal</option><option value="private">Chat privado</option></select></label>
+        <label><span id="shareDestinationLabel">Canal del grupo</span><select id="shareDestination" required></select></label>
+        <div class="share-media-preview" id="shareMediaPreview"></div>
+        <div class="form-feedback" id="shareMediaFeedback" role="status"></div>
+        <div class="modal-actions">
+          <button class="secondary-button" id="cancelShareMedia" type="button">Cancelar</button>
+          <button class="primary-button" type="submit">Compartir</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-backdrop calendar-day-modal-backdrop" id="calendarDayModal" aria-hidden="true">
+    <div class="profile-editor-modal calendar-day-modal" role="dialog" aria-modal="true" aria-labelledby="calendarDayTitle">
+      <div class="modal-heading">
+        <div><span class="eyebrow">AGENDA DEL DÍA</span><h2 id="calendarDayTitle">Eventos</h2></div>
+        <button class="icon-button" id="closeCalendarDayModal" type="button" aria-label="Cerrar">×</button>
+      </div>
+      <div class="calendar-day-detail-list" id="calendarDayDetailList"></div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop calendar-editor-backdrop" id="eventEditor" aria-hidden="true">
+    <div class="profile-editor-modal calendar-editor" role="dialog" aria-modal="true" aria-labelledby="eventEditorTitle">
+      <div class="modal-heading"><div><span class="eyebrow">EL CLUB · AGENDA</span><h2 id="eventEditorTitle">Nuevo evento</h2></div><button class="icon-button" id="closeEventEditor" type="button" aria-label="Cerrar">×</button></div>
+      <p class="calendar-editor-intro" id="eventEditorIntro">Un buen plan empieza por una fecha.</p>
+      <form id="eventForm" class="profile-form calendar-event-form">
+        <input id="eventId" type="hidden">
+        <div id="eventTypeField" class="event-kind-picker">
+          <select id="eventType" aria-label="Tipo de fecha" hidden><option value="event">Evento del grupo</option><option value="birthday">Cumpleaños</option></select>
+          <button type="button" data-event-kind="event" aria-pressed="true"><span class="event-kind-icon">◇</span><span><strong>Plan del club</strong><small>Nos juntamos</small></span></button>
+          <button type="button" data-event-kind="birthday" aria-pressed="false"><span class="event-kind-icon">✦</span><span><strong>Cumpleaños</strong><small>Lo celebramos</small></span></button>
+        </div>
+        <label class="event-title-field"><span id="eventTitleLabel">¿Qué vamos a hacer?</span><input id="eventTitle" name="eventTitle" maxlength="80" required placeholder="Cena, escapada, partido…"></label>
+        <div class="event-date-fields" id="eventDateFields">
+          <label><span>Comienza</span><input id="eventStartsAt" name="eventStartsAt" type="datetime-local" required></label>
+          <label><span>Termina <small>opcional</small></span><input id="eventEndsAt" name="eventEndsAt" type="datetime-local"></label>
+        </div>
+        <label id="birthdayDateField" hidden><span>El día que celebramos</span><input id="birthdayDate" name="birthdayDate" type="date"></label>
+        <div class="birthday-all-day-note" id="birthdayAllDayNote" hidden><span>✦</span><div><strong>Una fecha para recordar</strong><small>Todo el día, cada año. Lo guardamos en la agenda del club.</small></div></div>
+        <label><span>¿Dónde quedamos? <small>opcional</small></span><input id="eventLocation" name="eventLocation" maxlength="120" placeholder="Un sitio, una dirección…"></label>
+        <label><span id="eventDescriptionLabel">Los detalles <small>opcional</small></span><textarea id="eventDescription" name="eventDescription" maxlength="500" rows="3" placeholder="Todo lo que el grupo necesita saber"></textarea></label>
+        <div class="form-feedback" id="eventFeedback" role="status" aria-live="polite"></div>
+        <div class="modal-actions event-modal-actions"><button class="text-button danger-text" id="deleteEventButton" type="button" hidden>Eliminar</button><button class="secondary-button" id="cancelEventEditor" type="button">Cancelar</button><button class="primary-button" type="submit" id="eventSaveButton">Crear plan</button></div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="groupAvatarEditor" aria-hidden="true">
+    <div class="profile-editor-modal compact-dialog group-avatar-editor" role="dialog" aria-modal="true" aria-labelledby="groupAvatarEditorTitle">
+      <div class="modal-heading">
+        <div><span class="eyebrow">CHAT DEL GRUPO</span><h2 id="groupAvatarEditorTitle">Foto del grupo</h2></div>
+        <button class="icon-button profile-editor-back" id="closeGroupAvatarEditor" type="button" aria-label="Volver al chat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+      </div>
+      <form id="groupAvatarForm" class="profile-form group-avatar-page-form">
+        <div class="group-avatar-preview" id="groupAvatarPreview"><b>BB</b></div>
+        <label class="secondary-button group-avatar-file-button">
+          Elegir una foto
+          <input id="groupAvatarInput" type="file" accept="image/jpeg,image/png,image/webp" hidden>
+        </label>
+        <small class="group-avatar-help">JPG, PNG o WebP · máximo 3 MB. Se mostrará en la bandeja y la cabecera del chat.</small>
+        <div class="form-feedback" id="groupAvatarFeedback" role="status"></div>
+        <div class="modal-actions">
+          <button class="text-button danger-text" id="removeGroupAvatarButton" type="button">Quitar foto</button>
+          <button class="secondary-button" id="cancelGroupAvatarEditor" type="button">Cancelar</button>
+          <button class="primary-button" type="submit">Guardar foto</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="spotifyEditor" aria-hidden="true">
+    <div class="profile-editor-modal" role="dialog" aria-modal="true" aria-labelledby="spotifyEditorTitle">
+      <div class="modal-heading">
+        <div><span class="eyebrow">SPOTIFY</span><h2 id="spotifyEditorTitle">Vincular playlist</h2></div>
+        <button class="icon-button" id="closeSpotifyEditor" type="button" aria-label="Cerrar">×</button>
+      </div>
+      <form id="spotifyForm" class="profile-form">
+        <label>
+          <span>Enlace público de la playlist</span>
+          <input id="spotifyPlaylistUrl" name="spotifyPlaylistUrl" type="url" placeholder="https://open.spotify.com/playlist/…" required>
+          <small>Abre la playlist en Spotify, pulsa Compartir y copia su enlace.</small>
+        </label>
+        <div class="form-feedback" id="spotifyFeedback" role="status"></div>
+        <div class="modal-actions">
+          <button class="text-button danger-text" id="removeSpotifyButton" type="button">Quitar playlist</button>
+          <button class="secondary-button" id="cancelSpotifyEditor" type="button">Cancelar</button>
+          <button class="primary-button" type="submit">Guardar playlist</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-mark">BB</div>
+    <div>
+      <strong>THE BIG BOY RULES</strong>
+      <small>PRIVATE CLUB · EST. 2026</small>
+    </div>
+    <span>LOYALTY · BROTHERHOOD · LEGACY</span>
+  </footer>
+
+  <dialog class="collection-card-dialog" id="collectionCardDialog" aria-labelledby="collectionCardTitle">
+    <div class="collection-card-detail">
+      <header><span class="eyebrow">LOS NUESTROS · CATÁLOGO</span><button id="collectionCardClose" class="packs-back" type="button" aria-label="Cerrar carta" autofocus><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></header>
+      <h2 id="collectionCardTitle">Carta del club</h2>
+      <div class="collection-card-perspective"><div class="collection-card-tilt" id="collectionCardTilt" tabindex="0" role="group" aria-label="Carta interactiva" aria-describedby="collectionCardGestureHint"><div class="collection-card-stage" id="collectionCardStage">
+        <img id="collectionCardFront" class="collection-card-face" width="948" height="1659" decoding="async" alt="">
+        <img id="collectionCardBack" class="collection-card-face collection-card-reverse" width="948" height="1659" decoding="async" alt="" aria-hidden="true">
+      </div><div id="collectionCardFoil" class="collection-card-foil" aria-hidden="true"></div></div></div>
+      <p id="collectionCardGestureHint" class="collection-gesture-hint">Arrastra para mover · desliza a un lado para girar</p>
+      <div id="collectionCardError" class="collection-card-error" role="alert" hidden>No se ha podido cargar una de las caras. <button type="button" id="collectionCardRetry">Reintentar</button></div>
+      <p id="collectionCardStatus" role="status">Común · 86 puntos</p>
+      <button type="button" id="collectionCardFlip" class="packs-sync" aria-controls="collectionCardStage" aria-pressed="false">Ver reverso</button>
+    </div>
+  </dialog>
+
+  <dialog id="duplicatesDialog" class="banner-shop-dialog" aria-labelledby="duplicatesTitle">
+    <header class="banner-shop-heading duplicates-heading"><div><span class="duplicates-kicker">LOS NUESTROS · COLECCIÓN</span><h2 id="duplicatesTitle" tabindex="-1">Cartas repetidas</h2></div><button type="button" data-duplicates-close aria-label="Cerrar repetidas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></header>
+    <div class="dup-chota" id="duplicatesChota" data-mood="wave" hidden><i class="dup-chota-sprite" aria-hidden="true"></i><p></p></div>
+    <div class="duplicates-toolbar"><p id="duplicatesStatus" role="status"></p><button type="button" class="packs-sync" id="discardAllDuplicates">Elegir todas</button></div>
+    <div class="dup-editions" id="duplicatesEditions"></div>
+    <div id="ownedCardInventory" class="owned-card-inventory"></div>
+    <div class="dup-bar" id="duplicatesBar" hidden><span id="duplicatesBarText"></span><button type="button" id="discardSelected">Descartar</button></div>
+  </dialog>
+
+  <dialog id="bannerShopDialog" class="banner-shop-dialog" aria-labelledby="bannerShopTitle">
+    <header class="banner-shop-heading shop-topbar">
+      <button id="clubStoreBack" type="button" aria-label="Volver a la tienda" hidden>Tienda</button>
+      <div class="shop-brand"><span class="shop-brand-mark" aria-hidden="true">BB</span><div class="shop-brand-copy"><h2 id="bannerShopTitle">Tienda</h2></div></div>
+      <div class="shop-wallet"><span>Saldo</span><strong><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M14.8 8.5h-4a2 2 0 0 0 0 4h2.4a2 2 0 0 1 0 4H9M12 6v12"/></svg><span id="bannerShopBalance" class="banner-shop-balance">— monedas</span></strong></div>
+      <button id="bannerShopClose" type="button" aria-label="Cerrar tienda"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+    </header>
+    <section id="clubStoreScene" aria-label="Tienda del club" hidden><div id="clubStoreStage" class="club-store-stage" aria-busy="true"></div><p class="club-store-instruction">Toca un mueble para entrar.</p><p id="clubStoreSceneStatus" role="status" aria-live="polite"></p></section>
+    <div class="shop-content">
+      <div class="shop-navigation" role="tablist" aria-label="Secciones de la tienda"><button type="button" id="shopBannersTab" role="tab" aria-selected="true" aria-controls="shopBannersPanel" data-shop-tab="banners">Banners <span data-shop-banner-count>—</span></button><button type="button" id="shopChotaTab" role="tab" aria-selected="false" aria-controls="shopChotaPanel" tabindex="-1" data-shop-tab="chota">El Chota <span data-shop-chota-count>—</span></button><button type="button" id="shopVouchersTab" role="tab" aria-selected="false" aria-controls="shopVouchersPanel" tabindex="-1" data-shop-tab="vouchers">Vales <span data-shop-voucher-count>—</span></button><button type="button" id="shopClothingTab" role="tab" aria-selected="false" aria-controls="shopClothingPanel" tabindex="-1" data-shop-tab="clothing">Ropa</button></div>
+      <p id="bannerShopStatus" class="shop-status" role="status" aria-live="polite"></p>
+      <section id="shopBannersPanel" role="tabpanel" aria-labelledby="shopBannersTab"><header class="shop-section-heading shop-department-heading"><div><span class="shop-department-label">Banners de perfil</span><h3>Selección de hoy</h3><p>Actualización diaria</p></div><button id="bannerUnequip" class="shop-text-button" type="button" disabled>Quitar banner</button></header><div id="bannerShopItems" class="banner-shop-items"></div></section>
+      <section id="shopChotaPanel" role="tabpanel" aria-labelledby="shopChotaTab" hidden><header class="chota-shop-intro shop-department-heading"><div><span class="shop-department-label">El Chota</span><h3>Para su habitación</h3><p>Estilos y objetos para la sede.</p></div></header><p id="chotaShopStatus" role="status" aria-live="polite"></p><div id="chotaShopItems" class="chota-shop-items"></div></section>
+      <section id="shopVouchersPanel" class="reward-voucher-shop" role="tabpanel" aria-labelledby="shopVouchersTab" hidden><header class="shop-section-heading shop-department-heading"><div><span class="shop-department-label">Vales</span><h3 id="rewardVoucherTitle">Premios del club</h3><p>Desbloquea un vale y canjéalo cuando quieras.</p></div></header><div id="rewardVoucherItems" class="banner-shop-items"></div></section>
+      <section id="shopClothingPanel" role="tabpanel" aria-labelledby="shopClothingTab" hidden><header class="shop-section-heading"><div><h3>El armario del Chota</h3><p>Prendas que le acompañan al moverse, hablar y descansar.</p></div></header><p id="clothingShopStatus" role="status" aria-live="polite"></p><div id="clothingShopItems"></div><section id="chotaOutfits" class="chota-outfits" aria-label="Conjuntos guardados" hidden></section></section>
+    </div>
+  </dialog>
+
+  <dialog id="chatImageViewer" aria-label="Imagen del chat">
+    <button type="button" id="closeChatImageViewer" aria-label="Cerrar imagen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+    <div id="chatImageViewerStage"></div>
+    <p id="chatImageViewerStatus" role="status" hidden></p>
+  </dialog>
+  <div id="messageContextMenu" class="message-context-menu" role="menu" aria-label="Opciones del mensaje" hidden></div>
+  <dialog id="messageInfoDialog" class="message-info-dialog" aria-labelledby="messageInfoTitle">
+    <div class="message-info-heading"><div><span class="eyebrow">CONVERSACIÓN</span><h2 id="messageInfoTitle">Información del mensaje</h2></div><button type="button" id="closeMessageInfo" aria-label="Cerrar información">×</button></div>
+    <div id="messageInfoContent"></div>
+  </dialog>
+  <script defer src="vendor/supabase.js?v=20260901-125"></script>
+  <script defer src="config.js?v=20261008-210"></script>
+  <script defer src="feature-loader.js?v=20261116-epicos-v2-668"></script>
+  <script defer src="club-model.js?v=20260902-126"></script>
+  <script defer src="chat-motion.js?v=20260902-128"></script>
+  <script defer src="vendor/capacitor.js?v=8.5.0"></script>
+  <script defer src="app-update.js?v=20261116-lineas-674"></script>
+  <script defer src="chat-keyboard.js?v=20261114-chat-grupo-635"></script>
+  <script defer src="tab-navigation.js?v=20261026-dock-drag-411"></script>
+  <script defer src="trophy-motion.js?v=20260904-150"></script>
+  <script defer src="trophy-unlock.js?v=20261103-ladders-552"></script>
+  <script defer src="daily-packs.js?v=20261112-inicio-627"></script>
+  <script defer src="chota-level.js?v=20261116-nivel-wip-663"></script>
+  <script defer src="dev-tools.js?v=20261117-horillas-684"></script>
+  <script defer src="gif-picker.js?v=20261118-gifs-v2-688"></script>
+  <script defer src="collection-motion.js?v=20261116-wip-662"></script>
+  <script defer src="card-thumbnails.js?v=20261023-jose-vice-city-388"></script>
+  <script defer src="card-media.js?v=20261025-audit-404"></script>
+  <script defer src="card-collection.js?v=20261116-wip-662"></script>
+  <script defer src="card-catalog-sync.js?v=20261116-wip-662"></script>
+  <script defer src="achievement-progress.js?v=20261116-wip-662"></script>
+  <script defer src="collection-social.js?v=20261112-inicio-627"></script>
+  <script defer src="card-economy.js?v=20261116-wip-662"></script>
+  <script defer src="album.js?v=20261116-wip-662"></script>
+  <script defer src="onboarding.js?v=20261016-improvements-319"></script>
+  <script defer src="shop-catalog-media.js?v=20261030-audit-hardening-443"></script>
+  <script defer src="pack-opening.js?v=20261116-wip-662"></script>
+  <script defer src="pack-diagnostics.js?v=20261111-medidor-619"></script>
+  <script defer src="pack-extras.js?v=20261116-perf-671"></script>
+  <script defer src="banner-shop.js?v=20261117-horillas-684"></script>
+  <script defer src="chota-shop.js?v=20261113-abrigos-pausa-630"></script>
+  <script defer src="club-store.js?v=20261110-zapatillas-616"></script>
+  <script defer src="store-rooms.js?v=20261110-zapatillas-616"></script>
+  <script defer src="store-sky.js?v=20261108-rain-v2-593"></script>
+  <script defer src="coin-missions.js?v=20261116-niveles-661"></script>
+  <script defer src="club-day.js?v=20261112-inicio-627"></script>
+  <script defer src="club-plus.js?v=20261112-inicio-627"></script>
+  <script defer src="chota-scenes.js?v=20261106-chota-alive-568"></script>
+  <script defer src="chota-decisions.js?v=20261111-premios-622"></script>
+  <script defer src="club-life.js?v=20261108-rain-v2-593"></script>
+  <script defer src="club-night.js?v=20261102-night-507"></script>
+  <script defer src="tickets.js?v=20261112-inicio-627"></script>
+  <script defer src="pull-refresh.js?v=20261101-pull-482"></script>
+  <script defer src="chat-mentions.js?v=20261101-mentions-481"></script>
+  <script defer src="chat-custom.js?v=20261101-chat-custom-473"></script>
+  <script defer src="club-social.js?v=20261115-vitrina-646"></script>
+  <script defer src="club-live.js?v=20261111-imagenes-625"></script>
+  <script defer src="chota-games.js?v=20261115-minijuegos-640"></script>
+  <script defer src="plan-widget.js?v=20261024-social-393"></script>
+  <script defer src="group-interactions.js?v=20261118-encuestas-689"></script>
+  <script defer src="pending-actions.js?v=20261016-release-322"></script>
+  <script defer src="admin-console.js?v=20261116-wip-662"></script>
+  <script defer src="native-auth.js?v=20261030-native-google-442"></script>
+  <script defer src="profile-account-sheet.js?v=20261102-theme-532"></script>
+  <script defer src="account-security.js?v=20261102-login-546"></script>
+  <script defer src="account-requests.js?v=20261102-login-546"></script>
+  <script defer src="chota-outdoor.js?v=20261030-outdoor-events-448"></script>
+  <script defer src="chota-cloth.js?v=20261112-inicio-627"></script>
+  <script defer src="chota-interact.js?v=20261110-sede-viva-610"></script>
+  <script defer src="chota-appearance.js?v=20261114-chota-v8-636"></script>
+  <script defer src="chota-wardrobe.js?v=20261114-chota-v8-636"></script>
+  <script defer src="app.js?v=20261118-encuestas-689"></script>
+  <script>
+    (() => {
+      const ios = /iP(?:hone|ad|od)/.test(navigator.userAgent) || navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;
+      const standalone = navigator.standalone === true || matchMedia("(display-mode: standalone)").matches;
+      if (!ios || !standalone || !/^https?:$/.test(location.protocol)) return;
+      const root = document.documentElement;
+      let frame = 0;
+      root.dataset.pwaViewport = "ios";
+      const sync = () => {
+        if (frame) return;
+        frame = requestAnimationFrame(() => {
+          frame = 0;
+          const viewport = window.visualViewport;
+          if (viewport && Math.abs(viewport.scale - 1) > .01) return;
+          const height = Math.round(viewport?.height || innerHeight);
+          const top = Math.max(0, Math.round(viewport?.offsetTop || 0));
+          if (height <= 0) return;
+          for (const [name, value] of [["--pwa-window-height", `${height}px`], ["--pwa-window-top", `${top}px`]]) {
+            if (root.style.getPropertyValue(name) !== value) root.style.setProperty(name, value);
+          }
+        });
+      };
+      window.addEventListener("resize", sync, {passive:true});
+      window.visualViewport?.addEventListener("resize", sync, {passive:true});
+      window.visualViewport?.addEventListener("scroll", sync, {passive:true});
+      window.addEventListener("pageshow", sync);
+      document.addEventListener("visibilitychange", () => { if (!document.hidden) { sync(); setTimeout(sync, 200); } });
+      sync();
+    })();
+    const nativeWebView = location.protocol === "capacitor:" || location.origin === "https://localhost" || Boolean(globalThis.Capacitor?.isNativePlatform?.());
+    if (nativeWebView && "serviceWorker" in navigator) {
+      // Native builds already bundle their shell. Remove workers left by older builds.
+      navigator.serviceWorker.getRegistrations().then(registrations =>
+        Promise.all(registrations.map(registration => registration.unregister()))).catch(() => {});
+    }
+    if (!nativeWebView && "serviceWorker" in navigator) {
+      // Asset revisions identify the document actually on screen, including an
+      // older document restored by iOS while a newer worker is already active.
+      const documentRelease = Math.max(0, ...Array.from(document.querySelectorAll("link[href],script[src]"), element =>
+        Number(new URL(element.src || element.href, location.href).searchParams.get("v")?.match(/-(\d+)$/)?.[1]) || 0));
+      document.documentElement.dataset.appRelease = String(documentRelease);
+      let registration, pendingRelease = 0, lastCheck = 0;
+      const dirtyFields = new Map();
+      let safeUntil = Date.now() + 30000, scheduled = false;
+      const editable = element => element?.matches?.("input:not([type=button]):not([type=submit]):not([type=checkbox]):not([type=radio]),textarea,[contenteditable=true]");
+      const interacted = () => { safeUntil = 0; };
+      for (const type of ["pointerdown", "keydown", "scroll"]) document.addEventListener(type, interacted, {capture:true, passive:true});
+      document.addEventListener("beforeinput", event => {
+        const field = event.target;
+        if (editable(field) && !dirtyFields.has(field)) dirtyFields.set(field, field.value ?? field.textContent);
+      }, true);
+      document.addEventListener("input", event => {
+        const field = event.target;
+        if (editable(field) && !dirtyFields.has(field)) dirtyFields.set(field, field.defaultValue ?? "");
+      }, true);
+      const applyUpdate = () => {
+        if (!pendingRelease || document.hidden || Date.now() > safeUntil || editable(document.activeElement)) return;
+        if (document.querySelector("dialog[open],.modal-backdrop.open")) return;
+        for (const [field, initial] of dirtyFields) {
+          if (!field.isConnected) { dirtyFields.delete(field); continue; }
+          if (field.getClientRects().length && (field.value ?? field.textContent) !== initial) return;
+        }
+        // A failed offline navigation must not cause a refresh loop on resume.
+        try {
+          if (sessionStorage.getItem("bb-pwa-auto-release") === String(pendingRelease)) return;
+          sessionStorage.setItem("bb-pwa-auto-release", String(pendingRelease));
+        } catch {}
+        location.reload();
+      };
+      const inspectWorker = worker => {
+        if (!worker) return;
+        const channel = new MessageChannel();
+        const timer = setTimeout(() => channel.port1.close(), 1500);
+        channel.port1.onmessage = event => {
+          clearTimeout(timer); channel.port1.close();
+          const release = Number(String(event.data?.release || "").match(/-v(\d+)$/)?.[1]);
+          if (release > documentRelease) { pendingRelease = release; setTimeout(applyUpdate, 150); }
+        };
+        try { worker.postMessage({type:"BB_GET_RELEASE"}, [channel.port2]); }
+        catch { clearTimeout(timer); channel.port1.close(); }
+      };
+      const watchWorker = worker => {
+        if (!worker) return;
+        const inspect = () => { if (worker.state === "activated") inspectWorker(worker); };
+        worker.addEventListener("statechange", inspect); inspect();
+      };
+      const checkUpdate = () => {
+        applyUpdate();
+        if (!registration) return;
+        inspectWorker(registration.active);
+        if (Date.now() - lastCheck < 60000 || !navigator.onLine) return;
+        lastCheck = Date.now();
+        void registration.update().catch(() => {});
+      };
+      const resume = () => { safeUntil = Date.now() + 15000; checkUpdate(); };
+      document.addEventListener("visibilitychange", () => { if (!document.hidden) resume(); });
+      window.addEventListener("pageshow", event => { if (event.persisted) resume(); });
+      window.addEventListener("online", checkUpdate);
+      window.addEventListener("load", () => {
+        const register = () => {
+          if (editable(document.activeElement)) {
+            setTimeout(schedule, 2000);
+            return;
+          }
+          navigator.serviceWorker.register("./service-worker.js", {scope:"./", updateViaCache:"none"})
+            .then(value => {
+              registration = value;
+              registration.addEventListener("updatefound", () => watchWorker(registration.installing));
+              watchWorker(registration.installing);
+              checkUpdate();
+            })
+            .catch(error => console.warn("No se pudo activar el modo PWA:", error));
+        };
+        const schedule = () => {
+          if (window.requestIdleCallback) requestIdleCallback(register, {timeout:3000});
+          else setTimeout(register, 500);
+        };
+        const afterLaunch = () => { if (!scheduled) { scheduled = true; setTimeout(schedule, 1000); } };
+        if (document.documentElement.dataset.launchReady === "true") afterLaunch();
+        else document.addEventListener("bb:launch-ready", afterLaunch, {once:true});
+        setTimeout(afterLaunch, 10000);
+      });
+    }
+  </script>
+</body>
+</html>

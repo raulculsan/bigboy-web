@@ -1,0 +1,392 @@
+/* Big Boy design system. The one source for type, colour, space and controls.
+   Loaded last on purpose. Screens join by being listed in the :is() scopes below,
+   so the rest of the app keeps its look until it is migrated. Card art, banners
+   and pack art stay outside: the interface is quiet so they can stand out. */
+:root {
+  /* Type scale: nothing on a migrated screen goes below --ds-text-xs. */
+  --ds-text-xs: 12px;
+  --ds-text-sm: 13px;
+  --ds-text-md: 15px;
+  --ds-text-lg: 20px;
+  --ds-text-xl: 26px;
+  /* Spacing runs on a 4 px grid. */
+  --ds-space-1: 4px;
+  --ds-space-2: 8px;
+  --ds-space-3: 12px;
+  --ds-space-4: 16px;
+  --ds-space-5: 24px;
+  --ds-space-6: 32px;
+  --ds-radius-sm: 10px;
+  --ds-radius-md: 12px;
+  --ds-radius-lg: 18px;
+  --ds-radius-pill: 999px;
+  --ds-control: 44px;
+  --ds-control-sm: 36px;
+  --ds-surface: var(--bb2-panel);
+  --ds-raised: var(--bb2-raised);
+  --ds-line: var(--bb2-line);
+  --ds-line-strong: var(--bb2-line-strong);
+  --ds-text: var(--bb2-ink);
+  --ds-text-2: var(--bb2-secondary);
+  --ds-text-3: var(--bb2-muted);
+  --ds-accent: var(--bb2-gold);
+  --bb2-radius: var(--ds-radius-lg);
+  --bb2-control-radius: var(--ds-radius-md);
+}
+
+/* Headings */
+body.authenticated :is(#inicio,#sobres,#perfil) :is(h2) { font-size: var(--ds-text-xl); font-weight: 600; line-height: 1.15; letter-spacing: -.03em; color: var(--ds-text); }
+body.authenticated :is(#inicio,#sobres,#perfil) :is(.panel-heading h3,.profile-feed-heading h3,.clubhouse-heading h2,.club-news-heading h2) { font-size: var(--ds-text-lg); font-weight: 600; line-height: 1.2; letter-spacing: -.02em; color: var(--ds-text); }
+
+/* Small labels */
+body.authenticated :is(#inicio,#sobres,#perfil) :is(.eyebrow,.collection-section-label,.club-member-number,.club-profile-role) { font-size: var(--ds-text-xs); font-weight: 500; letter-spacing: .02em; text-transform: none; color: var(--ds-text-3); }
+body.authenticated :is(#inicio,#sobres,#perfil) :is(.club-profile-handle,.club-profile-bio,.profile-card-vitrine p,.bb2-album-label) { font-size: var(--ds-text-sm); color: var(--ds-text-2); }
+body.authenticated :is(#inicio,#sobres,#perfil) .club-profile-nickname { font-size: var(--ds-text-md); font-weight: 500; color: var(--ds-text); }
+
+/* Buttons: one shape, two weights. */
+body.authenticated :is(#inicio,#sobres,#perfil) :is(.primary-button,.secondary-button,.packs-sync,.packs-buy,.achievement-show-all,.profile-card-vitrine>button,.profile-edit-compact) { display: inline-flex; align-items: center; justify-content: center; gap: var(--ds-space-2); box-sizing: border-box; min-width: 0; min-height: var(--ds-control); padding: 0 var(--ds-space-4); border-radius: var(--ds-radius-md); font-size: var(--ds-text-sm); font-weight: 600; letter-spacing: 0; line-height: 1; }
+body.authenticated :is(#inicio,#sobres,#perfil) :is(.primary-button,.packs-buy) { border: 1px solid transparent; background: var(--ds-text); color: var(--bb2-canvas); box-shadow: none; }
+body.authenticated :is(#inicio,#sobres,#perfil) :is(.secondary-button,.packs-sync,.achievement-show-all,.profile-card-vitrine>button,.profile-edit-compact) { border: 1px solid var(--ds-line-strong); background: transparent; color: var(--ds-text); box-shadow: none; }
+body.authenticated :is(#inicio,#sobres,#perfil) :is(.profile-edit-compact,.profile-card-vitrine>button,.achievement-show-all) { min-height: var(--ds-control-sm); padding-inline: var(--ds-space-3); }
+
+/* Surfaces: flat, one border, one radius. Colour belongs to the content. */
+body.authenticated #sobres :is(.packs-display,.bb2-album-entry) { border: 1px solid var(--ds-line); border-radius: var(--ds-radius-lg); background: var(--ds-surface); box-shadow: none; }
+body.authenticated #sobres :is(.packs-display,.bb2-album-entry)::before,body.authenticated #sobres :is(.packs-display,.bb2-album-entry)::after { content: none; }
+body.authenticated #sobres .bb2-album-label { border-top-color: var(--ds-line); }
+
+/* Icon buttons */
+body.authenticated :is(#inicio,#sobres,#perfil) :is(.packs-back,.collection-catalog-trigger,.duplicate-cards-trigger,.packs-info-trigger) { width: var(--ds-control); height: var(--ds-control); min-width: var(--ds-control); min-height: var(--ds-control); padding: 0; border: 1px solid var(--ds-line); border-radius: var(--ds-radius-md); background: var(--ds-surface); color: var(--ds-text); box-shadow: none; }
+
+/* Chips */
+body.authenticated #perfil .profile-tags { gap: var(--ds-space-2); }
+body.authenticated #perfil .profile-tags span { display: inline-flex; align-items: center; min-height: 28px; padding: 0 var(--ds-space-3); border: 0; border-radius: var(--ds-radius-pill); background: var(--ds-raised); color: var(--ds-text-2); font-size: var(--ds-text-xs); font-weight: 500; }
+
+/* Quiet secondary text: the accent is kept for state, not decoration. */
+body.authenticated #sobres :is(.collection-section-label>span,.packs-display-edition,.bb2-pack-copy p,.bb2-album-label) { color: var(--ds-text-3); text-transform: none; letter-spacing: 0; font-size: var(--ds-text-xs); }
+body.authenticated #sobres .bb2-pack-copy p { font-size: var(--ds-text-sm); color: var(--ds-text-2); }
+body.authenticated #sobres .bb2-album-entry>strong,body.authenticated #sobres .packs-display h2 { font-size: var(--ds-text-xl); font-weight: 600; letter-spacing: -.03em; line-height: 1.15; }
+
+/* Profile toolbar: three controls, one shape. */
+body.authenticated #perfil .club-profile-topline { align-items: center; gap: var(--ds-space-2); }
+body.authenticated #perfil :is(.profile-coin-balance,.banner-shop-trigger,.card-album-trigger) { display: inline-flex; align-items: center; justify-content: center; gap: 6px; box-sizing: border-box; height: var(--ds-control-sm); min-width: var(--ds-control-sm); min-height: var(--ds-control-sm); padding: 0 var(--ds-space-2); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-sm); background: var(--ds-surface); color: var(--ds-text); box-shadow: none; font-size: var(--ds-text-sm); font-weight: 600; }
+body.authenticated #perfil :is(.profile-coin-balance,.banner-shop-trigger,.card-album-trigger) svg { width: 18px; height: 18px; }
+body.authenticated #perfil .club-profile-earned strong { color: var(--ds-text); }
+
+/* Inicio: readable small text. The clubhouse art keeps its own hand-set labels. */
+body.authenticated #inicio :is(.club-news-heading p,.news-collapse-button span,.clubhouse-heading-actions>*,.panel-heading .text-button) { font-size: var(--ds-text-xs); }
+body.authenticated #inicio .clubhouse-heading-actions>* { color: var(--ds-text-2); border-bottom-color: var(--ds-line-strong); }
+
+/* Repetidas: pick cards, adjust copies, discard from one bar. Selection stays neutral. */
+body.authenticated #duplicatesDialog #ownedCardInventory { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: var(--ds-space-3); padding-bottom: 96px; }
+body.authenticated #duplicatesDialog .dup-editions { display: flex; gap: var(--ds-space-2); width: calc(100% - 40px); margin: var(--ds-space-3) auto 0; overflow-x: auto; scrollbar-width: none; }
+body.authenticated #duplicatesDialog .dup-editions:empty { display: none; }
+body.authenticated #duplicatesDialog .dup-editions button { flex: none; min-height: var(--ds-control-sm); padding: 0 var(--ds-space-3); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-pill); background: transparent; color: var(--ds-text-2); font: inherit; font-size: var(--ds-text-sm); text-transform: capitalize; }
+body.authenticated #duplicatesDialog .dup-editions button[aria-pressed="true"] { border-color: var(--ds-text-2); background: var(--ds-raised); color: var(--ds-text); font-weight: 600; }
+body.authenticated #duplicatesDialog .dup-card { display: grid; align-content: start; gap: 2px; min-width: 0; }
+body.authenticated #duplicatesDialog .dup-pick { position: relative; display: block; width: 100%; padding: 0; border: 2px solid transparent; border-radius: var(--ds-radius-md); background: transparent; }
+body.authenticated #duplicatesDialog .dup-pick img { display: block; width: 100%; aspect-ratio: 948 / 1660; object-fit: cover; border-radius: var(--ds-radius-sm); }
+body.authenticated #duplicatesDialog .dup-card.is-picked .dup-pick { border-color: var(--ds-text); }
+body.authenticated #duplicatesDialog .dup-card.is-picked .dup-pick img { opacity: .72; }
+body.authenticated #duplicatesDialog .dup-count { position: absolute; right: 6px; bottom: 6px; padding: 2px 7px; border-radius: var(--ds-radius-pill); background: #000000c7; color: #fff; font-size: var(--ds-text-xs); font-weight: 600; }
+body.authenticated #duplicatesDialog .dup-check { position: absolute; top: 6px; right: 6px; display: none; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--ds-text); }
+body.authenticated #duplicatesDialog .dup-check svg { width: 16px; height: 16px; fill: none; stroke: var(--ds-surface); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+body.authenticated #duplicatesDialog .dup-card.is-picked .dup-check { display: grid; }
+body.authenticated #duplicatesDialog .dup-card h4 { margin: 4px 0 0; overflow: hidden; color: var(--ds-text); font-size: var(--ds-text-xs); font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+body.authenticated #duplicatesDialog .dup-card p { margin: 0; color: var(--ds-text-2); font-size: var(--ds-text-xs); }
+body.authenticated #duplicatesDialog .dup-stepper { display: grid; grid-template-columns: 36px 1fr 36px; align-items: center; margin-top: 4px; border: 1px solid var(--ds-line); border-radius: var(--ds-radius-sm); }
+body.authenticated #duplicatesDialog .dup-stepper[hidden] { display: none; }
+body.authenticated #duplicatesDialog .dup-stepper button { min-height: var(--ds-control-sm); padding: 0; border: 0; background: transparent; color: var(--ds-text); font: inherit; font-size: 18px; }
+body.authenticated #duplicatesDialog .dup-stepper output { color: var(--ds-text); font-size: var(--ds-text-sm); text-align: center; }
+body.authenticated #duplicatesDialog .dup-bar { position: fixed; z-index: 3; inset: auto 16px calc(16px + env(safe-area-inset-bottom, 0px)); display: flex; align-items: center; justify-content: space-between; gap: var(--ds-space-3); max-width: 560px; margin-inline: auto; padding: var(--ds-space-2) var(--ds-space-2) var(--ds-space-2) var(--ds-space-4); border: 1px solid var(--ds-line-strong); border-radius: var(--ds-radius-pill); background: var(--ds-raised); color: var(--ds-text); font-size: var(--ds-text-sm); font-weight: 600; }
+body.authenticated #duplicatesDialog .dup-bar[hidden] { display: none; }
+body.authenticated #duplicatesDialog .dup-bar button { min-height: var(--ds-control); padding: 0 var(--ds-space-5); border: 0; border-radius: var(--ds-radius-pill); background: var(--ds-text); color: var(--ds-surface); font: inherit; font-weight: 600; }
+
+/* Pull to refresh. Sits under the header and never pushes the page. */
+.pull-refresh { position: fixed; z-index: 40; top: calc(var(--pwa-safe-top, env(safe-area-inset-top, 0px)) + 16px); left: 50%; display: none; place-items: center; width: 40px; height: 40px; margin-top: -40px; border: 1px solid var(--ds-line-strong); border-radius: 50%; background: var(--ds-raised); color: var(--ds-text-2); pointer-events: none; }
+.pull-refresh.is-visible { display: grid; }
+.pull-refresh.is-ready { color: var(--ds-text); }
+.pull-refresh svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.pull-refresh.is-refreshing { color: var(--ds-text); }
+.pull-refresh.is-refreshing svg { animation: pull-refresh-spin .8s linear infinite; }
+@keyframes pull-refresh-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .pull-refresh.is-refreshing svg { animation: none; } }
+
+/* Calendario: same surfaces, pills and neutral selection as Tickets and Hoy en el club. */
+body.authenticated #calendario .club-calendar-heading { display: flex; align-items: center; justify-content: space-between; gap: var(--ds-space-3); margin: 0 0 var(--ds-space-3); padding: 0; border: 0; }
+body.authenticated #calendario .calendar-heading-copy .eyebrow { display: none; }
+body.authenticated #calendario .club-calendar-heading h2 { margin: 0; font-size: var(--ds-text-xl); font-weight: 600; line-height: 1.2; letter-spacing: normal; }
+body.authenticated #calendario :is(#calendarTodayButton, #addBirthdayButton, #addEventButton) { min-height: var(--ds-control-sm); padding: 0 var(--ds-space-4); border-radius: var(--ds-radius-pill); font-size: var(--ds-text-sm); font-weight: 500; }
+body.authenticated #calendario :is(#calendarTodayButton, #addBirthdayButton) { border: 1px solid var(--ds-line); background: transparent; color: var(--ds-text); }
+body.authenticated #calendario #addEventButton { border: 0; background: var(--ds-text); color: var(--ds-surface); font-weight: 600; }
+body.authenticated #calendario .calendar-actions { display: flex; flex-wrap: wrap; gap: var(--ds-space-2); margin: 0 0 var(--ds-space-4); padding: 0; }
+body.authenticated #calendario .calendar-actions > button { flex: 0 1 auto; width: auto; }
+body.authenticated #calendario .calendar-layout { gap: var(--ds-space-4); }
+body.authenticated #calendario :is(.calendar-month-panel, .calendar-agenda-panel) { padding: var(--ds-space-4); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-lg); background: var(--ds-surface); box-shadow: none; }
+body.authenticated #calendario :is(.calendar-month-panel, .calendar-agenda-panel)::before, body.authenticated #calendario :is(.calendar-month-panel, .calendar-agenda-panel)::after { content: none; }
+body.authenticated #calendario .calendar-toolbar { margin: 0 0 var(--ds-space-3); padding: 0; border: 0; }
+body.authenticated #calendario .calendar-navigation { display: flex; align-items: center; justify-content: space-between; gap: var(--ds-space-2); }
+body.authenticated #calendario #calendarMonthTitle { margin: 0; color: var(--ds-text); font-size: var(--ds-text-lg); font-weight: 600; letter-spacing: normal; text-align: center; text-transform: none; }
+body.authenticated #calendario #calendarMonthTitle::first-letter { text-transform: uppercase; }
+body.authenticated #calendario .calendar-navigation .icon-button { display: grid; place-items: center; width: var(--ds-control-sm); height: var(--ds-control-sm); min-width: var(--ds-control-sm); padding: 0; border: 1px solid var(--ds-line); border-radius: 50%; background: transparent; color: var(--ds-text); box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
+body.authenticated #calendario .calendar-grid { gap: 2px; }
+body.authenticated #calendario .calendar-weekday { padding: 0 0 var(--ds-space-2); color: var(--ds-text-3); font-size: var(--ds-text-xs); }
+body.authenticated #calendario .calendar-day { min-height: 52px; padding: 4px 2px; border: 1px solid transparent; border-radius: var(--ds-radius-sm); background: transparent; color: var(--ds-text); }
+body.authenticated #calendario .calendar-day.has-events:not(.selected) { background: transparent; }
+body.authenticated #calendario .calendar-day > .calendar-day-number { color: var(--ds-text); font-size: var(--ds-text-md); }
+body.authenticated #calendario .calendar-day.today > .calendar-day-number { background: var(--ds-text); color: var(--ds-surface); font-weight: 600; }
+body.authenticated #calendario .calendar-day.selected { border-color: var(--ds-line-strong); background: var(--ds-raised); box-shadow: none; }
+body.authenticated #calendario .calendar-day.selected > .calendar-day-number { color: var(--ds-text); font-weight: 600; }
+body.authenticated #calendario .calendar-day.today.selected > .calendar-day-number { color: var(--ds-surface); }
+body.authenticated #calendario .calendar-legend { margin: var(--ds-space-3) 0 0; padding: var(--ds-space-3) 0 0; border-top: 1px solid var(--ds-line); color: var(--ds-text-2); font-size: var(--ds-text-xs); }
+body.authenticated #calendario .calendar-legend i:not(.birthday), body.authenticated #calendario .calendar-day .calendar-event-dot:not(.birthday), body.authenticated #calendario .calendar-dots i:not(.birthday) { background: var(--ds-text-2); }
+body.authenticated #calendario .calendar-section-label { color: var(--ds-text-2); font-size: var(--ds-text-xs); letter-spacing: normal; text-transform: none; }
+body.authenticated #calendario #calendarSelectedTitle { margin: var(--ds-space-1) 0 var(--ds-space-3); color: var(--ds-text); font-size: var(--ds-text-lg); font-weight: 600; letter-spacing: normal; text-transform: none; }
+body.authenticated #calendario #calendarSelectedTitle::first-letter { text-transform: uppercase; }
+body.authenticated #calendario .calendar-count { color: var(--ds-text-2); font-size: var(--ds-text-xs); background: transparent; border: 0; }
+body.authenticated #calendario .calendar-agenda-event { gap: var(--ds-space-3); padding: var(--ds-space-3); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-md); background: var(--ds-raised); box-shadow: none; }
+body.authenticated #calendario .calendar-event-date { background: transparent; border: 0; color: var(--ds-text); }
+body.authenticated #calendario .calendar-event-date span, body.authenticated #calendario .calendar-event-type, body.authenticated #calendario .calendar-event-copy p { color: var(--ds-text-2); }
+body.authenticated #calendario .calendar-event-copy h4 { color: var(--ds-text); font-size: var(--ds-text-md); font-weight: 600; }
+body.authenticated #calendario .calendar-agenda-event { align-items: start; margin: 0; }
+body.authenticated #calendario .calendar-selected-events, body.authenticated #calendario #calendarEventList { display: grid; gap: var(--ds-space-2); }
+body.authenticated #calendario .calendar-agenda-event :is(button, a):not([data-attendance], [class*="attendance"]) { color: var(--ds-text); border-color: var(--ds-line); }
+body.authenticated #calendario .calendar-month-agenda { margin-top: var(--ds-space-4); padding-top: var(--ds-space-3); border-top: 1px solid var(--ds-line); }
+
+/* Chats: same pills, surfaces and neutral states as the rest of the app. Backgrounds the
+   members choose keep working: only the default theme's bubbles change here. */
+body.authenticated .chat-inbox .bb2-inbox-heading { margin-bottom: var(--ds-space-3); }
+body.authenticated .chat-inbox .bb2-inbox-heading .eyebrow { display: none; }
+body.authenticated .chat-inbox .bb2-inbox-heading h2 { margin: 0; font-size: var(--ds-text-xl); font-weight: 600; line-height: 1.2; letter-spacing: normal; }
+body.authenticated .chat-inbox .inbox-tools { padding-bottom: var(--ds-space-2); }
+body.authenticated .chat-inbox .inbox-search { min-height: var(--ds-control); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-md); background: var(--ds-surface); }
+body.authenticated .chat-inbox .inbox-filters { gap: var(--ds-space-2); margin-top: var(--ds-space-3); padding: 0 0 2px; border-radius: 0; background: transparent; }
+body.authenticated .chat-inbox .inbox-filters button { flex: none; min-height: var(--ds-control-sm); margin: 0; padding: 0 var(--ds-space-3); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-pill); background: transparent; color: var(--ds-text-2); font-size: var(--ds-text-sm); font-weight: 500; letter-spacing: normal; }
+body.authenticated .chat-inbox .inbox-filters button[aria-pressed="true"] { border-color: var(--ds-text-2); background: var(--ds-raised); color: var(--ds-text); font-weight: 600; }
+body.authenticated .chat-inbox .inbox-filters button[aria-pressed="true"]::after { content: none; }
+body.authenticated .chat-inbox .online-strip { padding: var(--ds-space-2) 16px var(--ds-space-1); }
+body.authenticated .chat-inbox .online-strip h4 { color: var(--ds-text-2); font-size: var(--ds-text-xs); }
+body.authenticated .chat-inbox .unified-chat-list { gap: var(--ds-space-2); padding: var(--ds-space-2) 16px 28px; }
+body.authenticated .chat-inbox .unified-chat-list .private-contact { min-height: 72px; gap: var(--ds-space-3); padding: var(--ds-space-3); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-md); background: var(--ds-surface); }
+body.authenticated .chat-inbox .unified-chat-list .private-contact::after { content: none; }
+body.authenticated .chat-inbox .unified-chat-list .private-contact.has-unread { border-color: var(--ds-line-strong); background: var(--ds-raised); }
+body.authenticated .chat-inbox .private-contact .chat-group-avatar { background: var(--ds-raised); color: var(--ds-text); }
+body.authenticated .chat-inbox .private-contact-copy { gap: 2px; }
+body.authenticated .chat-inbox .private-contact-copy strong { color: var(--ds-text); font-size: var(--ds-text-md); font-weight: 600; letter-spacing: normal; }
+body.authenticated .chat-inbox .private-contact-copy small { color: var(--ds-text-2); font-size: var(--ds-text-sm); }
+body.authenticated .chat-inbox .private-contact-copy time { color: var(--ds-text-3); font-size: var(--ds-text-xs); }
+body.authenticated .chat-inbox .has-unread time { color: var(--ds-text); }
+body.authenticated .private-contact > .inbox-unread-count { right: var(--ds-space-3); top: auto; bottom: var(--ds-space-3); background: var(--ds-text); color: var(--ds-surface); }
+body.authenticated :is(.private-conversation, .group-conversation) .chat-header { border-bottom: 1px solid var(--ds-line); background: var(--ds-surface); }
+body.authenticated :is(.private-conversation, .group-conversation) .chat-theme-button { color: var(--ds-text-2); }
+body.authenticated :is(.private-conversation, .group-conversation) .chat-username, body.authenticated .chat-header .online-label { color: var(--ds-text-2); font-size: var(--ds-text-xs); }
+body.authenticated :is(.private-conversation, .group-conversation) .message-form { border: 1px solid var(--ds-line); background: var(--ds-surface); box-shadow: none; }
+body.authenticated :is(.private-conversation, .group-conversation) .composer-tool-button { color: var(--ds-text-2); }
+body.authenticated .messages[data-chat-theme="big-boy"] .message .message-bubble { border-color: var(--ds-line); background: var(--ds-surface); }
+body.authenticated .messages[data-chat-theme="big-boy"]:not([data-chat-bubble]) .message.own .message-bubble:not(:has(> .message-image)) { border-color: var(--ds-line-strong); background: #2d3238; }
+body.authenticated :is(.chat-channel, .channel-add-button) { min-height: var(--ds-control-sm); padding: 0 var(--ds-space-3); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-pill); background: transparent; color: var(--ds-text-2); font-size: var(--ds-text-sm); }
+body.authenticated .chat-channel.active { border-color: var(--ds-text-2); background: var(--ds-raised); color: var(--ds-text); font-weight: 600; }
+body.authenticated .group-conversation .chat-channel-bar { border-bottom: 1px solid var(--ds-line); background: var(--ds-surface); }
+
+/* Catalogue, album, missions, games and administration. Inherited gold tokens go neutral
+   here, so nested rules follow; card art, the binder and game art keep their own colour. */
+:is(#catalogo, #album, #administracion, .admin-settings-page, .club-missions-dialog, .chota-arcade) {
+  --bb2-gold: var(--ds-text-2); --bb2-gold-dark: var(--ds-line-strong); --bb2-gold-wash: var(--ds-raised);
+  --club-gold: var(--ds-text-2); --accent: var(--ds-text-2); --mission-gold: var(--ds-text); }
+body.authenticated :is(#catalogo, #album, #administracion, .admin-settings-page) .eyebrow { display: none; }
+body.authenticated :is(#catalogo, #album) :is(h2, #cardAlbumTitle) { font-size: var(--ds-text-xl); font-weight: 600; letter-spacing: normal; }
+body.authenticated :is(#catalogo, #album) .packs-back, body.authenticated #album :is(.card-album-trigger, .duplicate-cards-trigger) { width: var(--ds-control); height: var(--ds-control); border: 1px solid var(--ds-line); border-radius: 50%; background: var(--ds-surface); color: var(--ds-text); box-shadow: none; }
+body.authenticated #catalogo .collection-catalog-note { color: var(--ds-text-2); font-size: var(--ds-text-sm); }
+body.authenticated #catalogo .collection-card-tile { padding: var(--ds-space-2); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-md); background: var(--ds-surface); box-shadow: none; }
+body.authenticated #catalogo .collection-card-tile > strong { color: var(--ds-text); font-size: var(--ds-text-sm); font-weight: 600; }
+body.authenticated #catalogo :is(.collection-card-meta, .collection-card-hint) { color: var(--ds-text-2); font-size: var(--ds-text-xs); }
+body.authenticated #album #cardAlbumStatus { padding: var(--ds-space-3); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-md); background: var(--ds-surface); color: var(--ds-text-2); font-size: var(--ds-text-sm); }
+body.authenticated #album :is(#cardAlbumStatus button, .card-album-tools button, .card-album-tabs button) { min-height: var(--ds-control-sm); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-pill); background: transparent; color: var(--ds-text-2); font-size: var(--ds-text-sm); box-shadow: none; }
+body.authenticated #album .card-album-tabs :is(button.active, [aria-selected="true"], [aria-pressed="true"]) { border-color: var(--ds-text-2); background: var(--ds-raised); color: var(--ds-text); font-weight: 600; }
+body.authenticated #album .card-album-tools input { min-height: var(--ds-control); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-md); background: var(--ds-surface); color: var(--ds-text); }
+body.authenticated #album .card-album-compass { border-color: var(--ds-line); background: transparent; }
+body.authenticated #album .card-album-compass-needle { background: var(--ds-text-2); }
+body.authenticated #album .card-album-compass-tick { color: var(--ds-text-3); }
+body.authenticated #album .card-album-compass-tick[aria-current=page] { color: var(--ds-text); }
+body.authenticated #administracion .section-intro h2 { margin: 0; font-size: var(--ds-text-xl); font-weight: 600; letter-spacing: normal; }
+body.authenticated #administracion :is(.request-admin-entry, .control-diagnostics, .admin-stat-card, .control-workspace, .control-overview article) { border: 1px solid var(--ds-line); border-radius: var(--ds-radius-md); background: var(--ds-surface); color: var(--ds-text); box-shadow: none; }
+body.authenticated #administracion .admin-stat-card span, body.authenticated #administracion .control-kicker { color: var(--ds-text-2); font-size: var(--ds-text-xs); letter-spacing: normal; text-transform: none; }
+body.authenticated #administracion .admin-stat-card strong { color: var(--ds-text); font-family: inherit; font-size: var(--ds-text-lg); font-weight: 600; }
+body.authenticated #administracion :is(.admin-help-entry, .admin-settings-gear) { border: 1px solid var(--ds-line); background: transparent; color: var(--ds-text); box-shadow: none; }
+body.authenticated #administracion .admin-help-entry { min-height: var(--ds-control-sm); border-radius: var(--ds-radius-pill); font-size: var(--ds-text-sm); font-weight: 500; }
+body.authenticated #administracion .admin-settings-gear { border-radius: 50%; -webkit-backdrop-filter: none; backdrop-filter: none; }
+#superAdminConsole .control-tabs button { border: 1px solid var(--ds-line); border-radius: var(--ds-radius-pill); background: transparent; color: var(--ds-text-2); font-size: var(--ds-text-sm); }
+#superAdminConsole .control-tabs button[aria-pressed="true"] { border-color: var(--ds-text-2); background: var(--ds-raised); color: var(--ds-text); font-weight: 600; }
+#superAdminConsole .control-emblem { border-color: var(--ds-line); background: var(--ds-surface); color: var(--ds-text); }
+.club-missions-dialog, .club-missions-dialog::backdrop, .chota-arcade { background: var(--bb2-canvas); }
+.club-missions-heading::before { content: none; }
+.club-missions-heading-copy > span { display: none; }
+.club-missions-heading h2, .chota-arcade-shell > header h2 { font-size: var(--ds-text-xl); font-weight: 600; letter-spacing: normal; }
+.club-missions-heading p { color: var(--ds-text-2); font-size: var(--ds-text-sm); }
+.club-missions-dialog .coin-missions-overview { padding: var(--ds-space-4); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-lg); background: var(--ds-surface); }
+.club-missions-dialog .coin-missions-overview span, .club-missions-dialog .coin-missions-overview h3 small, .club-missions-dialog .coin-missions-overview p { color: var(--ds-text-2); }
+.club-missions-dialog .coin-missions-overview h3 { color: var(--ds-text) !important; font-size: var(--ds-text-xl) !important; letter-spacing: normal; }
+.club-missions-dialog .coin-missions-filter button { min-height: var(--ds-control-sm); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-pill); background: transparent; color: var(--ds-text-2); }
+.club-missions-dialog .coin-missions-filter button[aria-pressed=true] { border-color: var(--ds-text-2); background: var(--ds-raised); color: var(--ds-text); }
+.club-missions-dialog .coin-mission-group { border-color: var(--ds-line); }
+.club-missions-dialog .coin-mission-copy h5, .club-missions-dialog .coin-mission-group h4 { color: var(--ds-text); }
+.club-missions-dialog :is(.coin-mission-copy p, .coin-mission-group summary small) { color: var(--ds-text-2); }
+.club-missions-dialog .coin-mission-reward strong { color: var(--ds-text); }
+.club-missions-dialog .coin-mission-reward button { border: 0; border-radius: var(--ds-radius-pill); background: var(--ds-text); color: var(--ds-surface); font-weight: 600; }
+.club-missions-dialog .coin-mission-reward button:disabled { background: var(--ds-raised); color: var(--ds-text-3); }
+.chota-arcade-shell > header { border-bottom: 1px solid var(--ds-line); }
+.chota-arcade-shell > header button { min-height: var(--ds-control-sm); padding: 0 var(--ds-space-3); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-pill); background: transparent; color: var(--ds-text); font-size: var(--ds-text-sm); }
+.chota-arcade .chota-arcade-results-actions [data-next] { border: 0; border-radius: var(--ds-radius-pill); background: var(--ds-text); color: var(--ds-surface); }
+
+.club-missions-dialog .club-mission-section { --mission-accent: var(--ds-text-2); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-lg); background: var(--ds-surface); }
+.club-missions-dialog .club-mission-section button, .club-missions-dialog .coin-missions-loading button { border: 1px solid var(--ds-line); border-radius: var(--ds-radius-pill); background: transparent; color: var(--ds-text); font-size: var(--ds-text-sm); }
+.club-missions-dialog .club-mission-category h3 { color: var(--ds-text); font-size: var(--ds-text-sm); font-weight: 600; letter-spacing: normal; }
+.club-missions-dialog .collection-season-bottom > strong, .club-missions-dialog .club-weekly-ranking strong { color: var(--ds-text); }
+body.authenticated #administracion .admin-summary { gap: var(--ds-space-2); }
+body.authenticated #administracion .admin-stat-card { min-width: 0; padding: var(--ds-space-3) var(--ds-space-1); }
+body.authenticated #administracion .admin-stat-card span { overflow-wrap: anywhere; font-size: 11px; }
+
+body.authenticated #album { color: var(--ds-text); }
+body.authenticated #album :is(.social-album-trigger, .album-filter > summary, .album-filter-toggle, [data-album-filter-toggle]) { border: 1px solid var(--ds-line); border-radius: 50%; background: var(--ds-surface); color: var(--ds-text); box-shadow: none; }
+body.authenticated #album .album-filter > summary, body.authenticated #album [data-album-filter-toggle] { border-radius: var(--ds-radius-pill); }
+body.authenticated #album [data-duplicates-count], body.authenticated #album .social-album-trigger [class*="count"] { background: var(--ds-text); color: var(--ds-surface); }
+body.authenticated #album .album-search { border: 0; background: transparent; box-shadow: none; }
+body.authenticated #album .album-search svg, body.authenticated #album .album-search::before { color: var(--ds-text-2); stroke: currentColor; }
+body.authenticated #album :is(.card-album-page-controls, .card-album-page-count, .card-album-compass, .card-album-compass-track) { color: var(--ds-text-2); }
+body.authenticated #administracion .request-admin-entry > span:last-child { background: var(--ds-raised); color: var(--ds-text); }
+.chota-arcade .chota-arcade-game > :last-child { color: var(--ds-text-2); }
+
+body.authenticated #album .album-card-search { border: 1px solid var(--ds-line); border-radius: var(--ds-radius-md); background: var(--ds-surface); box-shadow: none; }
+body.authenticated #album .album-card-search input { border: 0; background: transparent; }
+body.authenticated #album .album-card-search > span { color: var(--ds-text-2); }
+body.authenticated #album .card-album-tools :is(button, summary) { border: 1px solid var(--ds-line); border-radius: var(--ds-radius-pill); background: transparent; color: var(--ds-text-2); box-shadow: none; }
+body.authenticated #album #cardAlbumPageTitle { color: var(--ds-text-2); letter-spacing: normal; text-transform: none; }
+
+/* Plan and birthday form. Same fields and pills as tickets; birthdays keep only their pink dot. */
+#eventEditor, #eventEditor.is-birthday { --editor-accent: var(--ds-text-2); --interaction-strong: var(--ds-text-2); }
+#eventEditor .calendar-editor, #eventEditor.is-birthday .calendar-editor { padding: var(--ds-space-4); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-lg); background: var(--ds-surface); box-shadow: none; }
+#eventEditor .eyebrow { display: none; }
+#eventEditor h2 { font-size: var(--ds-text-xl); font-weight: 600; letter-spacing: normal; }
+#eventEditor .calendar-editor-intro { margin-bottom: var(--ds-space-4); color: var(--ds-text-2); font-size: var(--ds-text-sm); }
+#eventEditor .icon-button { width: var(--ds-control-sm); height: var(--ds-control-sm); min-height: var(--ds-control-sm); border: 1px solid var(--ds-line); border-radius: 50%; background: transparent; color: var(--ds-text); box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
+#eventEditor .calendar-event-form { gap: var(--ds-space-3); }
+#eventEditor .event-kind-picker { gap: var(--ds-space-2); }
+#eventEditor .event-kind-picker button { padding: var(--ds-space-3); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-md); background: transparent; color: var(--ds-text-2); }
+#eventEditor .event-kind-picker button[aria-pressed="true"] { border-color: var(--ds-text-2); background: var(--ds-raised); color: var(--ds-text); }
+#eventEditor .event-kind-picker strong { font-size: var(--ds-text-sm); }
+#eventEditor .event-kind-picker small { color: var(--ds-text-2); font-size: var(--ds-text-xs); }
+#eventEditor .calendar-event-form label { gap: var(--ds-space-1); }
+#eventEditor .calendar-event-form label > span { color: var(--ds-text-2); font-size: var(--ds-text-sm); }
+#eventEditor label small { color: var(--ds-text-3); font-size: var(--ds-text-xs); }
+#eventEditor input:not([type="hidden"]), #eventEditor textarea { min-height: var(--ds-control); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-sm); background: var(--ds-raised); color: var(--ds-text); font-size: 16px; }
+#eventEditor input:focus, #eventEditor textarea:focus { border-color: var(--ds-text-2); box-shadow: none; }
+#eventEditor .birthday-all-day-note { padding: var(--ds-space-3); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-md); background: transparent; }
+#eventEditor .birthday-all-day-note strong { font-size: var(--ds-text-sm); }
+#eventEditor .birthday-all-day-note small { color: var(--ds-text-2); font-size: var(--ds-text-xs); }
+#eventEditor .event-modal-actions { padding-top: var(--ds-space-3); border-top: 1px solid var(--ds-line); }
+#eventEditor .event-modal-actions :is(.primary-button, .secondary-button) { min-height: var(--ds-control); border-radius: var(--ds-radius-pill); font-size: var(--ds-text-sm); box-shadow: none; }
+#eventEditor .event-modal-actions .secondary-button { border: 1px solid var(--ds-line); background: transparent; color: var(--ds-text); }
+#eventEditor .event-modal-actions .primary-button { border: 0; background: var(--ds-text); color: var(--ds-surface); font-weight: 600; }
+
+/* Administration subpages and the achievements library. Trophies keep their own colours. */
+.achievement-admin-page { --club-gold: var(--ds-text-2); --bb2-gold: var(--ds-text-2); --accent: var(--ds-text-2); }
+body.authenticated .achievement-admin-page .achievement-page-header { display: flex; align-items: center; gap: var(--ds-space-3); padding: 0 0 var(--ds-space-3); border: 0; background: transparent; text-align: left; }
+body.authenticated .achievement-admin-page .achievement-page-header > div { flex: 1; min-width: 0; }
+body.authenticated .achievement-admin-page .achievement-page-header > span { display: none; }
+body.authenticated .achievement-admin-page .achievement-page-header small { display: none; }
+body.authenticated .achievement-admin-page .achievement-page-header h2 { margin: 0; font-size: var(--ds-text-xl); font-weight: 600; letter-spacing: normal; }
+body.authenticated .achievement-admin-page .achievement-back { display: grid; flex: none; place-items: center; width: var(--ds-control); height: var(--ds-control); padding: 0; border: 1px solid var(--ds-line); border-radius: 50%; background: var(--ds-surface); color: var(--ds-text); box-shadow: none; }
+body.authenticated .achievement-admin-page .achievement-page-content { gap: var(--ds-space-3); padding: 0; }
+body.authenticated #admin-logros .achievement-library-intro { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--ds-space-3); margin: 0; padding: 0; border: 0; background: transparent; }
+body.authenticated #admin-logros .achievement-library-intro > div { flex: 1 1 200px; min-width: 0; }
+body.authenticated #admin-logros .achievement-library-intro :is(.eyebrow, h3) { display: none; }
+body.authenticated #admin-logros .achievement-library-intro p { margin: 0; color: var(--ds-text-2); font-size: var(--ds-text-sm); }
+body.authenticated #admin-logros .achievement-library-intro button { flex: none; width: auto; min-height: var(--ds-control); padding: 0 var(--ds-space-4); border: 0; border-radius: var(--ds-radius-pill); background: var(--ds-text); color: var(--ds-surface); font-size: var(--ds-text-sm); font-weight: 600; box-shadow: none; }
+body.authenticated #admin-logros .achievement-library-stats { display: flex; gap: var(--ds-space-4); margin: 0; padding: 0; border: 0; color: var(--ds-text-2); font-size: var(--ds-text-sm); }
+body.authenticated #admin-logros .achievement-library-stats strong { color: var(--ds-text); font-size: var(--ds-text-md); font-weight: 600; }
+body.authenticated #admin-logros .achievement-library-tools { display: flex; flex-wrap: wrap; gap: var(--ds-space-2); margin: 0; }
+body.authenticated .achievement-admin-page .achievement-search { flex: 1 1 200px; min-height: var(--ds-control); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-md); background: var(--ds-surface); color: var(--ds-text); }
+body.authenticated .achievement-admin-page .achievement-search input { border: 0; background: transparent; color: var(--ds-text); font-size: 16px; }
+body.authenticated #admin-logros #achievementLibraryTier { flex: 1 1 140px; min-height: var(--ds-control); padding: 0 var(--ds-space-3); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-md); background: var(--ds-surface); color: var(--ds-text); font-size: 16px; }
+body.authenticated #admin-logros .achievement-library { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: var(--ds-space-2); }
+body.authenticated #admin-logros .achievement-library-card { display: grid; grid-template-columns: 56px minmax(0, 1fr); align-items: start; gap: var(--ds-space-1) var(--ds-space-3); padding: var(--ds-space-3); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-md); background: var(--ds-surface); box-shadow: none; }
+body.authenticated #admin-logros .achievement-library-card::before, body.authenticated #admin-logros .achievement-library-card::after { content: none; }
+body.authenticated #admin-logros .achievement-library-art { grid-row: span 2; width: 56px; height: 56px; margin: 0; padding: 0; background: transparent; }
+body.authenticated #admin-logros .achievement-library-art :is(img, svg) { width: 100%; height: 100%; object-fit: contain; }
+body.authenticated #admin-logros .achievement-library-copy { min-width: 0; padding: 0; }
+body.authenticated #admin-logros .achievement-library-copy small { color: var(--ds-text-2); font-size: var(--ds-text-xs); letter-spacing: normal; text-transform: none; }
+body.authenticated #admin-logros .achievement-library-copy h3 { margin: 2px 0; color: var(--ds-text); font-size: var(--ds-text-md); font-weight: 600; }
+body.authenticated #admin-logros .achievement-library-copy p { margin: 0; color: var(--ds-text-2); font-size: var(--ds-text-sm); line-height: 1.4; }
+body.authenticated #admin-logros .achievement-library-recipients { grid-column: 2; display: flex; align-items: center; gap: var(--ds-space-2); margin: 0; padding: 0; border: 0; color: var(--ds-text-2); font-size: var(--ds-text-xs); }
+body.authenticated #admin-logros .achievement-library-actions { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: var(--ds-space-2); margin: var(--ds-space-2) 0 0; padding: var(--ds-space-2) 0 0; border-top: 1px solid var(--ds-line); }
+body.authenticated #admin-logros .achievement-library-actions .secondary-button { flex: 1; min-height: var(--ds-control-sm); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-pill); background: transparent; color: var(--ds-text); font-size: var(--ds-text-sm); box-shadow: none; }
+body.authenticated #admin-logros .achievement-automatic-label { flex: 1; color: var(--ds-text-2); font-size: var(--ds-text-xs); }
+body.authenticated #admin-logros .achievement-delete { display: grid; flex: none; place-items: center; width: var(--ds-control-sm); height: var(--ds-control-sm); border: 1px solid var(--ds-line); border-radius: 50%; background: transparent; color: var(--ds-text-2); }
+body.authenticated .achievement-admin-page :is(.achievement-form-section, .achievement-editor-preview, .achievement-assignment-summary, .admin-settings-entry) { padding: var(--ds-space-4); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-lg); background: var(--ds-surface); box-shadow: none; }
+body.authenticated .achievement-admin-page .achievement-step > span { display: none; }
+body.authenticated .achievement-admin-page .achievement-step h3, body.authenticated .achievement-admin-page .achievement-form-section > h3 { color: var(--ds-text); font-size: var(--ds-text-lg); font-weight: 600; }
+body.authenticated .achievement-admin-page :is(.achievement-step p, .achievement-section-hint, .achievement-preview-label) { color: var(--ds-text-2); font-size: var(--ds-text-sm); letter-spacing: normal; }
+body.authenticated .achievement-admin-page .achievement-field { color: var(--ds-text-2); font-size: var(--ds-text-sm); }
+body.authenticated .achievement-admin-page .achievement-field :is(input, textarea, select) { min-height: var(--ds-control); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-sm); background: var(--ds-raised); color: var(--ds-text); font-size: 16px; }
+body.authenticated .achievement-admin-page .achievement-rank { border: 1px solid var(--ds-line); border-radius: var(--ds-radius-md); background: transparent; box-shadow: none; }
+body.authenticated .achievement-admin-page .achievement-rank:has(input:checked), body.authenticated .achievement-admin-page .achievement-mode-picker label:has(input:checked) { border-color: var(--ds-text-2); background: var(--ds-raised); }
+body.authenticated .achievement-admin-page .achievement-mode-picker label { border: 1px solid var(--ds-line); border-radius: var(--ds-radius-md); background: transparent; }
+body.authenticated .achievement-admin-page .achievement-editor-footer :is(.primary-button, .secondary-button) { min-height: var(--ds-control); border-radius: var(--ds-radius-pill); font-size: var(--ds-text-sm); box-shadow: none; }
+body.authenticated .achievement-admin-page .achievement-editor-footer .primary-button { border: 0; background: var(--ds-text); color: var(--ds-surface); font-weight: 600; }
+body.authenticated .achievement-admin-page .achievement-editor-footer .secondary-button { border: 1px solid var(--ds-line); background: transparent; color: var(--ds-text); }
+body.authenticated .achievement-admin-page .achievement-page-header { padding: calc(var(--pwa-safe-top, env(safe-area-inset-top, 0px)) + var(--ds-space-3)) 16px var(--ds-space-3); background: var(--bb2-canvas); }
+body.authenticated .achievement-admin-page .achievement-page-header h2 { text-align: left; }
+body.authenticated .achievement-admin-page .achievement-page-content { width: 100%; max-width: 980px; box-sizing: border-box; margin-inline: auto; padding: 0 16px var(--ds-space-5); }
+body.authenticated .achievement-admin-page .achievement-page-content > :empty { display: none; }
+body.authenticated #admin-logros .achievement-library-intro { min-height: 0; }
+body.authenticated #admin-logros .achievement-library-intro button { margin: 0; }
+body.authenticated .achievement-admin-page .achievement-picker-tools button { min-height: var(--ds-control-sm); padding: 0 var(--ds-space-3); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-pill); background: transparent; color: var(--ds-text-2); font-size: var(--ds-text-sm); }
+body.authenticated #admin-logros .achievement-library-intro { flex-direction: row; flex-wrap: nowrap; }
+body.authenticated #admin-logros .achievement-library-intro > div { flex: 1 1 0; }
+body.authenticated #admin-logros .achievement-library-stats { margin-block: var(--ds-space-1); }
+
+/* Control de cuentas and the account editor. */
+body.authenticated #admin-cuentas :is(.superadmin-tools, .admin-users-panel) { padding: var(--ds-space-4); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-lg); background: var(--ds-surface); box-shadow: none; }
+body.authenticated #admin-cuentas :is(.superadmin-tools, .admin-users-panel)::before, body.authenticated #admin-cuentas :is(.superadmin-tools, .admin-users-panel)::after { content: none; }
+body.authenticated #admin-cuentas .panel-heading { align-items: center; margin: 0 0 var(--ds-space-3); }
+body.authenticated #admin-cuentas .panel-heading h3 { margin: 0; color: var(--ds-text); font-size: var(--ds-text-lg); font-weight: 600; }
+body.authenticated #admin-cuentas .admin-disclosure-icon { border: 1px solid var(--ds-line); background: transparent; color: var(--ds-text-2); }
+body.authenticated #admin-cuentas .admin-users-panel .panel-heading > :not(div) { padding: 0; border: 0; background: transparent; color: var(--ds-text-2); font-size: var(--ds-text-xs); font-weight: 400; }
+body.authenticated #admin-cuentas .admin-member-card { min-height: 64px; padding: var(--ds-space-2) var(--ds-space-3); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-md); background: transparent; color: var(--ds-text); box-shadow: none; }
+body.authenticated #admin-cuentas .admin-member-copy strong { color: var(--ds-text); font-size: var(--ds-text-md); font-weight: 600; }
+body.authenticated #admin-cuentas .admin-member-copy small { color: var(--ds-text-2); font-size: var(--ds-text-xs); }
+body.authenticated #admin-cuentas .role-chip { padding: 2px 8px; border: 1px solid var(--ds-line); border-radius: var(--ds-radius-pill); background: transparent; color: var(--ds-text-2); font-size: var(--ds-text-xs); font-weight: 500; letter-spacing: normal; text-transform: none; box-shadow: none; }
+body.authenticated #admin-cuentas .role-chip.admin { border-color: var(--ds-text-2); color: var(--ds-text); font-weight: 600; }
+body.authenticated #admin-cuentas .admin-create-user-form label { color: var(--ds-text-2); font-size: var(--ds-text-sm); }
+body.authenticated #admin-cuentas .admin-create-user-form input { min-height: var(--ds-control); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-sm); background: var(--ds-raised); color: var(--ds-text); font-size: 16px; }
+body.authenticated #admin-cuentas .admin-create-user-form .primary-button { min-height: var(--ds-control); border: 0; border-radius: var(--ds-radius-pill); background: var(--ds-text); color: var(--ds-surface); font-size: var(--ds-text-sm); font-weight: 600; box-shadow: none; }
+body.authenticated .admin-account-page, body.authenticated.achievement-management-open .admin-account-page { box-sizing: border-box; padding: calc(var(--pwa-safe-top, env(safe-area-inset-top, 0px)) + var(--ds-space-3)) 16px calc(var(--pwa-safe-bottom, env(safe-area-inset-bottom, 0px)) + var(--ds-space-6)); }
+.admin-account-page { --accent: var(--ds-text-2); --club-gold: var(--ds-text-2); --bb2-gold: var(--ds-text-2); }
+.admin-account-header { margin: 0 0 var(--ds-space-4); gap: var(--ds-space-3); }
+.admin-account-header > button { width: var(--ds-control); height: var(--ds-control); border: 1px solid var(--ds-line); background: var(--ds-surface); color: var(--ds-text); }
+.admin-account-header span, .admin-account-card-heading > span { display: none; }
+.admin-account-header h2 { margin: 0; font-size: var(--ds-text-xl); font-weight: 600; letter-spacing: normal; }
+.admin-account-identity { margin-bottom: var(--ds-space-3); gap: var(--ds-space-3); }
+.admin-account-identity .avatar { width: 56px; height: 56px; }
+.admin-account-identity h3 { font-size: var(--ds-text-lg); font-weight: 600; }
+.admin-account-identity span, .admin-account-identity small { color: var(--ds-text-2); font-size: var(--ds-text-sm); }
+.admin-account-balances { gap: var(--ds-space-2); }
+.admin-account-balances > div, .admin-account-card { border: 1px solid var(--ds-line); border-radius: var(--ds-radius-lg); background: var(--ds-surface); box-shadow: none; }
+.admin-account-balances > div { padding: var(--ds-space-3); }
+.admin-account-card { padding: var(--ds-space-4); }
+.admin-account-card h3 { margin: 0 0 var(--ds-space-3); color: var(--ds-text); font-size: var(--ds-text-lg); font-weight: 600; }
+.admin-account-card label { color: var(--ds-text-2); font-size: var(--ds-text-sm); }
+.admin-account-card :is(input:not([type="checkbox"], [type="radio"]), select, textarea) { min-height: var(--ds-control); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-sm); background: var(--ds-raised); color: var(--ds-text); font-size: 16px; }
+.admin-account-card button[type="submit"], .admin-account-card .primary-button { min-height: var(--ds-control); border: 0; border-radius: var(--ds-radius-pill); background: var(--ds-text); color: var(--ds-surface); font-size: var(--ds-text-sm); font-weight: 600; box-shadow: none; }
+.admin-account-balances span { color: var(--ds-text-2); font-size: var(--ds-text-xs); font-weight: 500; letter-spacing: normal; }
+.admin-account-balances strong { color: var(--ds-text); font-size: var(--ds-text-lg); font-weight: 600; }
+body.authenticated #admin-cuentas #superAdminTools > summary { margin: 0; padding: 0; }
+
+/* These pages hide the top bar, so nothing else covers the status bar while scrolling. */
+@media (max-width: 760px) {
+  body.authenticated.achievement-management-open::before { content: ""; position: fixed; z-index: 60; inset: 0 0 auto 0; display: block; height: var(--pwa-safe-top, env(safe-area-inset-top, 0px)); background: var(--bb2-canvas); animation: none; pointer-events: none; }
+}
+body.authenticated.achievement-management-open .admin-account-page { padding-top: 0; }
+.admin-account-header { position: sticky; z-index: 4; top: 0; margin-inline: -16px; padding: calc(var(--pwa-safe-top, env(safe-area-inset-top, 0px)) + var(--ds-space-3)) 16px var(--ds-space-3); background: var(--bb2-canvas); }
+
+/* Missions keep their shape while data arrives. */
+.club-missions-dialog .club-mission-section { min-height: 132px; }

@@ -1,0 +1,5107 @@
+{
+  "version": 1,
+  "rigVersion": 8,
+  "cell": 256,
+  "poseCount": 67,
+  "mode": "integrated-upper-only",
+  "stockLowerBaked": false,
+  "runtimeRevision": "illustrated-v8-636",
+  "files": [
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-negro-base.webp",
+      "size": [
+        1536,
+        1024
+      ],
+      "bytes": 890002,
+      "sha256": "59dd2f77581e31e2ae3198049db90810d5ccfa62353f9b27d201dbc2d93aa664",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-negro-flip-base.webp",
+      "size": [
+        1536,
+        1024
+      ],
+      "bytes": 890126,
+      "sha256": "a2e5e38975823a643cdcc8dd60cdd005f47261d2120d1e38ec35111f0b5d5bdd",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-negro-directional.webp",
+      "size": [
+        1280,
+        1024
+      ],
+      "bytes": 711946,
+      "sha256": "0b6c251b740af11165701920752c1ae287b04c0d465264d5e5bda06c4bf945a8",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-negro-flip-directional.webp",
+      "size": [
+        1280,
+        1024
+      ],
+      "bytes": 711618,
+      "sha256": "9f268354a1ad099165cb87a8e6089fb41113150b650079598d2e3a9d3e51ce85",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-negro-contextual.webp",
+      "size": [
+        1024,
+        1024
+      ],
+      "bytes": 619840,
+      "sha256": "06bd8bb97ed6ad96ff18fad332bebe5b2916f9a230dcb6827463e4d0386edc25",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-negro-flip-contextual.webp",
+      "size": [
+        1024,
+        1024
+      ],
+      "bytes": 620160,
+      "sha256": "3d2e5715c7129813d73f6a8bb35964405ddce3367cf44e2693976a1699975c77",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-negro-room.webp",
+      "size": [
+        1024,
+        256
+      ],
+      "bytes": 133886,
+      "sha256": "28d2873cc78cfee37302b5e6b260b3280cdad09971945616b1949cdf5af43c1c",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-negro-flip-room.webp",
+      "size": [
+        1024,
+        256
+      ],
+      "bytes": 133902,
+      "sha256": "18cf5c8e508cd08692230da4be4cbee2aede057b238f492f5ea757e06b09cb5e",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-negro-talk.webp",
+      "size": [
+        768,
+        256
+      ],
+      "bytes": 42778,
+      "sha256": "49179c2840430cbffad4a7948553f185ff1016589c57b9b2f1d0250a50f71125",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-negro-flip-talk.webp",
+      "size": [
+        768,
+        256
+      ],
+      "bytes": 42728,
+      "sha256": "23ff700123328f533e86501a8d6c4789d447535252cfb8e445ab53e5485e8616",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-crema-base.webp",
+      "size": [
+        1536,
+        1024
+      ],
+      "bytes": 911154,
+      "sha256": "ea5687d11b8fabc41508da1451b9ecccfbcced72c4eb0398dde456a32df98365",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-crema-flip-base.webp",
+      "size": [
+        1536,
+        1024
+      ],
+      "bytes": 911136,
+      "sha256": "e813e07775fc1b78e7492bb1173e8abd22b56bbcfd123f38050fd73b00637573",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-crema-directional.webp",
+      "size": [
+        1280,
+        1024
+      ],
+      "bytes": 736072,
+      "sha256": "12c2ab4ddc4f39cfd8b738bf1f90d33f6d83ccd5389a75760600a230a8846d4e",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-crema-flip-directional.webp",
+      "size": [
+        1280,
+        1024
+      ],
+      "bytes": 736472,
+      "sha256": "ee0f3e1aadc1d1bbaa1b59f449b21e39f5e8f70d4a8502f1179653e8837ccd4c",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-crema-contextual.webp",
+      "size": [
+        1024,
+        1024
+      ],
+      "bytes": 640790,
+      "sha256": "3a138707758d9a974cf8ff3aae7bd1b006c09dce0aff469a62be82b70ff71857",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-crema-flip-contextual.webp",
+      "size": [
+        1024,
+        1024
+      ],
+      "bytes": 640078,
+      "sha256": "b13a5983eeee1ee3df924a44bc29d5a1c9fa04548b62ab15d95aa577e2102fc5",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-crema-room.webp",
+      "size": [
+        1024,
+        256
+      ],
+      "bytes": 136788,
+      "sha256": "f5d433fd31bc1b38471bc73cdd112ef2d921b05b0fbfeecd8e610f85c357191e",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-crema-flip-room.webp",
+      "size": [
+        1024,
+        256
+      ],
+      "bytes": 136724,
+      "sha256": "caa7a285c844be7666cbf64c1991d22f938968bc42032295bbe6a149dd7f4b29",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-crema-talk.webp",
+      "size": [
+        768,
+        256
+      ],
+      "bytes": 43570,
+      "sha256": "85391135934a5253a9c1472e7464af606ee97fe41949aaf9f9e09810c11ab104",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-crema-flip-talk.webp",
+      "size": [
+        768,
+        256
+      ],
+      "bytes": 43758,
+      "sha256": "99df775caf8a1be64b35424288ce49b3ea6ff4498af04bbf1d36aa4e25af7324",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-rojo-base.webp",
+      "size": [
+        1536,
+        1024
+      ],
+      "bytes": 921502,
+      "sha256": "6e464cdfb7db0065457976b4992c540ca480bdbf1cd8cf8b3417a22e775ec723",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-rojo-flip-base.webp",
+      "size": [
+        1536,
+        1024
+      ],
+      "bytes": 922266,
+      "sha256": "cc23c3a61127387f4ed468da9a4e87fcd9eeaf105c7d637ea156b18c81271800",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-rojo-directional.webp",
+      "size": [
+        1280,
+        1024
+      ],
+      "bytes": 745286,
+      "sha256": "70541c2f4a677f92b78dcf18e5eb4f612af96ca5ede7b01013ed51a35b852607",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-rojo-flip-directional.webp",
+      "size": [
+        1280,
+        1024
+      ],
+      "bytes": 744636,
+      "sha256": "0443742bc9ee8b2c123482d0eafdf6e5fd4e40433e9bdcd855139afa5bcac30b",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-rojo-contextual.webp",
+      "size": [
+        1024,
+        1024
+      ],
+      "bytes": 649644,
+      "sha256": "0f6fa03c33313112f8762ba6002880b5a964adec45086e1f650dac01ad79f823",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-rojo-flip-contextual.webp",
+      "size": [
+        1024,
+        1024
+      ],
+      "bytes": 649494,
+      "sha256": "aa900aa01dc43c53620a748af46a197fc6dcdbe022a75c6739774b3d83023e0a",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-rojo-room.webp",
+      "size": [
+        1024,
+        256
+      ],
+      "bytes": 138902,
+      "sha256": "eed6d2a96fb748954cf854c4864530c4bdd8c3847423c429197771f006be14a6",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-rojo-flip-room.webp",
+      "size": [
+        1024,
+        256
+      ],
+      "bytes": 138242,
+      "sha256": "9d371c5ccc50940eb0f1e5b737cd7332acd24e77753d8123ee4638fc7e935e94",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-rojo-talk.webp",
+      "size": [
+        768,
+        256
+      ],
+      "bytes": 45024,
+      "sha256": "0be63c1a736ecbe022d87d1705aeb73d5614f7a84f18a69d5212f1f8d66425d1",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-rojo-flip-talk.webp",
+      "size": [
+        768,
+        256
+      ],
+      "bytes": 44616,
+      "sha256": "f158cc4f9e105929cc6c603eb4d5a68ef86c17b464f4c2569c2460d7c8cb618a",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-azul-base.webp",
+      "size": [
+        1536,
+        1024
+      ],
+      "bytes": 926782,
+      "sha256": "ff4acbfccd4ec253dc7f11f187972f91b66579d6d804c395559b5dc41a3c5564",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-azul-flip-base.webp",
+      "size": [
+        1536,
+        1024
+      ],
+      "bytes": 929274,
+      "sha256": "c723d7d3c8849b550ca6e88e94a532bf35114a339636b9ba4cf25ec902209dab",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-azul-directional.webp",
+      "size": [
+        1280,
+        1024
+      ],
+      "bytes": 747238,
+      "sha256": "9f8fb7b140fbeed52f65af8358fd3461c33c2fc30c14fd9ceddda7ea4e14658a",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-azul-flip-directional.webp",
+      "size": [
+        1280,
+        1024
+      ],
+      "bytes": 747476,
+      "sha256": "4b298ff0c08c110e4e54ad87ece0364e24728fecdbf405c96f046a67fa5806ae",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-azul-contextual.webp",
+      "size": [
+        1024,
+        1024
+      ],
+      "bytes": 652010,
+      "sha256": "6435a09784eb39ed8fede13ab1b5fe450771f7488baddd9e6a22de1b731841e2",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-azul-flip-contextual.webp",
+      "size": [
+        1024,
+        1024
+      ],
+      "bytes": 653510,
+      "sha256": "05a6298a6a3e43731227ee383c7a834aed8d8182959c51ee98e1e2332fa4cf04",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-azul-room.webp",
+      "size": [
+        1024,
+        256
+      ],
+      "bytes": 139384,
+      "sha256": "086f0b57f6f5a24e92ebdaa0519e0a6bbac81e836f734fb60f8ec67ad2d58a63",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-azul-flip-room.webp",
+      "size": [
+        1024,
+        256
+      ],
+      "bytes": 139458,
+      "sha256": "bbccdf63dc8a3bbfce40aafd1bdae964f79911b1058e23f4f428d938f31d47bb",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-azul-talk.webp",
+      "size": [
+        768,
+        256
+      ],
+      "bytes": 44754,
+      "sha256": "ca0ac80399b8bb8f29c57ba12169f25a8b8bafb67945bc275f05b254f05b0dc5",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-azul-flip-talk.webp",
+      "size": [
+        768,
+        256
+      ],
+      "bytes": 44744,
+      "sha256": "b1ef94da4f8ba91460d77df3539a3a23ef9308086262344ad1dfd13f3284937f",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-oliva-base.webp",
+      "size": [
+        1536,
+        1024
+      ],
+      "bytes": 914716,
+      "sha256": "cd4291cce435fb1955af9894b71baa9f4ef2bc42b4e5695e9f4ef3cdf67206b2",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-oliva-flip-base.webp",
+      "size": [
+        1536,
+        1024
+      ],
+      "bytes": 914708,
+      "sha256": "df8d2e55d82a5883238e6645109ae681d938c261453aaabf3fdfa9a6a27284ef",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-oliva-directional.webp",
+      "size": [
+        1280,
+        1024
+      ],
+      "bytes": 738284,
+      "sha256": "bc872ee450ce9be8c040fe37b4ed3c55d74b943bfc770bed21458ef912abc17a",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-oliva-flip-directional.webp",
+      "size": [
+        1280,
+        1024
+      ],
+      "bytes": 737572,
+      "sha256": "85e88385328d2e10fefc85e76004fe8ac3c3fbb3b52619a77af6bb6b9b2fbafa",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-oliva-contextual.webp",
+      "size": [
+        1024,
+        1024
+      ],
+      "bytes": 644384,
+      "sha256": "5ce2ce78b841786602106029ba3d7ac52d1c7daa9198b5375e472889fd0b00ad",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-oliva-flip-contextual.webp",
+      "size": [
+        1024,
+        1024
+      ],
+      "bytes": 644602,
+      "sha256": "3a541db9ce12d8f1be89f0b4857402384209444d3819b5c87438a151935cecb8",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-oliva-room.webp",
+      "size": [
+        1024,
+        256
+      ],
+      "bytes": 137180,
+      "sha256": "c313516bf641f5bfb86736d4be48451e6d0fd1fe2fa4c15c247d72414e851215",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-oliva-flip-room.webp",
+      "size": [
+        1024,
+        256
+      ],
+      "bytes": 137484,
+      "sha256": "721302b5291c9636be8afe1debf43261987e159e881a382d3136461a603aadd3",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-oliva-talk.webp",
+      "size": [
+        768,
+        256
+      ],
+      "bytes": 43820,
+      "sha256": "1e345f1ff7a84bae5e2df56887c49fabb46c40a766c0992729b4bf4072ad2781",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-oliva-flip-talk.webp",
+      "size": [
+        768,
+        256
+      ],
+      "bytes": 44188,
+      "sha256": "45b5de2815e050025ecd55efbf3563dfa8246722c59ebc8415b7463801840df0",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-morado-base.webp",
+      "size": [
+        1536,
+        1024
+      ],
+      "bytes": 924004,
+      "sha256": "dfbb4680963b1c9b73772ba68d80a0ddbbfe033edfab7f93da8debb8eced95ec",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-morado-flip-base.webp",
+      "size": [
+        1536,
+        1024
+      ],
+      "bytes": 924806,
+      "sha256": "f1c16acb9414a646cd25b8d5e3452f0a5f8c69175d58f6b52f42ee84e5c871cc",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-morado-directional.webp",
+      "size": [
+        1280,
+        1024
+      ],
+      "bytes": 743862,
+      "sha256": "cb6c9792d6cdcc21b02c25cb51952a26692e2f50b5bab94b35a39d6a9fc89078",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-morado-flip-directional.webp",
+      "size": [
+        1280,
+        1024
+      ],
+      "bytes": 743864,
+      "sha256": "2e9d92ea3ac91338e3e9ceaec67b534658811ea02c4aefefa32e35b72de59838",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-morado-contextual.webp",
+      "size": [
+        1024,
+        1024
+      ],
+      "bytes": 649048,
+      "sha256": "ee9754b42c14052fe560149b5cce34212eabe53d14af04720e2af6eb38584c32",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-morado-flip-contextual.webp",
+      "size": [
+        1024,
+        1024
+      ],
+      "bytes": 649172,
+      "sha256": "56c2b2f8fe8ce0ffd4406eb3ad76829237e1fa4e55e80fd59119a7e1e8cdbf48",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-morado-room.webp",
+      "size": [
+        1024,
+        256
+      ],
+      "bytes": 138114,
+      "sha256": "3647cb87e85319fdd1b853b9f2d35010837e3567bcc13a9dc073559c156f020c",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-morado-flip-room.webp",
+      "size": [
+        1024,
+        256
+      ],
+      "bytes": 138286,
+      "sha256": "cc5fdae56f9b0ad5c9099e9c368e3878bb9e12315536913408070e07fc43c1a4",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-morado-talk.webp",
+      "size": [
+        768,
+        256
+      ],
+      "bytes": 44716,
+      "sha256": "84a8640664e25023f6fe53892e02af9c1deda273dbe8eb540ce360aa17bc51f7",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    },
+    {
+      "path": "icons/mascot/chota-v2/illustrated-v8/upper-morado-flip-talk.webp",
+      "size": [
+        768,
+        256
+      ],
+      "bytes": 44710,
+      "sha256": "d611ac0e9187c5e335a5f067efee83fc403aee223d0c5845565a3deec59f462e",
+      "alphaMismatch": 0,
+      "visibleRGBMismatch": 0
+    }
+  ],
+  "poses": [
+    {
+      "key": "base-00",
+      "color": "negro",
+      "maskSHA256": "ecbc428d63109dc680aa99a36b2dc385d6819b9ca3a9db950d16dfe9492094aa",
+      "mirrorPrintROI": [
+        295,
+        283,
+        327,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-01",
+      "color": "negro",
+      "maskSHA256": "32725e72fe1b57d32f6d130394c93ee00c74de5dd22d2afe9e3eb748373f4b8a",
+      "mirrorPrintROI": [
+        289,
+        283,
+        318,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-02",
+      "color": "negro",
+      "maskSHA256": "fb3ee1306ca3b1f606aa1a679acc6c275db8d324e3d9538d0bb30a9a6a788242",
+      "mirrorPrintROI": [
+        292,
+        283,
+        321,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-03",
+      "color": "negro",
+      "maskSHA256": "968c15244039637ab74bd546cb0721e96b9978c50b19d3ad636cd870c64b3ffe",
+      "mirrorPrintROI": [
+        295,
+        284,
+        327,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-04",
+      "color": "negro",
+      "maskSHA256": "0da74c9c2958cc466bd20c86bfa3f4accb507e0156d5ddfb1f8d77b9bae0ac33",
+      "mirrorPrintROI": [
+        291,
+        283,
+        322,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-05",
+      "color": "negro",
+      "maskSHA256": "78d67c66c883285cfd623b9c7bbf70881e0da2ed82cce732022a66f72791e477",
+      "mirrorPrintROI": [
+        291,
+        283,
+        321,
+        301
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-06",
+      "color": "negro",
+      "maskSHA256": "a8444cc28b15ba518f276433ebb24b09ae87ddbeb4ed76ec5f937839149aed92",
+      "mirrorPrintROI": [
+        292,
+        272,
+        319,
+        290
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-07",
+      "color": "negro",
+      "maskSHA256": "16c9f75b335644bc61d2eeed0227dd55fc72be48d39a69fa6437134ead9dfa32",
+      "mirrorPrintROI": [
+        295,
+        270,
+        317,
+        287
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-08",
+      "color": "negro",
+      "maskSHA256": "909e929dbfe222c5f907080a9b2cdd23f29e6d8a375c3144605dda495546438e",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-09",
+      "color": "negro",
+      "maskSHA256": "df40765903287638929aac94501bebd2f0a4f9f88f280cd2438de0eb7e815fe5",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-10",
+      "color": "negro",
+      "maskSHA256": "5c8ecafadc5787b16bf899e371be0a2fcd3ebcf2b9fe63adfeecd791b498fb29",
+      "mirrorPrintROI": [
+        293,
+        267,
+        316,
+        281
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-11",
+      "color": "negro",
+      "maskSHA256": "ec090352f5094e457565095be53bef9a436a9ab42a6ad3d8fd162268c0f2d3c5",
+      "mirrorPrintROI": [
+        294,
+        266,
+        320,
+        283
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-12",
+      "color": "negro",
+      "maskSHA256": "1bbcd6767051e1880ae3774e69fed76cc14536bcc99745aa8e838539a9ca3e21",
+      "mirrorPrintROI": [
+        286,
+        283,
+        320,
+        299
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-13",
+      "color": "negro",
+      "maskSHA256": "a9901f346e4098d2739a5cc6a93d178d14ab1e20d261967e7fd831b403e8cdc2",
+      "mirrorPrintROI": [
+        287,
+        324,
+        317,
+        339
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-14",
+      "color": "negro",
+      "maskSHA256": "f225cec29c5e915e78f3b0b513a7f5e597568dccee5b2b32386fe5fe756261d9",
+      "mirrorPrintROI": [
+        292,
+        266,
+        321,
+        283
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-15",
+      "color": "negro",
+      "maskSHA256": "91aa77799a66816cfe790ddd3a1dbfaeff7159bd1bf55ded76b088380d3d25f3",
+      "mirrorPrintROI": [
+        271,
+        232,
+        304,
+        254
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-16",
+      "color": "negro",
+      "maskSHA256": "88c8a9d38fb8ba3acbf4e8cb135e0f802d9bb8bc803fbd4132a0eda502c40e37",
+      "mirrorPrintROI": [
+        293,
+        309,
+        319,
+        324
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-17",
+      "color": "negro",
+      "maskSHA256": "06b395e35e09d476aa794bde6a8ba70f896e23dd80adb9cc300ba2f36966f050",
+      "mirrorPrintROI": [
+        300,
+        273,
+        326,
+        291
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-18",
+      "color": "negro",
+      "maskSHA256": "0e6adf579e55e19dac8a7a39a636712efbc632e47c46b52d19d95d472894aa22",
+      "mirrorPrintROI": [
+        288,
+        268,
+        319,
+        288
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-19",
+      "color": "negro",
+      "maskSHA256": "183cdfb1ebdfcdcb7104e8e8653db60ef2626aa2a5634ddd191f04c24a16235f",
+      "mirrorPrintROI": [
+        285,
+        328,
+        313,
+        348
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-20",
+      "color": "negro",
+      "maskSHA256": "f7597250221227ca4afefdbc6e142883315430fe45f84adb024b1adaf99c2009",
+      "mirrorPrintROI": [
+        282,
+        339,
+        315,
+        358
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-21",
+      "color": "negro",
+      "maskSHA256": "9eac4d2f21bd48ab254dabe708959289322d15ff0499d00776d625bd0189e340",
+      "mirrorPrintROI": [
+        238,
+        387,
+        279,
+        414
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-22",
+      "color": "negro",
+      "maskSHA256": "a637ec52666fc518e47b1d731165a4c2a004805248ead19e868f9f56a4c1c28d",
+      "mirrorPrintROI": [
+        260,
+        397,
+        281,
+        417
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-23",
+      "color": "negro",
+      "maskSHA256": "912e69a5f6c001f5812f4871a08294096aca7bc75afd48e814ad6bbc7a3868fe",
+      "mirrorPrintROI": [
+        264,
+        403,
+        289,
+        425
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-00",
+      "color": "negro",
+      "maskSHA256": "dea65503b66a2391cf6c52997b7143b8e9917cadf622a20755a7b4dba743e201",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-01",
+      "color": "negro",
+      "maskSHA256": "748fcd2cc6c323ad0972b81d0d1ba3e3d5ff49302a65bec6773885bfb6811d3a",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-02",
+      "color": "negro",
+      "maskSHA256": "3f653e6b113b3b30ea254f03f9f9c4c70aaeb2df524d58f7ad9f41b9fa9f7fdf",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-03",
+      "color": "negro",
+      "maskSHA256": "4bd0d8747f7d1a948abe3ce056e2b50cdab9a68fc0c9c8305420041bfcef521a",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-04",
+      "color": "negro",
+      "maskSHA256": "c9758f7506189ac6b234262a44468dc05852b97c39446ad45d26c19974e81701",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-05",
+      "color": "negro",
+      "maskSHA256": "3d86d655dcb5ec71ba908130d3d63afc95b2702aa0e8d5f642fdd3f18dbe7013",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-06",
+      "color": "negro",
+      "maskSHA256": "dd46bdb682a7e956dd81393bd9c52a1dad1f0bf3b88ec49879c315377a4edcd6",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-07",
+      "color": "negro",
+      "maskSHA256": "223260fb8e2611dc63ad7e23adf8682efb5e6cfbd8a08655cd76e19174d6e313",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-08",
+      "color": "negro",
+      "maskSHA256": "5066a2cff00f775a41854eb03d0c0313c6f0a05bc59fa61ca9438ecd531021ac",
+      "mirrorPrintROI": [
+        286,
+        273,
+        314,
+        293
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-09",
+      "color": "negro",
+      "maskSHA256": "9e71abd0e330270f4eb71403e05fb319ded1613dd83b8d08edcd6fcfcc61c691",
+      "mirrorPrintROI": [
+        286,
+        274,
+        313,
+        289
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-10",
+      "color": "negro",
+      "maskSHA256": "0af5a956956b3792ea3d4159f3011916eec3f99c6bb6d2f4e1ab62d4dde62d8b",
+      "mirrorPrintROI": [
+        284,
+        274,
+        314,
+        289
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-11",
+      "color": "negro",
+      "maskSHA256": "bb272da9360dee7239abcd3b0bfae1d430ff61e528aebf816376e7465e5727a5",
+      "mirrorPrintROI": [
+        284,
+        273,
+        314,
+        289
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-12",
+      "color": "negro",
+      "maskSHA256": "57322215b78be9892689281e977bf04786ff0c3cf74607396edfa0afea941455",
+      "mirrorPrintROI": [
+        291,
+        277,
+        314,
+        298
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-13",
+      "color": "negro",
+      "maskSHA256": "3a668ac6e9eeaee9c389840f01e40fdfd472e55758c1a7a0d9fa623bdb7668ad",
+      "mirrorPrintROI": [
+        288,
+        274,
+        315,
+        298
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-14",
+      "color": "negro",
+      "maskSHA256": "26268f1f6638b89b97b6569fbdff2c073a5e00ae04fa9cbe0c75d2414d9f024b",
+      "mirrorPrintROI": [
+        280,
+        272,
+        312,
+        296
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-15",
+      "color": "negro",
+      "maskSHA256": "ca0540be65a322dbdc9bb87260902c456754ff63d30f3eef73ac792a1354397c",
+      "mirrorPrintROI": [
+        292,
+        276,
+        315,
+        295
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-16",
+      "color": "negro",
+      "maskSHA256": "34cd5c411014df5b19ac645410590caba0907159c477cf303d9d392cd6e91190",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-17",
+      "color": "negro",
+      "maskSHA256": "60881b6ad82f29c1c64a5faba36b4c30a2cf247a454eba110c89c60ed2452978",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-18",
+      "color": "negro",
+      "maskSHA256": "dd1a76628adba066f152d6ddcd9d96e11891d3a45d21915c89849a8e152ed865",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-19",
+      "color": "negro",
+      "maskSHA256": "3104094c68150bd1cd3eb728f3e058c43631be9bbe02b2c4ce1f198efe1067c6",
+      "mirrorPrintROI": [
+        294,
+        273,
+        313,
+        287
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-00",
+      "color": "negro",
+      "maskSHA256": "b656c4af85b28738a5a9ba49aff4d80c5eae4310f86b4cd9d3c6049030523202",
+      "mirrorPrintROI": [
+        301,
+        277,
+        331,
+        297
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-01",
+      "color": "negro",
+      "maskSHA256": "a7f8ad583111d8842ee4d4c8c0692de96ea04e489f67d1a664f130da45ebab58",
+      "mirrorPrintROI": [
+        290,
+        282,
+        322,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-02",
+      "color": "negro",
+      "maskSHA256": "24f1a5a6b390e1f40715f354e544c5aeba922bc003634d02889b566425a6a5e0",
+      "mirrorPrintROI": [
+        285,
+        276,
+        316,
+        296
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-03",
+      "color": "negro",
+      "maskSHA256": "61c3570821da68ac3abbe43a7f3f4f9c69e0df60f447be117a53319fd7f3b1f6",
+      "mirrorPrintROI": [
+        285,
+        276,
+        315,
+        296
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-04",
+      "color": "negro",
+      "maskSHA256": "23940aa943902a80668ae55c7069cb9de56a008025c04996e7ab6d84446a66e1",
+      "mirrorPrintROI": [
+        290,
+        274,
+        327,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-05",
+      "color": "negro",
+      "maskSHA256": "8358086fe73dcdf4e4d0040927361772f60c96204a114e14d141b62980d4c36c",
+      "mirrorPrintROI": [
+        290,
+        274,
+        325,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-06",
+      "color": "negro",
+      "maskSHA256": "15a93491a65f173d8d3d45096ef506d2a4782645524df172402fcfd7a512a8d4",
+      "mirrorPrintROI": [
+        287,
+        273,
+        324,
+        293
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-07",
+      "color": "negro",
+      "maskSHA256": "d40e11834caa7677536484bba0ce8a3cc610674dbc43628dca2286466cf94051",
+      "mirrorPrintROI": [
+        289,
+        274,
+        325,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-08",
+      "color": "negro",
+      "maskSHA256": "9b55b5426d3e3184f2a8b8ae913aa9c8fd96d070e3d1768fe16a353661e4cafe",
+      "mirrorPrintROI": [
+        290,
+        274,
+        327,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-09",
+      "color": "negro",
+      "maskSHA256": "cfa431d69cf2ecaa82bb2a345dd3f36bbe752f43af12af0a6ea7964dad8289c1",
+      "mirrorPrintROI": [
+        290,
+        274,
+        325,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-10",
+      "color": "negro",
+      "maskSHA256": "1f9d856bad2f0cc53f42030dbf6ccb6fba06e482957bc11ac7264246efb74bed",
+      "mirrorPrintROI": [
+        285,
+        261,
+        315,
+        281
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-11",
+      "color": "negro",
+      "maskSHA256": "3341fbd68b0793c48c763e453c0ed999d8c66c490a1d942a5bf780eed247fb47",
+      "mirrorPrintROI": [
+        285,
+        261,
+        315,
+        281
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-12",
+      "color": "negro",
+      "maskSHA256": "e84833a315ec885c0682eb884743c704f5f2e0ea46882d2f07f68e3419f4fb85",
+      "mirrorPrintROI": [
+        290,
+        276,
+        304,
+        295
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-13",
+      "color": "negro",
+      "maskSHA256": "490ab234d254ece94f6590a5f83b91c13bd0cc5cd803ae3ff458965cfca37f37",
+      "mirrorPrintROI": [
+        290,
+        274,
+        312,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-14",
+      "color": "negro",
+      "maskSHA256": "b391b12d0879a16e1ffde313c23404e6ff7b43d0eff3acf9f87c5110253ecffe",
+      "mirrorPrintROI": [
+        297,
+        269,
+        329,
+        288
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-15",
+      "color": "negro",
+      "maskSHA256": "87547d082de7f02edb22d8e9b575b7e9510d8203aa11fb363e4b6a09c5dbc2c7",
+      "mirrorPrintROI": [
+        297,
+        269,
+        329,
+        288
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "room-00",
+      "color": "negro",
+      "maskSHA256": "8283a280d7ca82d5b093162d297f5a8fa4532133de0a6566a42694fd67f03d09",
+      "mirrorPrintROI": [
+        289,
+        293,
+        319,
+        311
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "room-01",
+      "color": "negro",
+      "maskSHA256": "af6e7f60ae50271b6ff747e7a866b0a24491621c67c383de08134e861c65f68a",
+      "mirrorPrintROI": [
+        264,
+        286,
+        299,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "room-02",
+      "color": "negro",
+      "maskSHA256": "7a614bbbbf349092a01d7ebb1699a562afc549e6923811ced514db2c6a716bba",
+      "mirrorPrintROI": [
+        270,
+        289,
+        304,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "room-03",
+      "color": "negro",
+      "maskSHA256": "af04adde4914e8d67656efc023274a90a0a505b1a226eb5dcc6a5aefb15ffced",
+      "mirrorPrintROI": [
+        288,
+        312,
+        302,
+        325
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "talk-00",
+      "color": "negro",
+      "maskSHA256": "ecbc428d63109dc680aa99a36b2dc385d6819b9ca3a9db950d16dfe9492094aa",
+      "mirrorPrintROI": [
+        295,
+        283,
+        327,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "talk-01",
+      "color": "negro",
+      "maskSHA256": "981de6347c9bd578a55f993f2a05b07e80cd5f60b114da6756dd74ee2578da69",
+      "mirrorPrintROI": [
+        295,
+        283,
+        327,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "talk-02",
+      "color": "negro",
+      "maskSHA256": "2fc1d9668a187f76d254751a420fa7d1e9f7cad07209c8df0ac823d0081fd40d",
+      "mirrorPrintROI": [
+        295,
+        283,
+        327,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-00",
+      "color": "crema",
+      "maskSHA256": "ecbc428d63109dc680aa99a36b2dc385d6819b9ca3a9db950d16dfe9492094aa",
+      "mirrorPrintROI": [
+        295,
+        283,
+        327,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-01",
+      "color": "crema",
+      "maskSHA256": "32725e72fe1b57d32f6d130394c93ee00c74de5dd22d2afe9e3eb748373f4b8a",
+      "mirrorPrintROI": [
+        289,
+        283,
+        318,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-02",
+      "color": "crema",
+      "maskSHA256": "fb3ee1306ca3b1f606aa1a679acc6c275db8d324e3d9538d0bb30a9a6a788242",
+      "mirrorPrintROI": [
+        292,
+        283,
+        321,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-03",
+      "color": "crema",
+      "maskSHA256": "968c15244039637ab74bd546cb0721e96b9978c50b19d3ad636cd870c64b3ffe",
+      "mirrorPrintROI": [
+        295,
+        284,
+        327,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-04",
+      "color": "crema",
+      "maskSHA256": "0da74c9c2958cc466bd20c86bfa3f4accb507e0156d5ddfb1f8d77b9bae0ac33",
+      "mirrorPrintROI": [
+        291,
+        283,
+        322,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-05",
+      "color": "crema",
+      "maskSHA256": "78d67c66c883285cfd623b9c7bbf70881e0da2ed82cce732022a66f72791e477",
+      "mirrorPrintROI": [
+        291,
+        283,
+        321,
+        301
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-06",
+      "color": "crema",
+      "maskSHA256": "a8444cc28b15ba518f276433ebb24b09ae87ddbeb4ed76ec5f937839149aed92",
+      "mirrorPrintROI": [
+        292,
+        272,
+        319,
+        290
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-07",
+      "color": "crema",
+      "maskSHA256": "16c9f75b335644bc61d2eeed0227dd55fc72be48d39a69fa6437134ead9dfa32",
+      "mirrorPrintROI": [
+        295,
+        270,
+        317,
+        287
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-08",
+      "color": "crema",
+      "maskSHA256": "909e929dbfe222c5f907080a9b2cdd23f29e6d8a375c3144605dda495546438e",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-09",
+      "color": "crema",
+      "maskSHA256": "df40765903287638929aac94501bebd2f0a4f9f88f280cd2438de0eb7e815fe5",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-10",
+      "color": "crema",
+      "maskSHA256": "5c8ecafadc5787b16bf899e371be0a2fcd3ebcf2b9fe63adfeecd791b498fb29",
+      "mirrorPrintROI": [
+        293,
+        267,
+        316,
+        281
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-11",
+      "color": "crema",
+      "maskSHA256": "ec090352f5094e457565095be53bef9a436a9ab42a6ad3d8fd162268c0f2d3c5",
+      "mirrorPrintROI": [
+        294,
+        266,
+        320,
+        283
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-12",
+      "color": "crema",
+      "maskSHA256": "1bbcd6767051e1880ae3774e69fed76cc14536bcc99745aa8e838539a9ca3e21",
+      "mirrorPrintROI": [
+        286,
+        283,
+        320,
+        299
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-13",
+      "color": "crema",
+      "maskSHA256": "a9901f346e4098d2739a5cc6a93d178d14ab1e20d261967e7fd831b403e8cdc2",
+      "mirrorPrintROI": [
+        287,
+        324,
+        317,
+        339
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-14",
+      "color": "crema",
+      "maskSHA256": "f225cec29c5e915e78f3b0b513a7f5e597568dccee5b2b32386fe5fe756261d9",
+      "mirrorPrintROI": [
+        292,
+        266,
+        321,
+        283
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-15",
+      "color": "crema",
+      "maskSHA256": "91aa77799a66816cfe790ddd3a1dbfaeff7159bd1bf55ded76b088380d3d25f3",
+      "mirrorPrintROI": [
+        271,
+        232,
+        304,
+        254
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-16",
+      "color": "crema",
+      "maskSHA256": "88c8a9d38fb8ba3acbf4e8cb135e0f802d9bb8bc803fbd4132a0eda502c40e37",
+      "mirrorPrintROI": [
+        293,
+        309,
+        319,
+        324
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-17",
+      "color": "crema",
+      "maskSHA256": "06b395e35e09d476aa794bde6a8ba70f896e23dd80adb9cc300ba2f36966f050",
+      "mirrorPrintROI": [
+        300,
+        273,
+        326,
+        291
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-18",
+      "color": "crema",
+      "maskSHA256": "0e6adf579e55e19dac8a7a39a636712efbc632e47c46b52d19d95d472894aa22",
+      "mirrorPrintROI": [
+        288,
+        268,
+        319,
+        288
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-19",
+      "color": "crema",
+      "maskSHA256": "183cdfb1ebdfcdcb7104e8e8653db60ef2626aa2a5634ddd191f04c24a16235f",
+      "mirrorPrintROI": [
+        285,
+        328,
+        313,
+        348
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-20",
+      "color": "crema",
+      "maskSHA256": "f7597250221227ca4afefdbc6e142883315430fe45f84adb024b1adaf99c2009",
+      "mirrorPrintROI": [
+        282,
+        339,
+        315,
+        358
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-21",
+      "color": "crema",
+      "maskSHA256": "9eac4d2f21bd48ab254dabe708959289322d15ff0499d00776d625bd0189e340",
+      "mirrorPrintROI": [
+        238,
+        387,
+        279,
+        414
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-22",
+      "color": "crema",
+      "maskSHA256": "a637ec52666fc518e47b1d731165a4c2a004805248ead19e868f9f56a4c1c28d",
+      "mirrorPrintROI": [
+        260,
+        397,
+        281,
+        417
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-23",
+      "color": "crema",
+      "maskSHA256": "912e69a5f6c001f5812f4871a08294096aca7bc75afd48e814ad6bbc7a3868fe",
+      "mirrorPrintROI": [
+        264,
+        403,
+        289,
+        425
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-00",
+      "color": "crema",
+      "maskSHA256": "dea65503b66a2391cf6c52997b7143b8e9917cadf622a20755a7b4dba743e201",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-01",
+      "color": "crema",
+      "maskSHA256": "748fcd2cc6c323ad0972b81d0d1ba3e3d5ff49302a65bec6773885bfb6811d3a",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-02",
+      "color": "crema",
+      "maskSHA256": "3f653e6b113b3b30ea254f03f9f9c4c70aaeb2df524d58f7ad9f41b9fa9f7fdf",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-03",
+      "color": "crema",
+      "maskSHA256": "4bd0d8747f7d1a948abe3ce056e2b50cdab9a68fc0c9c8305420041bfcef521a",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-04",
+      "color": "crema",
+      "maskSHA256": "c9758f7506189ac6b234262a44468dc05852b97c39446ad45d26c19974e81701",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-05",
+      "color": "crema",
+      "maskSHA256": "3d86d655dcb5ec71ba908130d3d63afc95b2702aa0e8d5f642fdd3f18dbe7013",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-06",
+      "color": "crema",
+      "maskSHA256": "dd46bdb682a7e956dd81393bd9c52a1dad1f0bf3b88ec49879c315377a4edcd6",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-07",
+      "color": "crema",
+      "maskSHA256": "223260fb8e2611dc63ad7e23adf8682efb5e6cfbd8a08655cd76e19174d6e313",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-08",
+      "color": "crema",
+      "maskSHA256": "5066a2cff00f775a41854eb03d0c0313c6f0a05bc59fa61ca9438ecd531021ac",
+      "mirrorPrintROI": [
+        286,
+        273,
+        314,
+        293
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-09",
+      "color": "crema",
+      "maskSHA256": "9e71abd0e330270f4eb71403e05fb319ded1613dd83b8d08edcd6fcfcc61c691",
+      "mirrorPrintROI": [
+        286,
+        274,
+        313,
+        289
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-10",
+      "color": "crema",
+      "maskSHA256": "0af5a956956b3792ea3d4159f3011916eec3f99c6bb6d2f4e1ab62d4dde62d8b",
+      "mirrorPrintROI": [
+        284,
+        274,
+        314,
+        289
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-11",
+      "color": "crema",
+      "maskSHA256": "bb272da9360dee7239abcd3b0bfae1d430ff61e528aebf816376e7465e5727a5",
+      "mirrorPrintROI": [
+        284,
+        273,
+        314,
+        289
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-12",
+      "color": "crema",
+      "maskSHA256": "57322215b78be9892689281e977bf04786ff0c3cf74607396edfa0afea941455",
+      "mirrorPrintROI": [
+        291,
+        277,
+        314,
+        298
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-13",
+      "color": "crema",
+      "maskSHA256": "3a668ac6e9eeaee9c389840f01e40fdfd472e55758c1a7a0d9fa623bdb7668ad",
+      "mirrorPrintROI": [
+        288,
+        274,
+        315,
+        298
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-14",
+      "color": "crema",
+      "maskSHA256": "26268f1f6638b89b97b6569fbdff2c073a5e00ae04fa9cbe0c75d2414d9f024b",
+      "mirrorPrintROI": [
+        280,
+        272,
+        312,
+        296
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-15",
+      "color": "crema",
+      "maskSHA256": "ca0540be65a322dbdc9bb87260902c456754ff63d30f3eef73ac792a1354397c",
+      "mirrorPrintROI": [
+        292,
+        276,
+        315,
+        295
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-16",
+      "color": "crema",
+      "maskSHA256": "34cd5c411014df5b19ac645410590caba0907159c477cf303d9d392cd6e91190",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-17",
+      "color": "crema",
+      "maskSHA256": "60881b6ad82f29c1c64a5faba36b4c30a2cf247a454eba110c89c60ed2452978",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-18",
+      "color": "crema",
+      "maskSHA256": "dd1a76628adba066f152d6ddcd9d96e11891d3a45d21915c89849a8e152ed865",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-19",
+      "color": "crema",
+      "maskSHA256": "3104094c68150bd1cd3eb728f3e058c43631be9bbe02b2c4ce1f198efe1067c6",
+      "mirrorPrintROI": [
+        294,
+        273,
+        313,
+        287
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-00",
+      "color": "crema",
+      "maskSHA256": "b656c4af85b28738a5a9ba49aff4d80c5eae4310f86b4cd9d3c6049030523202",
+      "mirrorPrintROI": [
+        301,
+        277,
+        331,
+        297
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-01",
+      "color": "crema",
+      "maskSHA256": "a7f8ad583111d8842ee4d4c8c0692de96ea04e489f67d1a664f130da45ebab58",
+      "mirrorPrintROI": [
+        290,
+        282,
+        322,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-02",
+      "color": "crema",
+      "maskSHA256": "24f1a5a6b390e1f40715f354e544c5aeba922bc003634d02889b566425a6a5e0",
+      "mirrorPrintROI": [
+        285,
+        276,
+        316,
+        296
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-03",
+      "color": "crema",
+      "maskSHA256": "61c3570821da68ac3abbe43a7f3f4f9c69e0df60f447be117a53319fd7f3b1f6",
+      "mirrorPrintROI": [
+        285,
+        276,
+        315,
+        296
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-04",
+      "color": "crema",
+      "maskSHA256": "23940aa943902a80668ae55c7069cb9de56a008025c04996e7ab6d84446a66e1",
+      "mirrorPrintROI": [
+        290,
+        274,
+        327,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-05",
+      "color": "crema",
+      "maskSHA256": "8358086fe73dcdf4e4d0040927361772f60c96204a114e14d141b62980d4c36c",
+      "mirrorPrintROI": [
+        290,
+        274,
+        325,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-06",
+      "color": "crema",
+      "maskSHA256": "15a93491a65f173d8d3d45096ef506d2a4782645524df172402fcfd7a512a8d4",
+      "mirrorPrintROI": [
+        287,
+        273,
+        324,
+        293
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-07",
+      "color": "crema",
+      "maskSHA256": "d40e11834caa7677536484bba0ce8a3cc610674dbc43628dca2286466cf94051",
+      "mirrorPrintROI": [
+        289,
+        274,
+        325,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-08",
+      "color": "crema",
+      "maskSHA256": "9b55b5426d3e3184f2a8b8ae913aa9c8fd96d070e3d1768fe16a353661e4cafe",
+      "mirrorPrintROI": [
+        290,
+        274,
+        327,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-09",
+      "color": "crema",
+      "maskSHA256": "cfa431d69cf2ecaa82bb2a345dd3f36bbe752f43af12af0a6ea7964dad8289c1",
+      "mirrorPrintROI": [
+        290,
+        274,
+        325,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-10",
+      "color": "crema",
+      "maskSHA256": "1f9d856bad2f0cc53f42030dbf6ccb6fba06e482957bc11ac7264246efb74bed",
+      "mirrorPrintROI": [
+        285,
+        261,
+        315,
+        281
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-11",
+      "color": "crema",
+      "maskSHA256": "3341fbd68b0793c48c763e453c0ed999d8c66c490a1d942a5bf780eed247fb47",
+      "mirrorPrintROI": [
+        285,
+        261,
+        315,
+        281
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-12",
+      "color": "crema",
+      "maskSHA256": "e84833a315ec885c0682eb884743c704f5f2e0ea46882d2f07f68e3419f4fb85",
+      "mirrorPrintROI": [
+        290,
+        276,
+        304,
+        295
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-13",
+      "color": "crema",
+      "maskSHA256": "490ab234d254ece94f6590a5f83b91c13bd0cc5cd803ae3ff458965cfca37f37",
+      "mirrorPrintROI": [
+        290,
+        274,
+        312,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-14",
+      "color": "crema",
+      "maskSHA256": "b391b12d0879a16e1ffde313c23404e6ff7b43d0eff3acf9f87c5110253ecffe",
+      "mirrorPrintROI": [
+        297,
+        269,
+        329,
+        288
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-15",
+      "color": "crema",
+      "maskSHA256": "87547d082de7f02edb22d8e9b575b7e9510d8203aa11fb363e4b6a09c5dbc2c7",
+      "mirrorPrintROI": [
+        297,
+        269,
+        329,
+        288
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "room-00",
+      "color": "crema",
+      "maskSHA256": "8283a280d7ca82d5b093162d297f5a8fa4532133de0a6566a42694fd67f03d09",
+      "mirrorPrintROI": [
+        289,
+        293,
+        319,
+        311
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "room-01",
+      "color": "crema",
+      "maskSHA256": "af6e7f60ae50271b6ff747e7a866b0a24491621c67c383de08134e861c65f68a",
+      "mirrorPrintROI": [
+        264,
+        286,
+        299,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "room-02",
+      "color": "crema",
+      "maskSHA256": "7a614bbbbf349092a01d7ebb1699a562afc549e6923811ced514db2c6a716bba",
+      "mirrorPrintROI": [
+        270,
+        289,
+        304,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "room-03",
+      "color": "crema",
+      "maskSHA256": "af04adde4914e8d67656efc023274a90a0a505b1a226eb5dcc6a5aefb15ffced",
+      "mirrorPrintROI": [
+        288,
+        312,
+        302,
+        325
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "talk-00",
+      "color": "crema",
+      "maskSHA256": "ecbc428d63109dc680aa99a36b2dc385d6819b9ca3a9db950d16dfe9492094aa",
+      "mirrorPrintROI": [
+        295,
+        283,
+        327,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "talk-01",
+      "color": "crema",
+      "maskSHA256": "981de6347c9bd578a55f993f2a05b07e80cd5f60b114da6756dd74ee2578da69",
+      "mirrorPrintROI": [
+        295,
+        283,
+        327,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "talk-02",
+      "color": "crema",
+      "maskSHA256": "2fc1d9668a187f76d254751a420fa7d1e9f7cad07209c8df0ac823d0081fd40d",
+      "mirrorPrintROI": [
+        295,
+        283,
+        327,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-00",
+      "color": "rojo",
+      "maskSHA256": "ecbc428d63109dc680aa99a36b2dc385d6819b9ca3a9db950d16dfe9492094aa",
+      "mirrorPrintROI": [
+        295,
+        283,
+        327,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-01",
+      "color": "rojo",
+      "maskSHA256": "32725e72fe1b57d32f6d130394c93ee00c74de5dd22d2afe9e3eb748373f4b8a",
+      "mirrorPrintROI": [
+        289,
+        283,
+        318,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-02",
+      "color": "rojo",
+      "maskSHA256": "fb3ee1306ca3b1f606aa1a679acc6c275db8d324e3d9538d0bb30a9a6a788242",
+      "mirrorPrintROI": [
+        292,
+        283,
+        321,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-03",
+      "color": "rojo",
+      "maskSHA256": "968c15244039637ab74bd546cb0721e96b9978c50b19d3ad636cd870c64b3ffe",
+      "mirrorPrintROI": [
+        295,
+        284,
+        327,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-04",
+      "color": "rojo",
+      "maskSHA256": "0da74c9c2958cc466bd20c86bfa3f4accb507e0156d5ddfb1f8d77b9bae0ac33",
+      "mirrorPrintROI": [
+        291,
+        283,
+        322,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-05",
+      "color": "rojo",
+      "maskSHA256": "78d67c66c883285cfd623b9c7bbf70881e0da2ed82cce732022a66f72791e477",
+      "mirrorPrintROI": [
+        291,
+        283,
+        321,
+        301
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-06",
+      "color": "rojo",
+      "maskSHA256": "a8444cc28b15ba518f276433ebb24b09ae87ddbeb4ed76ec5f937839149aed92",
+      "mirrorPrintROI": [
+        292,
+        272,
+        319,
+        290
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-07",
+      "color": "rojo",
+      "maskSHA256": "16c9f75b335644bc61d2eeed0227dd55fc72be48d39a69fa6437134ead9dfa32",
+      "mirrorPrintROI": [
+        295,
+        270,
+        317,
+        287
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-08",
+      "color": "rojo",
+      "maskSHA256": "909e929dbfe222c5f907080a9b2cdd23f29e6d8a375c3144605dda495546438e",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-09",
+      "color": "rojo",
+      "maskSHA256": "df40765903287638929aac94501bebd2f0a4f9f88f280cd2438de0eb7e815fe5",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-10",
+      "color": "rojo",
+      "maskSHA256": "5c8ecafadc5787b16bf899e371be0a2fcd3ebcf2b9fe63adfeecd791b498fb29",
+      "mirrorPrintROI": [
+        293,
+        267,
+        316,
+        281
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-11",
+      "color": "rojo",
+      "maskSHA256": "ec090352f5094e457565095be53bef9a436a9ab42a6ad3d8fd162268c0f2d3c5",
+      "mirrorPrintROI": [
+        294,
+        266,
+        320,
+        283
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-12",
+      "color": "rojo",
+      "maskSHA256": "1bbcd6767051e1880ae3774e69fed76cc14536bcc99745aa8e838539a9ca3e21",
+      "mirrorPrintROI": [
+        286,
+        283,
+        320,
+        299
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-13",
+      "color": "rojo",
+      "maskSHA256": "a9901f346e4098d2739a5cc6a93d178d14ab1e20d261967e7fd831b403e8cdc2",
+      "mirrorPrintROI": [
+        287,
+        324,
+        317,
+        339
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-14",
+      "color": "rojo",
+      "maskSHA256": "f225cec29c5e915e78f3b0b513a7f5e597568dccee5b2b32386fe5fe756261d9",
+      "mirrorPrintROI": [
+        292,
+        266,
+        321,
+        283
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-15",
+      "color": "rojo",
+      "maskSHA256": "91aa77799a66816cfe790ddd3a1dbfaeff7159bd1bf55ded76b088380d3d25f3",
+      "mirrorPrintROI": [
+        271,
+        232,
+        304,
+        254
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-16",
+      "color": "rojo",
+      "maskSHA256": "88c8a9d38fb8ba3acbf4e8cb135e0f802d9bb8bc803fbd4132a0eda502c40e37",
+      "mirrorPrintROI": [
+        293,
+        309,
+        319,
+        324
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-17",
+      "color": "rojo",
+      "maskSHA256": "06b395e35e09d476aa794bde6a8ba70f896e23dd80adb9cc300ba2f36966f050",
+      "mirrorPrintROI": [
+        300,
+        273,
+        326,
+        291
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-18",
+      "color": "rojo",
+      "maskSHA256": "0e6adf579e55e19dac8a7a39a636712efbc632e47c46b52d19d95d472894aa22",
+      "mirrorPrintROI": [
+        288,
+        268,
+        319,
+        288
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-19",
+      "color": "rojo",
+      "maskSHA256": "183cdfb1ebdfcdcb7104e8e8653db60ef2626aa2a5634ddd191f04c24a16235f",
+      "mirrorPrintROI": [
+        285,
+        328,
+        313,
+        348
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-20",
+      "color": "rojo",
+      "maskSHA256": "f7597250221227ca4afefdbc6e142883315430fe45f84adb024b1adaf99c2009",
+      "mirrorPrintROI": [
+        282,
+        339,
+        315,
+        358
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-21",
+      "color": "rojo",
+      "maskSHA256": "9eac4d2f21bd48ab254dabe708959289322d15ff0499d00776d625bd0189e340",
+      "mirrorPrintROI": [
+        238,
+        387,
+        279,
+        414
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-22",
+      "color": "rojo",
+      "maskSHA256": "a637ec52666fc518e47b1d731165a4c2a004805248ead19e868f9f56a4c1c28d",
+      "mirrorPrintROI": [
+        260,
+        397,
+        281,
+        417
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-23",
+      "color": "rojo",
+      "maskSHA256": "912e69a5f6c001f5812f4871a08294096aca7bc75afd48e814ad6bbc7a3868fe",
+      "mirrorPrintROI": [
+        264,
+        403,
+        289,
+        425
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-00",
+      "color": "rojo",
+      "maskSHA256": "dea65503b66a2391cf6c52997b7143b8e9917cadf622a20755a7b4dba743e201",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-01",
+      "color": "rojo",
+      "maskSHA256": "748fcd2cc6c323ad0972b81d0d1ba3e3d5ff49302a65bec6773885bfb6811d3a",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-02",
+      "color": "rojo",
+      "maskSHA256": "3f653e6b113b3b30ea254f03f9f9c4c70aaeb2df524d58f7ad9f41b9fa9f7fdf",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-03",
+      "color": "rojo",
+      "maskSHA256": "4bd0d8747f7d1a948abe3ce056e2b50cdab9a68fc0c9c8305420041bfcef521a",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-04",
+      "color": "rojo",
+      "maskSHA256": "c9758f7506189ac6b234262a44468dc05852b97c39446ad45d26c19974e81701",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-05",
+      "color": "rojo",
+      "maskSHA256": "3d86d655dcb5ec71ba908130d3d63afc95b2702aa0e8d5f642fdd3f18dbe7013",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-06",
+      "color": "rojo",
+      "maskSHA256": "dd46bdb682a7e956dd81393bd9c52a1dad1f0bf3b88ec49879c315377a4edcd6",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-07",
+      "color": "rojo",
+      "maskSHA256": "223260fb8e2611dc63ad7e23adf8682efb5e6cfbd8a08655cd76e19174d6e313",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-08",
+      "color": "rojo",
+      "maskSHA256": "5066a2cff00f775a41854eb03d0c0313c6f0a05bc59fa61ca9438ecd531021ac",
+      "mirrorPrintROI": [
+        286,
+        273,
+        314,
+        293
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-09",
+      "color": "rojo",
+      "maskSHA256": "9e71abd0e330270f4eb71403e05fb319ded1613dd83b8d08edcd6fcfcc61c691",
+      "mirrorPrintROI": [
+        286,
+        274,
+        313,
+        289
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-10",
+      "color": "rojo",
+      "maskSHA256": "0af5a956956b3792ea3d4159f3011916eec3f99c6bb6d2f4e1ab62d4dde62d8b",
+      "mirrorPrintROI": [
+        284,
+        274,
+        314,
+        289
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-11",
+      "color": "rojo",
+      "maskSHA256": "bb272da9360dee7239abcd3b0bfae1d430ff61e528aebf816376e7465e5727a5",
+      "mirrorPrintROI": [
+        284,
+        273,
+        314,
+        289
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-12",
+      "color": "rojo",
+      "maskSHA256": "57322215b78be9892689281e977bf04786ff0c3cf74607396edfa0afea941455",
+      "mirrorPrintROI": [
+        291,
+        277,
+        314,
+        298
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-13",
+      "color": "rojo",
+      "maskSHA256": "3a668ac6e9eeaee9c389840f01e40fdfd472e55758c1a7a0d9fa623bdb7668ad",
+      "mirrorPrintROI": [
+        288,
+        274,
+        315,
+        298
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-14",
+      "color": "rojo",
+      "maskSHA256": "26268f1f6638b89b97b6569fbdff2c073a5e00ae04fa9cbe0c75d2414d9f024b",
+      "mirrorPrintROI": [
+        280,
+        272,
+        312,
+        296
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-15",
+      "color": "rojo",
+      "maskSHA256": "ca0540be65a322dbdc9bb87260902c456754ff63d30f3eef73ac792a1354397c",
+      "mirrorPrintROI": [
+        292,
+        276,
+        315,
+        295
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-16",
+      "color": "rojo",
+      "maskSHA256": "34cd5c411014df5b19ac645410590caba0907159c477cf303d9d392cd6e91190",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-17",
+      "color": "rojo",
+      "maskSHA256": "60881b6ad82f29c1c64a5faba36b4c30a2cf247a454eba110c89c60ed2452978",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-18",
+      "color": "rojo",
+      "maskSHA256": "dd1a76628adba066f152d6ddcd9d96e11891d3a45d21915c89849a8e152ed865",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-19",
+      "color": "rojo",
+      "maskSHA256": "3104094c68150bd1cd3eb728f3e058c43631be9bbe02b2c4ce1f198efe1067c6",
+      "mirrorPrintROI": [
+        294,
+        273,
+        313,
+        287
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-00",
+      "color": "rojo",
+      "maskSHA256": "b656c4af85b28738a5a9ba49aff4d80c5eae4310f86b4cd9d3c6049030523202",
+      "mirrorPrintROI": [
+        301,
+        277,
+        331,
+        297
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-01",
+      "color": "rojo",
+      "maskSHA256": "a7f8ad583111d8842ee4d4c8c0692de96ea04e489f67d1a664f130da45ebab58",
+      "mirrorPrintROI": [
+        290,
+        282,
+        322,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-02",
+      "color": "rojo",
+      "maskSHA256": "24f1a5a6b390e1f40715f354e544c5aeba922bc003634d02889b566425a6a5e0",
+      "mirrorPrintROI": [
+        285,
+        276,
+        316,
+        296
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-03",
+      "color": "rojo",
+      "maskSHA256": "61c3570821da68ac3abbe43a7f3f4f9c69e0df60f447be117a53319fd7f3b1f6",
+      "mirrorPrintROI": [
+        285,
+        276,
+        315,
+        296
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-04",
+      "color": "rojo",
+      "maskSHA256": "23940aa943902a80668ae55c7069cb9de56a008025c04996e7ab6d84446a66e1",
+      "mirrorPrintROI": [
+        290,
+        274,
+        327,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-05",
+      "color": "rojo",
+      "maskSHA256": "8358086fe73dcdf4e4d0040927361772f60c96204a114e14d141b62980d4c36c",
+      "mirrorPrintROI": [
+        290,
+        274,
+        325,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-06",
+      "color": "rojo",
+      "maskSHA256": "15a93491a65f173d8d3d45096ef506d2a4782645524df172402fcfd7a512a8d4",
+      "mirrorPrintROI": [
+        287,
+        273,
+        324,
+        293
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-07",
+      "color": "rojo",
+      "maskSHA256": "d40e11834caa7677536484bba0ce8a3cc610674dbc43628dca2286466cf94051",
+      "mirrorPrintROI": [
+        289,
+        274,
+        325,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-08",
+      "color": "rojo",
+      "maskSHA256": "9b55b5426d3e3184f2a8b8ae913aa9c8fd96d070e3d1768fe16a353661e4cafe",
+      "mirrorPrintROI": [
+        290,
+        274,
+        327,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-09",
+      "color": "rojo",
+      "maskSHA256": "cfa431d69cf2ecaa82bb2a345dd3f36bbe752f43af12af0a6ea7964dad8289c1",
+      "mirrorPrintROI": [
+        290,
+        274,
+        325,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-10",
+      "color": "rojo",
+      "maskSHA256": "1f9d856bad2f0cc53f42030dbf6ccb6fba06e482957bc11ac7264246efb74bed",
+      "mirrorPrintROI": [
+        285,
+        261,
+        315,
+        281
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-11",
+      "color": "rojo",
+      "maskSHA256": "3341fbd68b0793c48c763e453c0ed999d8c66c490a1d942a5bf780eed247fb47",
+      "mirrorPrintROI": [
+        285,
+        261,
+        315,
+        281
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-12",
+      "color": "rojo",
+      "maskSHA256": "e84833a315ec885c0682eb884743c704f5f2e0ea46882d2f07f68e3419f4fb85",
+      "mirrorPrintROI": [
+        290,
+        276,
+        304,
+        295
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-13",
+      "color": "rojo",
+      "maskSHA256": "490ab234d254ece94f6590a5f83b91c13bd0cc5cd803ae3ff458965cfca37f37",
+      "mirrorPrintROI": [
+        290,
+        274,
+        312,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-14",
+      "color": "rojo",
+      "maskSHA256": "b391b12d0879a16e1ffde313c23404e6ff7b43d0eff3acf9f87c5110253ecffe",
+      "mirrorPrintROI": [
+        297,
+        269,
+        329,
+        288
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-15",
+      "color": "rojo",
+      "maskSHA256": "87547d082de7f02edb22d8e9b575b7e9510d8203aa11fb363e4b6a09c5dbc2c7",
+      "mirrorPrintROI": [
+        297,
+        269,
+        329,
+        288
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "room-00",
+      "color": "rojo",
+      "maskSHA256": "8283a280d7ca82d5b093162d297f5a8fa4532133de0a6566a42694fd67f03d09",
+      "mirrorPrintROI": [
+        289,
+        293,
+        319,
+        311
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "room-01",
+      "color": "rojo",
+      "maskSHA256": "af6e7f60ae50271b6ff747e7a866b0a24491621c67c383de08134e861c65f68a",
+      "mirrorPrintROI": [
+        264,
+        286,
+        299,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "room-02",
+      "color": "rojo",
+      "maskSHA256": "7a614bbbbf349092a01d7ebb1699a562afc549e6923811ced514db2c6a716bba",
+      "mirrorPrintROI": [
+        270,
+        289,
+        304,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "room-03",
+      "color": "rojo",
+      "maskSHA256": "af04adde4914e8d67656efc023274a90a0a505b1a226eb5dcc6a5aefb15ffced",
+      "mirrorPrintROI": [
+        288,
+        312,
+        302,
+        325
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "talk-00",
+      "color": "rojo",
+      "maskSHA256": "ecbc428d63109dc680aa99a36b2dc385d6819b9ca3a9db950d16dfe9492094aa",
+      "mirrorPrintROI": [
+        295,
+        283,
+        327,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "talk-01",
+      "color": "rojo",
+      "maskSHA256": "981de6347c9bd578a55f993f2a05b07e80cd5f60b114da6756dd74ee2578da69",
+      "mirrorPrintROI": [
+        295,
+        283,
+        327,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "talk-02",
+      "color": "rojo",
+      "maskSHA256": "2fc1d9668a187f76d254751a420fa7d1e9f7cad07209c8df0ac823d0081fd40d",
+      "mirrorPrintROI": [
+        295,
+        283,
+        327,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-00",
+      "color": "azul",
+      "maskSHA256": "ecbc428d63109dc680aa99a36b2dc385d6819b9ca3a9db950d16dfe9492094aa",
+      "mirrorPrintROI": [
+        295,
+        283,
+        327,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-01",
+      "color": "azul",
+      "maskSHA256": "32725e72fe1b57d32f6d130394c93ee00c74de5dd22d2afe9e3eb748373f4b8a",
+      "mirrorPrintROI": [
+        289,
+        283,
+        318,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-02",
+      "color": "azul",
+      "maskSHA256": "fb3ee1306ca3b1f606aa1a679acc6c275db8d324e3d9538d0bb30a9a6a788242",
+      "mirrorPrintROI": [
+        292,
+        283,
+        321,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-03",
+      "color": "azul",
+      "maskSHA256": "968c15244039637ab74bd546cb0721e96b9978c50b19d3ad636cd870c64b3ffe",
+      "mirrorPrintROI": [
+        295,
+        284,
+        327,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-04",
+      "color": "azul",
+      "maskSHA256": "0da74c9c2958cc466bd20c86bfa3f4accb507e0156d5ddfb1f8d77b9bae0ac33",
+      "mirrorPrintROI": [
+        291,
+        283,
+        322,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-05",
+      "color": "azul",
+      "maskSHA256": "78d67c66c883285cfd623b9c7bbf70881e0da2ed82cce732022a66f72791e477",
+      "mirrorPrintROI": [
+        291,
+        283,
+        321,
+        301
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-06",
+      "color": "azul",
+      "maskSHA256": "a8444cc28b15ba518f276433ebb24b09ae87ddbeb4ed76ec5f937839149aed92",
+      "mirrorPrintROI": [
+        292,
+        272,
+        319,
+        290
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-07",
+      "color": "azul",
+      "maskSHA256": "16c9f75b335644bc61d2eeed0227dd55fc72be48d39a69fa6437134ead9dfa32",
+      "mirrorPrintROI": [
+        295,
+        270,
+        317,
+        287
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-08",
+      "color": "azul",
+      "maskSHA256": "909e929dbfe222c5f907080a9b2cdd23f29e6d8a375c3144605dda495546438e",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-09",
+      "color": "azul",
+      "maskSHA256": "df40765903287638929aac94501bebd2f0a4f9f88f280cd2438de0eb7e815fe5",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-10",
+      "color": "azul",
+      "maskSHA256": "5c8ecafadc5787b16bf899e371be0a2fcd3ebcf2b9fe63adfeecd791b498fb29",
+      "mirrorPrintROI": [
+        293,
+        267,
+        316,
+        281
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-11",
+      "color": "azul",
+      "maskSHA256": "ec090352f5094e457565095be53bef9a436a9ab42a6ad3d8fd162268c0f2d3c5",
+      "mirrorPrintROI": [
+        294,
+        266,
+        320,
+        283
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-12",
+      "color": "azul",
+      "maskSHA256": "1bbcd6767051e1880ae3774e69fed76cc14536bcc99745aa8e838539a9ca3e21",
+      "mirrorPrintROI": [
+        286,
+        283,
+        320,
+        299
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-13",
+      "color": "azul",
+      "maskSHA256": "a9901f346e4098d2739a5cc6a93d178d14ab1e20d261967e7fd831b403e8cdc2",
+      "mirrorPrintROI": [
+        287,
+        324,
+        317,
+        339
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-14",
+      "color": "azul",
+      "maskSHA256": "f225cec29c5e915e78f3b0b513a7f5e597568dccee5b2b32386fe5fe756261d9",
+      "mirrorPrintROI": [
+        292,
+        266,
+        321,
+        283
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-15",
+      "color": "azul",
+      "maskSHA256": "91aa77799a66816cfe790ddd3a1dbfaeff7159bd1bf55ded76b088380d3d25f3",
+      "mirrorPrintROI": [
+        271,
+        232,
+        304,
+        254
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-16",
+      "color": "azul",
+      "maskSHA256": "88c8a9d38fb8ba3acbf4e8cb135e0f802d9bb8bc803fbd4132a0eda502c40e37",
+      "mirrorPrintROI": [
+        293,
+        309,
+        319,
+        324
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-17",
+      "color": "azul",
+      "maskSHA256": "06b395e35e09d476aa794bde6a8ba70f896e23dd80adb9cc300ba2f36966f050",
+      "mirrorPrintROI": [
+        300,
+        273,
+        326,
+        291
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-18",
+      "color": "azul",
+      "maskSHA256": "0e6adf579e55e19dac8a7a39a636712efbc632e47c46b52d19d95d472894aa22",
+      "mirrorPrintROI": [
+        288,
+        268,
+        319,
+        288
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-19",
+      "color": "azul",
+      "maskSHA256": "183cdfb1ebdfcdcb7104e8e8653db60ef2626aa2a5634ddd191f04c24a16235f",
+      "mirrorPrintROI": [
+        285,
+        328,
+        313,
+        348
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-20",
+      "color": "azul",
+      "maskSHA256": "f7597250221227ca4afefdbc6e142883315430fe45f84adb024b1adaf99c2009",
+      "mirrorPrintROI": [
+        282,
+        339,
+        315,
+        358
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-21",
+      "color": "azul",
+      "maskSHA256": "9eac4d2f21bd48ab254dabe708959289322d15ff0499d00776d625bd0189e340",
+      "mirrorPrintROI": [
+        238,
+        387,
+        279,
+        414
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-22",
+      "color": "azul",
+      "maskSHA256": "a637ec52666fc518e47b1d731165a4c2a004805248ead19e868f9f56a4c1c28d",
+      "mirrorPrintROI": [
+        260,
+        397,
+        281,
+        417
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-23",
+      "color": "azul",
+      "maskSHA256": "912e69a5f6c001f5812f4871a08294096aca7bc75afd48e814ad6bbc7a3868fe",
+      "mirrorPrintROI": [
+        264,
+        403,
+        289,
+        425
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-00",
+      "color": "azul",
+      "maskSHA256": "dea65503b66a2391cf6c52997b7143b8e9917cadf622a20755a7b4dba743e201",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-01",
+      "color": "azul",
+      "maskSHA256": "748fcd2cc6c323ad0972b81d0d1ba3e3d5ff49302a65bec6773885bfb6811d3a",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-02",
+      "color": "azul",
+      "maskSHA256": "3f653e6b113b3b30ea254f03f9f9c4c70aaeb2df524d58f7ad9f41b9fa9f7fdf",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-03",
+      "color": "azul",
+      "maskSHA256": "4bd0d8747f7d1a948abe3ce056e2b50cdab9a68fc0c9c8305420041bfcef521a",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-04",
+      "color": "azul",
+      "maskSHA256": "c9758f7506189ac6b234262a44468dc05852b97c39446ad45d26c19974e81701",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-05",
+      "color": "azul",
+      "maskSHA256": "3d86d655dcb5ec71ba908130d3d63afc95b2702aa0e8d5f642fdd3f18dbe7013",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-06",
+      "color": "azul",
+      "maskSHA256": "dd46bdb682a7e956dd81393bd9c52a1dad1f0bf3b88ec49879c315377a4edcd6",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-07",
+      "color": "azul",
+      "maskSHA256": "223260fb8e2611dc63ad7e23adf8682efb5e6cfbd8a08655cd76e19174d6e313",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-08",
+      "color": "azul",
+      "maskSHA256": "5066a2cff00f775a41854eb03d0c0313c6f0a05bc59fa61ca9438ecd531021ac",
+      "mirrorPrintROI": [
+        286,
+        273,
+        314,
+        293
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-09",
+      "color": "azul",
+      "maskSHA256": "9e71abd0e330270f4eb71403e05fb319ded1613dd83b8d08edcd6fcfcc61c691",
+      "mirrorPrintROI": [
+        286,
+        274,
+        313,
+        289
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-10",
+      "color": "azul",
+      "maskSHA256": "0af5a956956b3792ea3d4159f3011916eec3f99c6bb6d2f4e1ab62d4dde62d8b",
+      "mirrorPrintROI": [
+        284,
+        274,
+        314,
+        289
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-11",
+      "color": "azul",
+      "maskSHA256": "bb272da9360dee7239abcd3b0bfae1d430ff61e528aebf816376e7465e5727a5",
+      "mirrorPrintROI": [
+        284,
+        273,
+        314,
+        289
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-12",
+      "color": "azul",
+      "maskSHA256": "57322215b78be9892689281e977bf04786ff0c3cf74607396edfa0afea941455",
+      "mirrorPrintROI": [
+        291,
+        277,
+        314,
+        298
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-13",
+      "color": "azul",
+      "maskSHA256": "3a668ac6e9eeaee9c389840f01e40fdfd472e55758c1a7a0d9fa623bdb7668ad",
+      "mirrorPrintROI": [
+        288,
+        274,
+        315,
+        298
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-14",
+      "color": "azul",
+      "maskSHA256": "26268f1f6638b89b97b6569fbdff2c073a5e00ae04fa9cbe0c75d2414d9f024b",
+      "mirrorPrintROI": [
+        280,
+        272,
+        312,
+        296
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-15",
+      "color": "azul",
+      "maskSHA256": "ca0540be65a322dbdc9bb87260902c456754ff63d30f3eef73ac792a1354397c",
+      "mirrorPrintROI": [
+        292,
+        276,
+        315,
+        295
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-16",
+      "color": "azul",
+      "maskSHA256": "34cd5c411014df5b19ac645410590caba0907159c477cf303d9d392cd6e91190",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-17",
+      "color": "azul",
+      "maskSHA256": "60881b6ad82f29c1c64a5faba36b4c30a2cf247a454eba110c89c60ed2452978",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-18",
+      "color": "azul",
+      "maskSHA256": "dd1a76628adba066f152d6ddcd9d96e11891d3a45d21915c89849a8e152ed865",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-19",
+      "color": "azul",
+      "maskSHA256": "3104094c68150bd1cd3eb728f3e058c43631be9bbe02b2c4ce1f198efe1067c6",
+      "mirrorPrintROI": [
+        294,
+        273,
+        313,
+        287
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-00",
+      "color": "azul",
+      "maskSHA256": "b656c4af85b28738a5a9ba49aff4d80c5eae4310f86b4cd9d3c6049030523202",
+      "mirrorPrintROI": [
+        301,
+        277,
+        331,
+        297
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-01",
+      "color": "azul",
+      "maskSHA256": "a7f8ad583111d8842ee4d4c8c0692de96ea04e489f67d1a664f130da45ebab58",
+      "mirrorPrintROI": [
+        290,
+        282,
+        322,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-02",
+      "color": "azul",
+      "maskSHA256": "24f1a5a6b390e1f40715f354e544c5aeba922bc003634d02889b566425a6a5e0",
+      "mirrorPrintROI": [
+        285,
+        276,
+        316,
+        296
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-03",
+      "color": "azul",
+      "maskSHA256": "61c3570821da68ac3abbe43a7f3f4f9c69e0df60f447be117a53319fd7f3b1f6",
+      "mirrorPrintROI": [
+        285,
+        276,
+        315,
+        296
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-04",
+      "color": "azul",
+      "maskSHA256": "23940aa943902a80668ae55c7069cb9de56a008025c04996e7ab6d84446a66e1",
+      "mirrorPrintROI": [
+        290,
+        274,
+        327,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-05",
+      "color": "azul",
+      "maskSHA256": "8358086fe73dcdf4e4d0040927361772f60c96204a114e14d141b62980d4c36c",
+      "mirrorPrintROI": [
+        290,
+        274,
+        325,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-06",
+      "color": "azul",
+      "maskSHA256": "15a93491a65f173d8d3d45096ef506d2a4782645524df172402fcfd7a512a8d4",
+      "mirrorPrintROI": [
+        287,
+        273,
+        324,
+        293
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-07",
+      "color": "azul",
+      "maskSHA256": "d40e11834caa7677536484bba0ce8a3cc610674dbc43628dca2286466cf94051",
+      "mirrorPrintROI": [
+        289,
+        274,
+        325,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-08",
+      "color": "azul",
+      "maskSHA256": "9b55b5426d3e3184f2a8b8ae913aa9c8fd96d070e3d1768fe16a353661e4cafe",
+      "mirrorPrintROI": [
+        290,
+        274,
+        327,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-09",
+      "color": "azul",
+      "maskSHA256": "cfa431d69cf2ecaa82bb2a345dd3f36bbe752f43af12af0a6ea7964dad8289c1",
+      "mirrorPrintROI": [
+        290,
+        274,
+        325,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-10",
+      "color": "azul",
+      "maskSHA256": "1f9d856bad2f0cc53f42030dbf6ccb6fba06e482957bc11ac7264246efb74bed",
+      "mirrorPrintROI": [
+        285,
+        261,
+        315,
+        281
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-11",
+      "color": "azul",
+      "maskSHA256": "3341fbd68b0793c48c763e453c0ed999d8c66c490a1d942a5bf780eed247fb47",
+      "mirrorPrintROI": [
+        285,
+        261,
+        315,
+        281
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-12",
+      "color": "azul",
+      "maskSHA256": "e84833a315ec885c0682eb884743c704f5f2e0ea46882d2f07f68e3419f4fb85",
+      "mirrorPrintROI": [
+        290,
+        276,
+        304,
+        295
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-13",
+      "color": "azul",
+      "maskSHA256": "490ab234d254ece94f6590a5f83b91c13bd0cc5cd803ae3ff458965cfca37f37",
+      "mirrorPrintROI": [
+        290,
+        274,
+        312,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-14",
+      "color": "azul",
+      "maskSHA256": "b391b12d0879a16e1ffde313c23404e6ff7b43d0eff3acf9f87c5110253ecffe",
+      "mirrorPrintROI": [
+        297,
+        269,
+        329,
+        288
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-15",
+      "color": "azul",
+      "maskSHA256": "87547d082de7f02edb22d8e9b575b7e9510d8203aa11fb363e4b6a09c5dbc2c7",
+      "mirrorPrintROI": [
+        297,
+        269,
+        329,
+        288
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "room-00",
+      "color": "azul",
+      "maskSHA256": "8283a280d7ca82d5b093162d297f5a8fa4532133de0a6566a42694fd67f03d09",
+      "mirrorPrintROI": [
+        289,
+        293,
+        319,
+        311
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "room-01",
+      "color": "azul",
+      "maskSHA256": "af6e7f60ae50271b6ff747e7a866b0a24491621c67c383de08134e861c65f68a",
+      "mirrorPrintROI": [
+        264,
+        286,
+        299,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "room-02",
+      "color": "azul",
+      "maskSHA256": "7a614bbbbf349092a01d7ebb1699a562afc549e6923811ced514db2c6a716bba",
+      "mirrorPrintROI": [
+        270,
+        289,
+        304,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "room-03",
+      "color": "azul",
+      "maskSHA256": "af04adde4914e8d67656efc023274a90a0a505b1a226eb5dcc6a5aefb15ffced",
+      "mirrorPrintROI": [
+        288,
+        312,
+        302,
+        325
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "talk-00",
+      "color": "azul",
+      "maskSHA256": "ecbc428d63109dc680aa99a36b2dc385d6819b9ca3a9db950d16dfe9492094aa",
+      "mirrorPrintROI": [
+        295,
+        283,
+        327,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "talk-01",
+      "color": "azul",
+      "maskSHA256": "981de6347c9bd578a55f993f2a05b07e80cd5f60b114da6756dd74ee2578da69",
+      "mirrorPrintROI": [
+        295,
+        283,
+        327,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "talk-02",
+      "color": "azul",
+      "maskSHA256": "2fc1d9668a187f76d254751a420fa7d1e9f7cad07209c8df0ac823d0081fd40d",
+      "mirrorPrintROI": [
+        295,
+        283,
+        327,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-00",
+      "color": "oliva",
+      "maskSHA256": "ecbc428d63109dc680aa99a36b2dc385d6819b9ca3a9db950d16dfe9492094aa",
+      "mirrorPrintROI": [
+        295,
+        283,
+        327,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-01",
+      "color": "oliva",
+      "maskSHA256": "32725e72fe1b57d32f6d130394c93ee00c74de5dd22d2afe9e3eb748373f4b8a",
+      "mirrorPrintROI": [
+        289,
+        283,
+        318,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-02",
+      "color": "oliva",
+      "maskSHA256": "fb3ee1306ca3b1f606aa1a679acc6c275db8d324e3d9538d0bb30a9a6a788242",
+      "mirrorPrintROI": [
+        292,
+        283,
+        321,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-03",
+      "color": "oliva",
+      "maskSHA256": "968c15244039637ab74bd546cb0721e96b9978c50b19d3ad636cd870c64b3ffe",
+      "mirrorPrintROI": [
+        295,
+        284,
+        327,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-04",
+      "color": "oliva",
+      "maskSHA256": "0da74c9c2958cc466bd20c86bfa3f4accb507e0156d5ddfb1f8d77b9bae0ac33",
+      "mirrorPrintROI": [
+        291,
+        283,
+        322,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-05",
+      "color": "oliva",
+      "maskSHA256": "78d67c66c883285cfd623b9c7bbf70881e0da2ed82cce732022a66f72791e477",
+      "mirrorPrintROI": [
+        291,
+        283,
+        321,
+        301
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-06",
+      "color": "oliva",
+      "maskSHA256": "a8444cc28b15ba518f276433ebb24b09ae87ddbeb4ed76ec5f937839149aed92",
+      "mirrorPrintROI": [
+        292,
+        272,
+        319,
+        290
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-07",
+      "color": "oliva",
+      "maskSHA256": "16c9f75b335644bc61d2eeed0227dd55fc72be48d39a69fa6437134ead9dfa32",
+      "mirrorPrintROI": [
+        295,
+        270,
+        317,
+        287
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-08",
+      "color": "oliva",
+      "maskSHA256": "909e929dbfe222c5f907080a9b2cdd23f29e6d8a375c3144605dda495546438e",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-09",
+      "color": "oliva",
+      "maskSHA256": "df40765903287638929aac94501bebd2f0a4f9f88f280cd2438de0eb7e815fe5",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-10",
+      "color": "oliva",
+      "maskSHA256": "5c8ecafadc5787b16bf899e371be0a2fcd3ebcf2b9fe63adfeecd791b498fb29",
+      "mirrorPrintROI": [
+        293,
+        267,
+        316,
+        281
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-11",
+      "color": "oliva",
+      "maskSHA256": "ec090352f5094e457565095be53bef9a436a9ab42a6ad3d8fd162268c0f2d3c5",
+      "mirrorPrintROI": [
+        294,
+        266,
+        320,
+        283
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-12",
+      "color": "oliva",
+      "maskSHA256": "1bbcd6767051e1880ae3774e69fed76cc14536bcc99745aa8e838539a9ca3e21",
+      "mirrorPrintROI": [
+        286,
+        283,
+        320,
+        299
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-13",
+      "color": "oliva",
+      "maskSHA256": "a9901f346e4098d2739a5cc6a93d178d14ab1e20d261967e7fd831b403e8cdc2",
+      "mirrorPrintROI": [
+        287,
+        324,
+        317,
+        339
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-14",
+      "color": "oliva",
+      "maskSHA256": "f225cec29c5e915e78f3b0b513a7f5e597568dccee5b2b32386fe5fe756261d9",
+      "mirrorPrintROI": [
+        292,
+        266,
+        321,
+        283
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-15",
+      "color": "oliva",
+      "maskSHA256": "91aa77799a66816cfe790ddd3a1dbfaeff7159bd1bf55ded76b088380d3d25f3",
+      "mirrorPrintROI": [
+        271,
+        232,
+        304,
+        254
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-16",
+      "color": "oliva",
+      "maskSHA256": "88c8a9d38fb8ba3acbf4e8cb135e0f802d9bb8bc803fbd4132a0eda502c40e37",
+      "mirrorPrintROI": [
+        293,
+        309,
+        319,
+        324
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-17",
+      "color": "oliva",
+      "maskSHA256": "06b395e35e09d476aa794bde6a8ba70f896e23dd80adb9cc300ba2f36966f050",
+      "mirrorPrintROI": [
+        300,
+        273,
+        326,
+        291
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-18",
+      "color": "oliva",
+      "maskSHA256": "0e6adf579e55e19dac8a7a39a636712efbc632e47c46b52d19d95d472894aa22",
+      "mirrorPrintROI": [
+        288,
+        268,
+        319,
+        288
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-19",
+      "color": "oliva",
+      "maskSHA256": "183cdfb1ebdfcdcb7104e8e8653db60ef2626aa2a5634ddd191f04c24a16235f",
+      "mirrorPrintROI": [
+        285,
+        328,
+        313,
+        348
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-20",
+      "color": "oliva",
+      "maskSHA256": "f7597250221227ca4afefdbc6e142883315430fe45f84adb024b1adaf99c2009",
+      "mirrorPrintROI": [
+        282,
+        339,
+        315,
+        358
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-21",
+      "color": "oliva",
+      "maskSHA256": "9eac4d2f21bd48ab254dabe708959289322d15ff0499d00776d625bd0189e340",
+      "mirrorPrintROI": [
+        238,
+        387,
+        279,
+        414
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-22",
+      "color": "oliva",
+      "maskSHA256": "a637ec52666fc518e47b1d731165a4c2a004805248ead19e868f9f56a4c1c28d",
+      "mirrorPrintROI": [
+        260,
+        397,
+        281,
+        417
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-23",
+      "color": "oliva",
+      "maskSHA256": "912e69a5f6c001f5812f4871a08294096aca7bc75afd48e814ad6bbc7a3868fe",
+      "mirrorPrintROI": [
+        264,
+        403,
+        289,
+        425
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-00",
+      "color": "oliva",
+      "maskSHA256": "dea65503b66a2391cf6c52997b7143b8e9917cadf622a20755a7b4dba743e201",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-01",
+      "color": "oliva",
+      "maskSHA256": "748fcd2cc6c323ad0972b81d0d1ba3e3d5ff49302a65bec6773885bfb6811d3a",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-02",
+      "color": "oliva",
+      "maskSHA256": "3f653e6b113b3b30ea254f03f9f9c4c70aaeb2df524d58f7ad9f41b9fa9f7fdf",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-03",
+      "color": "oliva",
+      "maskSHA256": "4bd0d8747f7d1a948abe3ce056e2b50cdab9a68fc0c9c8305420041bfcef521a",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-04",
+      "color": "oliva",
+      "maskSHA256": "c9758f7506189ac6b234262a44468dc05852b97c39446ad45d26c19974e81701",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-05",
+      "color": "oliva",
+      "maskSHA256": "3d86d655dcb5ec71ba908130d3d63afc95b2702aa0e8d5f642fdd3f18dbe7013",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-06",
+      "color": "oliva",
+      "maskSHA256": "dd46bdb682a7e956dd81393bd9c52a1dad1f0bf3b88ec49879c315377a4edcd6",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-07",
+      "color": "oliva",
+      "maskSHA256": "223260fb8e2611dc63ad7e23adf8682efb5e6cfbd8a08655cd76e19174d6e313",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-08",
+      "color": "oliva",
+      "maskSHA256": "5066a2cff00f775a41854eb03d0c0313c6f0a05bc59fa61ca9438ecd531021ac",
+      "mirrorPrintROI": [
+        286,
+        273,
+        314,
+        293
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-09",
+      "color": "oliva",
+      "maskSHA256": "9e71abd0e330270f4eb71403e05fb319ded1613dd83b8d08edcd6fcfcc61c691",
+      "mirrorPrintROI": [
+        286,
+        274,
+        313,
+        289
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-10",
+      "color": "oliva",
+      "maskSHA256": "0af5a956956b3792ea3d4159f3011916eec3f99c6bb6d2f4e1ab62d4dde62d8b",
+      "mirrorPrintROI": [
+        284,
+        274,
+        314,
+        289
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-11",
+      "color": "oliva",
+      "maskSHA256": "bb272da9360dee7239abcd3b0bfae1d430ff61e528aebf816376e7465e5727a5",
+      "mirrorPrintROI": [
+        284,
+        273,
+        314,
+        289
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-12",
+      "color": "oliva",
+      "maskSHA256": "57322215b78be9892689281e977bf04786ff0c3cf74607396edfa0afea941455",
+      "mirrorPrintROI": [
+        291,
+        277,
+        314,
+        298
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-13",
+      "color": "oliva",
+      "maskSHA256": "3a668ac6e9eeaee9c389840f01e40fdfd472e55758c1a7a0d9fa623bdb7668ad",
+      "mirrorPrintROI": [
+        288,
+        274,
+        315,
+        298
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-14",
+      "color": "oliva",
+      "maskSHA256": "26268f1f6638b89b97b6569fbdff2c073a5e00ae04fa9cbe0c75d2414d9f024b",
+      "mirrorPrintROI": [
+        280,
+        272,
+        312,
+        296
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-15",
+      "color": "oliva",
+      "maskSHA256": "ca0540be65a322dbdc9bb87260902c456754ff63d30f3eef73ac792a1354397c",
+      "mirrorPrintROI": [
+        292,
+        276,
+        315,
+        295
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-16",
+      "color": "oliva",
+      "maskSHA256": "34cd5c411014df5b19ac645410590caba0907159c477cf303d9d392cd6e91190",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-17",
+      "color": "oliva",
+      "maskSHA256": "60881b6ad82f29c1c64a5faba36b4c30a2cf247a454eba110c89c60ed2452978",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-18",
+      "color": "oliva",
+      "maskSHA256": "dd1a76628adba066f152d6ddcd9d96e11891d3a45d21915c89849a8e152ed865",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-19",
+      "color": "oliva",
+      "maskSHA256": "3104094c68150bd1cd3eb728f3e058c43631be9bbe02b2c4ce1f198efe1067c6",
+      "mirrorPrintROI": [
+        294,
+        273,
+        313,
+        287
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-00",
+      "color": "oliva",
+      "maskSHA256": "b656c4af85b28738a5a9ba49aff4d80c5eae4310f86b4cd9d3c6049030523202",
+      "mirrorPrintROI": [
+        301,
+        277,
+        331,
+        297
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-01",
+      "color": "oliva",
+      "maskSHA256": "a7f8ad583111d8842ee4d4c8c0692de96ea04e489f67d1a664f130da45ebab58",
+      "mirrorPrintROI": [
+        290,
+        282,
+        322,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-02",
+      "color": "oliva",
+      "maskSHA256": "24f1a5a6b390e1f40715f354e544c5aeba922bc003634d02889b566425a6a5e0",
+      "mirrorPrintROI": [
+        285,
+        276,
+        316,
+        296
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-03",
+      "color": "oliva",
+      "maskSHA256": "61c3570821da68ac3abbe43a7f3f4f9c69e0df60f447be117a53319fd7f3b1f6",
+      "mirrorPrintROI": [
+        285,
+        276,
+        315,
+        296
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-04",
+      "color": "oliva",
+      "maskSHA256": "23940aa943902a80668ae55c7069cb9de56a008025c04996e7ab6d84446a66e1",
+      "mirrorPrintROI": [
+        290,
+        274,
+        327,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-05",
+      "color": "oliva",
+      "maskSHA256": "8358086fe73dcdf4e4d0040927361772f60c96204a114e14d141b62980d4c36c",
+      "mirrorPrintROI": [
+        290,
+        274,
+        325,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-06",
+      "color": "oliva",
+      "maskSHA256": "15a93491a65f173d8d3d45096ef506d2a4782645524df172402fcfd7a512a8d4",
+      "mirrorPrintROI": [
+        287,
+        273,
+        324,
+        293
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-07",
+      "color": "oliva",
+      "maskSHA256": "d40e11834caa7677536484bba0ce8a3cc610674dbc43628dca2286466cf94051",
+      "mirrorPrintROI": [
+        289,
+        274,
+        325,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-08",
+      "color": "oliva",
+      "maskSHA256": "9b55b5426d3e3184f2a8b8ae913aa9c8fd96d070e3d1768fe16a353661e4cafe",
+      "mirrorPrintROI": [
+        290,
+        274,
+        327,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-09",
+      "color": "oliva",
+      "maskSHA256": "cfa431d69cf2ecaa82bb2a345dd3f36bbe752f43af12af0a6ea7964dad8289c1",
+      "mirrorPrintROI": [
+        290,
+        274,
+        325,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-10",
+      "color": "oliva",
+      "maskSHA256": "1f9d856bad2f0cc53f42030dbf6ccb6fba06e482957bc11ac7264246efb74bed",
+      "mirrorPrintROI": [
+        285,
+        261,
+        315,
+        281
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-11",
+      "color": "oliva",
+      "maskSHA256": "3341fbd68b0793c48c763e453c0ed999d8c66c490a1d942a5bf780eed247fb47",
+      "mirrorPrintROI": [
+        285,
+        261,
+        315,
+        281
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-12",
+      "color": "oliva",
+      "maskSHA256": "e84833a315ec885c0682eb884743c704f5f2e0ea46882d2f07f68e3419f4fb85",
+      "mirrorPrintROI": [
+        290,
+        276,
+        304,
+        295
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-13",
+      "color": "oliva",
+      "maskSHA256": "490ab234d254ece94f6590a5f83b91c13bd0cc5cd803ae3ff458965cfca37f37",
+      "mirrorPrintROI": [
+        290,
+        274,
+        312,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-14",
+      "color": "oliva",
+      "maskSHA256": "b391b12d0879a16e1ffde313c23404e6ff7b43d0eff3acf9f87c5110253ecffe",
+      "mirrorPrintROI": [
+        297,
+        269,
+        329,
+        288
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-15",
+      "color": "oliva",
+      "maskSHA256": "87547d082de7f02edb22d8e9b575b7e9510d8203aa11fb363e4b6a09c5dbc2c7",
+      "mirrorPrintROI": [
+        297,
+        269,
+        329,
+        288
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "room-00",
+      "color": "oliva",
+      "maskSHA256": "8283a280d7ca82d5b093162d297f5a8fa4532133de0a6566a42694fd67f03d09",
+      "mirrorPrintROI": [
+        289,
+        293,
+        319,
+        311
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "room-01",
+      "color": "oliva",
+      "maskSHA256": "af6e7f60ae50271b6ff747e7a866b0a24491621c67c383de08134e861c65f68a",
+      "mirrorPrintROI": [
+        264,
+        286,
+        299,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "room-02",
+      "color": "oliva",
+      "maskSHA256": "7a614bbbbf349092a01d7ebb1699a562afc549e6923811ced514db2c6a716bba",
+      "mirrorPrintROI": [
+        270,
+        289,
+        304,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "room-03",
+      "color": "oliva",
+      "maskSHA256": "af04adde4914e8d67656efc023274a90a0a505b1a226eb5dcc6a5aefb15ffced",
+      "mirrorPrintROI": [
+        288,
+        312,
+        302,
+        325
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "talk-00",
+      "color": "oliva",
+      "maskSHA256": "ecbc428d63109dc680aa99a36b2dc385d6819b9ca3a9db950d16dfe9492094aa",
+      "mirrorPrintROI": [
+        295,
+        283,
+        327,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "talk-01",
+      "color": "oliva",
+      "maskSHA256": "981de6347c9bd578a55f993f2a05b07e80cd5f60b114da6756dd74ee2578da69",
+      "mirrorPrintROI": [
+        295,
+        283,
+        327,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "talk-02",
+      "color": "oliva",
+      "maskSHA256": "2fc1d9668a187f76d254751a420fa7d1e9f7cad07209c8df0ac823d0081fd40d",
+      "mirrorPrintROI": [
+        295,
+        283,
+        327,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-00",
+      "color": "morado",
+      "maskSHA256": "ecbc428d63109dc680aa99a36b2dc385d6819b9ca3a9db950d16dfe9492094aa",
+      "mirrorPrintROI": [
+        295,
+        283,
+        327,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-01",
+      "color": "morado",
+      "maskSHA256": "32725e72fe1b57d32f6d130394c93ee00c74de5dd22d2afe9e3eb748373f4b8a",
+      "mirrorPrintROI": [
+        289,
+        283,
+        318,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-02",
+      "color": "morado",
+      "maskSHA256": "fb3ee1306ca3b1f606aa1a679acc6c275db8d324e3d9538d0bb30a9a6a788242",
+      "mirrorPrintROI": [
+        292,
+        283,
+        321,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-03",
+      "color": "morado",
+      "maskSHA256": "968c15244039637ab74bd546cb0721e96b9978c50b19d3ad636cd870c64b3ffe",
+      "mirrorPrintROI": [
+        295,
+        284,
+        327,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-04",
+      "color": "morado",
+      "maskSHA256": "0da74c9c2958cc466bd20c86bfa3f4accb507e0156d5ddfb1f8d77b9bae0ac33",
+      "mirrorPrintROI": [
+        291,
+        283,
+        322,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-05",
+      "color": "morado",
+      "maskSHA256": "78d67c66c883285cfd623b9c7bbf70881e0da2ed82cce732022a66f72791e477",
+      "mirrorPrintROI": [
+        291,
+        283,
+        321,
+        301
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-06",
+      "color": "morado",
+      "maskSHA256": "a8444cc28b15ba518f276433ebb24b09ae87ddbeb4ed76ec5f937839149aed92",
+      "mirrorPrintROI": [
+        292,
+        272,
+        319,
+        290
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-07",
+      "color": "morado",
+      "maskSHA256": "16c9f75b335644bc61d2eeed0227dd55fc72be48d39a69fa6437134ead9dfa32",
+      "mirrorPrintROI": [
+        295,
+        270,
+        317,
+        287
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-08",
+      "color": "morado",
+      "maskSHA256": "909e929dbfe222c5f907080a9b2cdd23f29e6d8a375c3144605dda495546438e",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-09",
+      "color": "morado",
+      "maskSHA256": "df40765903287638929aac94501bebd2f0a4f9f88f280cd2438de0eb7e815fe5",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-10",
+      "color": "morado",
+      "maskSHA256": "5c8ecafadc5787b16bf899e371be0a2fcd3ebcf2b9fe63adfeecd791b498fb29",
+      "mirrorPrintROI": [
+        293,
+        267,
+        316,
+        281
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-11",
+      "color": "morado",
+      "maskSHA256": "ec090352f5094e457565095be53bef9a436a9ab42a6ad3d8fd162268c0f2d3c5",
+      "mirrorPrintROI": [
+        294,
+        266,
+        320,
+        283
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-12",
+      "color": "morado",
+      "maskSHA256": "1bbcd6767051e1880ae3774e69fed76cc14536bcc99745aa8e838539a9ca3e21",
+      "mirrorPrintROI": [
+        286,
+        283,
+        320,
+        299
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-13",
+      "color": "morado",
+      "maskSHA256": "a9901f346e4098d2739a5cc6a93d178d14ab1e20d261967e7fd831b403e8cdc2",
+      "mirrorPrintROI": [
+        287,
+        324,
+        317,
+        339
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-14",
+      "color": "morado",
+      "maskSHA256": "f225cec29c5e915e78f3b0b513a7f5e597568dccee5b2b32386fe5fe756261d9",
+      "mirrorPrintROI": [
+        292,
+        266,
+        321,
+        283
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-15",
+      "color": "morado",
+      "maskSHA256": "91aa77799a66816cfe790ddd3a1dbfaeff7159bd1bf55ded76b088380d3d25f3",
+      "mirrorPrintROI": [
+        271,
+        232,
+        304,
+        254
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-16",
+      "color": "morado",
+      "maskSHA256": "88c8a9d38fb8ba3acbf4e8cb135e0f802d9bb8bc803fbd4132a0eda502c40e37",
+      "mirrorPrintROI": [
+        293,
+        309,
+        319,
+        324
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-17",
+      "color": "morado",
+      "maskSHA256": "06b395e35e09d476aa794bde6a8ba70f896e23dd80adb9cc300ba2f36966f050",
+      "mirrorPrintROI": [
+        300,
+        273,
+        326,
+        291
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-18",
+      "color": "morado",
+      "maskSHA256": "0e6adf579e55e19dac8a7a39a636712efbc632e47c46b52d19d95d472894aa22",
+      "mirrorPrintROI": [
+        288,
+        268,
+        319,
+        288
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-19",
+      "color": "morado",
+      "maskSHA256": "183cdfb1ebdfcdcb7104e8e8653db60ef2626aa2a5634ddd191f04c24a16235f",
+      "mirrorPrintROI": [
+        285,
+        328,
+        313,
+        348
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-20",
+      "color": "morado",
+      "maskSHA256": "f7597250221227ca4afefdbc6e142883315430fe45f84adb024b1adaf99c2009",
+      "mirrorPrintROI": [
+        282,
+        339,
+        315,
+        358
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-21",
+      "color": "morado",
+      "maskSHA256": "9eac4d2f21bd48ab254dabe708959289322d15ff0499d00776d625bd0189e340",
+      "mirrorPrintROI": [
+        238,
+        387,
+        279,
+        414
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-22",
+      "color": "morado",
+      "maskSHA256": "a637ec52666fc518e47b1d731165a4c2a004805248ead19e868f9f56a4c1c28d",
+      "mirrorPrintROI": [
+        260,
+        397,
+        281,
+        417
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "base-23",
+      "color": "morado",
+      "maskSHA256": "912e69a5f6c001f5812f4871a08294096aca7bc75afd48e814ad6bbc7a3868fe",
+      "mirrorPrintROI": [
+        264,
+        403,
+        289,
+        425
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-00",
+      "color": "morado",
+      "maskSHA256": "dea65503b66a2391cf6c52997b7143b8e9917cadf622a20755a7b4dba743e201",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-01",
+      "color": "morado",
+      "maskSHA256": "748fcd2cc6c323ad0972b81d0d1ba3e3d5ff49302a65bec6773885bfb6811d3a",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-02",
+      "color": "morado",
+      "maskSHA256": "3f653e6b113b3b30ea254f03f9f9c4c70aaeb2df524d58f7ad9f41b9fa9f7fdf",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-03",
+      "color": "morado",
+      "maskSHA256": "4bd0d8747f7d1a948abe3ce056e2b50cdab9a68fc0c9c8305420041bfcef521a",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-04",
+      "color": "morado",
+      "maskSHA256": "c9758f7506189ac6b234262a44468dc05852b97c39446ad45d26c19974e81701",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-05",
+      "color": "morado",
+      "maskSHA256": "3d86d655dcb5ec71ba908130d3d63afc95b2702aa0e8d5f642fdd3f18dbe7013",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-06",
+      "color": "morado",
+      "maskSHA256": "dd46bdb682a7e956dd81393bd9c52a1dad1f0bf3b88ec49879c315377a4edcd6",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-07",
+      "color": "morado",
+      "maskSHA256": "223260fb8e2611dc63ad7e23adf8682efb5e6cfbd8a08655cd76e19174d6e313",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-08",
+      "color": "morado",
+      "maskSHA256": "5066a2cff00f775a41854eb03d0c0313c6f0a05bc59fa61ca9438ecd531021ac",
+      "mirrorPrintROI": [
+        286,
+        273,
+        314,
+        293
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-09",
+      "color": "morado",
+      "maskSHA256": "9e71abd0e330270f4eb71403e05fb319ded1613dd83b8d08edcd6fcfcc61c691",
+      "mirrorPrintROI": [
+        286,
+        274,
+        313,
+        289
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-10",
+      "color": "morado",
+      "maskSHA256": "0af5a956956b3792ea3d4159f3011916eec3f99c6bb6d2f4e1ab62d4dde62d8b",
+      "mirrorPrintROI": [
+        284,
+        274,
+        314,
+        289
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-11",
+      "color": "morado",
+      "maskSHA256": "bb272da9360dee7239abcd3b0bfae1d430ff61e528aebf816376e7465e5727a5",
+      "mirrorPrintROI": [
+        284,
+        273,
+        314,
+        289
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-12",
+      "color": "morado",
+      "maskSHA256": "57322215b78be9892689281e977bf04786ff0c3cf74607396edfa0afea941455",
+      "mirrorPrintROI": [
+        291,
+        277,
+        314,
+        298
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-13",
+      "color": "morado",
+      "maskSHA256": "3a668ac6e9eeaee9c389840f01e40fdfd472e55758c1a7a0d9fa623bdb7668ad",
+      "mirrorPrintROI": [
+        288,
+        274,
+        315,
+        298
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-14",
+      "color": "morado",
+      "maskSHA256": "26268f1f6638b89b97b6569fbdff2c073a5e00ae04fa9cbe0c75d2414d9f024b",
+      "mirrorPrintROI": [
+        280,
+        272,
+        312,
+        296
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-15",
+      "color": "morado",
+      "maskSHA256": "ca0540be65a322dbdc9bb87260902c456754ff63d30f3eef73ac792a1354397c",
+      "mirrorPrintROI": [
+        292,
+        276,
+        315,
+        295
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-16",
+      "color": "morado",
+      "maskSHA256": "34cd5c411014df5b19ac645410590caba0907159c477cf303d9d392cd6e91190",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-17",
+      "color": "morado",
+      "maskSHA256": "60881b6ad82f29c1c64a5faba36b4c30a2cf247a454eba110c89c60ed2452978",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-18",
+      "color": "morado",
+      "maskSHA256": "dd1a76628adba066f152d6ddcd9d96e11891d3a45d21915c89849a8e152ed865",
+      "mirrorPrintROI": null,
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "directional-19",
+      "color": "morado",
+      "maskSHA256": "3104094c68150bd1cd3eb728f3e058c43631be9bbe02b2c4ce1f198efe1067c6",
+      "mirrorPrintROI": [
+        294,
+        273,
+        313,
+        287
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-00",
+      "color": "morado",
+      "maskSHA256": "b656c4af85b28738a5a9ba49aff4d80c5eae4310f86b4cd9d3c6049030523202",
+      "mirrorPrintROI": [
+        301,
+        277,
+        331,
+        297
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-01",
+      "color": "morado",
+      "maskSHA256": "a7f8ad583111d8842ee4d4c8c0692de96ea04e489f67d1a664f130da45ebab58",
+      "mirrorPrintROI": [
+        290,
+        282,
+        322,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-02",
+      "color": "morado",
+      "maskSHA256": "24f1a5a6b390e1f40715f354e544c5aeba922bc003634d02889b566425a6a5e0",
+      "mirrorPrintROI": [
+        285,
+        276,
+        316,
+        296
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-03",
+      "color": "morado",
+      "maskSHA256": "61c3570821da68ac3abbe43a7f3f4f9c69e0df60f447be117a53319fd7f3b1f6",
+      "mirrorPrintROI": [
+        285,
+        276,
+        315,
+        296
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-04",
+      "color": "morado",
+      "maskSHA256": "23940aa943902a80668ae55c7069cb9de56a008025c04996e7ab6d84446a66e1",
+      "mirrorPrintROI": [
+        290,
+        274,
+        327,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-05",
+      "color": "morado",
+      "maskSHA256": "8358086fe73dcdf4e4d0040927361772f60c96204a114e14d141b62980d4c36c",
+      "mirrorPrintROI": [
+        290,
+        274,
+        325,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-06",
+      "color": "morado",
+      "maskSHA256": "15a93491a65f173d8d3d45096ef506d2a4782645524df172402fcfd7a512a8d4",
+      "mirrorPrintROI": [
+        287,
+        273,
+        324,
+        293
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-07",
+      "color": "morado",
+      "maskSHA256": "d40e11834caa7677536484bba0ce8a3cc610674dbc43628dca2286466cf94051",
+      "mirrorPrintROI": [
+        289,
+        274,
+        325,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-08",
+      "color": "morado",
+      "maskSHA256": "9b55b5426d3e3184f2a8b8ae913aa9c8fd96d070e3d1768fe16a353661e4cafe",
+      "mirrorPrintROI": [
+        290,
+        274,
+        327,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-09",
+      "color": "morado",
+      "maskSHA256": "cfa431d69cf2ecaa82bb2a345dd3f36bbe752f43af12af0a6ea7964dad8289c1",
+      "mirrorPrintROI": [
+        290,
+        274,
+        325,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-10",
+      "color": "morado",
+      "maskSHA256": "1f9d856bad2f0cc53f42030dbf6ccb6fba06e482957bc11ac7264246efb74bed",
+      "mirrorPrintROI": [
+        285,
+        261,
+        315,
+        281
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-11",
+      "color": "morado",
+      "maskSHA256": "3341fbd68b0793c48c763e453c0ed999d8c66c490a1d942a5bf780eed247fb47",
+      "mirrorPrintROI": [
+        285,
+        261,
+        315,
+        281
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-12",
+      "color": "morado",
+      "maskSHA256": "e84833a315ec885c0682eb884743c704f5f2e0ea46882d2f07f68e3419f4fb85",
+      "mirrorPrintROI": [
+        290,
+        276,
+        304,
+        295
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-13",
+      "color": "morado",
+      "maskSHA256": "490ab234d254ece94f6590a5f83b91c13bd0cc5cd803ae3ff458965cfca37f37",
+      "mirrorPrintROI": [
+        290,
+        274,
+        312,
+        294
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-14",
+      "color": "morado",
+      "maskSHA256": "b391b12d0879a16e1ffde313c23404e6ff7b43d0eff3acf9f87c5110253ecffe",
+      "mirrorPrintROI": [
+        297,
+        269,
+        329,
+        288
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "contextual-15",
+      "color": "morado",
+      "maskSHA256": "87547d082de7f02edb22d8e9b575b7e9510d8203aa11fb363e4b6a09c5dbc2c7",
+      "mirrorPrintROI": [
+        297,
+        269,
+        329,
+        288
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "room-00",
+      "color": "morado",
+      "maskSHA256": "8283a280d7ca82d5b093162d297f5a8fa4532133de0a6566a42694fd67f03d09",
+      "mirrorPrintROI": [
+        289,
+        293,
+        319,
+        311
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "room-01",
+      "color": "morado",
+      "maskSHA256": "af6e7f60ae50271b6ff747e7a866b0a24491621c67c383de08134e861c65f68a",
+      "mirrorPrintROI": [
+        264,
+        286,
+        299,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "room-02",
+      "color": "morado",
+      "maskSHA256": "7a614bbbbf349092a01d7ebb1699a562afc549e6923811ced514db2c6a716bba",
+      "mirrorPrintROI": [
+        270,
+        289,
+        304,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "room-03",
+      "color": "morado",
+      "maskSHA256": "af04adde4914e8d67656efc023274a90a0a505b1a226eb5dcc6a5aefb15ffced",
+      "mirrorPrintROI": [
+        288,
+        312,
+        302,
+        325
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "talk-00",
+      "color": "morado",
+      "maskSHA256": "ecbc428d63109dc680aa99a36b2dc385d6819b9ca3a9db950d16dfe9492094aa",
+      "mirrorPrintROI": [
+        295,
+        283,
+        327,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "talk-01",
+      "color": "morado",
+      "maskSHA256": "981de6347c9bd578a55f993f2a05b07e80cd5f60b114da6756dd74ee2578da69",
+      "mirrorPrintROI": [
+        295,
+        283,
+        327,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    },
+    {
+      "key": "talk-02",
+      "color": "morado",
+      "maskSHA256": "2fc1d9668a187f76d254751a420fa7d1e9f7cad07209c8df0ac823d0081fd40d",
+      "mirrorPrintROI": [
+        295,
+        283,
+        327,
+        302
+      ],
+      "mirrorAlphaMismatch": 0
+    }
+  ]
+}

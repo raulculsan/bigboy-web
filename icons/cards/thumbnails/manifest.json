@@ -1,0 +1,318 @@
+{
+  "icons/cards/abelias-comun-v1.jpg": {
+    "target": "icons/cards/thumbnails/abelias-comun-v1.jpg",
+    "fingerprint": "1:360:78:522783:1795250123436.774"
+  },
+  "icons/cards/abrantes-metro-comun-v1.jpg": {
+    "target": "icons/cards/thumbnails/abrantes-metro-comun-v1.jpg",
+    "fingerprint": "1:360:78:734406:1795250123449.0164"
+  },
+  "icons/cards/alberto-velasco-comun-79-v4.jpg": {
+    "target": "icons/cards/thumbnails/alberto-velasco-comun-79-v4.jpg",
+    "fingerprint": "1:360:78:560750:1795250123453.2593"
+  },
+  "icons/cards/alberto-velasco-full-art-84-v2.jpg": {
+    "target": "icons/cards/thumbnails/alberto-velasco-full-art-84-v2.jpg",
+    "fingerprint": "1:360:78:660954:1795250123462.8044"
+  },
+  "icons/cards/almudena-de-diego-matilla-comun-84-v1.jpg": {
+    "target": "icons/cards/thumbnails/almudena-de-diego-matilla-comun-84-v1.jpg",
+    "fingerprint": "1:360:78:588321:1795250123478.6182"
+  },
+  "icons/cards/almudena-de-diego-matilla-full-art-91-v4.jpg": {
+    "target": "icons/cards/thumbnails/almudena-de-diego-matilla-full-art-91-v4.jpg",
+    "fingerprint": "1:360:78:869265:1795250123486.7944"
+  },
+  "icons/cards/azul-comun-77-v1.jpg": {
+    "target": "icons/cards/thumbnails/azul-comun-77-v1.jpg",
+    "fingerprint": "1:360:78:590151:1795250123496.6519"
+  },
+  "icons/cards/bajos-de-arguelles-especial-v1.jpg": {
+    "target": "icons/cards/thumbnails/bajos-de-arguelles-especial-v1.jpg",
+    "fingerprint": "1:360:78:766294:1795250123500.125"
+  },
+  "icons/cards/big-mac-legendario-v1.jpg": {
+    "target": "icons/cards/thumbnails/big-mac-legendario-v1.jpg",
+    "fingerprint": "1:360:78:627420:1795250123502.1533"
+  },
+  "icons/cards/borox-legendaria-v5.jpg": {
+    "target": "icons/cards/thumbnails/borox-legendaria-v5.jpg",
+    "fingerprint": "1:360:78:482615:1795250123538.9822"
+  },
+  "icons/cards/bote-de-nutella-epico-v1.jpg": {
+    "target": "icons/cards/thumbnails/bote-de-nutella-epico-v1.jpg",
+    "fingerprint": "1:360:78:481335:1795250123544.8677"
+  },
+  "icons/cards/cafe-del-santander-comun-v1.jpg": {
+    "target": "icons/cards/thumbnails/cafe-del-santander-comun-v1.jpg",
+    "fingerprint": "1:360:78:415726:1795250123577.6355"
+  },
+  "icons/cards/caonabo-alberto-comun-82-v4.jpg": {
+    "target": "icons/cards/thumbnails/caonabo-alberto-comun-82-v4.jpg",
+    "fingerprint": "1:360:78:430063:1795250123586.3252"
+  },
+  "icons/cards/caonabo-alberto-full-art-88-v1.jpg": {
+    "target": "icons/cards/thumbnails/caonabo-alberto-full-art-88-v1.jpg",
+    "fingerprint": "1:360:78:908169:1795250123592.7256"
+  },
+  "icons/cards/carabanchel-legendaria-v1.jpg": {
+    "target": "icons/cards/thumbnails/carabanchel-legendaria-v1.jpg",
+    "fingerprint": "1:360:78:711285:1795250123602.357"
+  },
+  "icons/cards/carlos-gonzalez-motos-comun-82-v4.jpg": {
+    "target": "icons/cards/thumbnails/carlos-gonzalez-motos-comun-82-v4.jpg",
+    "fingerprint": "1:360:78:516741:1795250123610.3352"
+  },
+  "icons/cards/carlos-gonzalez-motos-full-art-89-v3.jpg": {
+    "target": "icons/cards/thumbnails/carlos-gonzalez-motos-full-art-89-v3.jpg",
+    "fingerprint": "1:360:78:951044:1795250123625.036"
+  },
+  "icons/cards/carlos-sanchez-rodriguez-retro-88-v2.jpg": {
+    "target": "icons/cards/thumbnails/carlos-sanchez-rodriguez-retro-88-v2.jpg",
+    "fingerprint": "1:360:78:807784:1795250123658.2705"
+  },
+  "icons/cards/castellana-legendaria-v2.jpg": {
+    "target": "icons/cards/thumbnails/castellana-legendaria-v2.jpg",
+    "fingerprint": "1:360:78:787280:1795250123717.1794"
+  },
+  "icons/cards/ceviche-epico-v1.jpg": {
+    "target": "icons/cards/thumbnails/ceviche-epico-v1.jpg",
+    "fingerprint": "1:360:78:566512:1795250123730.2756"
+  },
+  "icons/cards/contrato-de-trabajo-comun-v1.jpg": {
+    "target": "icons/cards/thumbnails/contrato-de-trabajo-comun-v1.jpg",
+    "fingerprint": "1:360:78:425684:1795250123755.3396"
+  },
+  "icons/cards/cristobal-fabrik-comun-75-v1.jpg": {
+    "target": "icons/cards/thumbnails/cristobal-fabrik-comun-75-v1.jpg",
+    "fingerprint": "1:360:78:623967:1795250123765.2463"
+  },
+  "icons/cards/cristobal-fabrik-vice-city-91-v2.jpg": {
+    "target": "icons/cards/thumbnails/cristobal-fabrik-vice-city-91-v2.jpg",
+    "fingerprint": "1:360:78:804184:1795250123769.267"
+  },
+  "icons/cards/cruz-anticristo-legendaria-v1.jpg": {
+    "target": "icons/cards/thumbnails/cruz-anticristo-legendaria-v1.jpg",
+    "fingerprint": "1:360:78:502875:1795250123770.769"
+  },
+  "icons/cards/cuba-epica-v1.jpg": {
+    "target": "icons/cards/thumbnails/cuba-epica-v1.jpg",
+    "fingerprint": "1:360:78:639923:1795250123775.387"
+  },
+  "icons/cards/cubo-de-alitas-kfc-legendario-v1.jpg": {
+    "target": "icons/cards/thumbnails/cubo-de-alitas-kfc-legendario-v1.jpg",
+    "fingerprint": "1:360:78:627805:1795250123778.996"
+  },
+  "icons/cards/daniel-gonzalez-motos-comun-80-v4.jpg": {
+    "target": "icons/cards/thumbnails/daniel-gonzalez-motos-comun-80-v4.jpg",
+    "fingerprint": "1:360:78:461719:1795250123789.2407"
+  },
+  "icons/cards/daniel-gonzalez-motos-full-art-87-v1.jpg": {
+    "target": "icons/cards/thumbnails/daniel-gonzalez-motos-full-art-87-v1.jpg",
+    "fingerprint": "1:360:78:825767:1795250123793.8574"
+  },
+  "icons/cards/daniel-gonzalez-motos-halloween-96-v2.png": {
+    "target": "icons/cards/thumbnails/daniel-gonzalez-motos-halloween-96-v2.jpg",
+    "fingerprint": "1:360:78:3367147:1795250123803.2285"
+  },
+  "icons/cards/el-retiro-especial-v1.jpg": {
+    "target": "icons/cards/thumbnails/el-retiro-especial-v1.jpg",
+    "fingerprint": "1:360:78:733637:1795250123812.9094"
+  },
+  "icons/cards/estadio-santiago-bernabeu-retro-v1.jpg": {
+    "target": "icons/cards/thumbnails/estadio-santiago-bernabeu-retro-v1.jpg",
+    "fingerprint": "1:360:78:845282:1795250123816.9277"
+  },
+  "icons/cards/estadio-vicente-calderon-retro-v1.jpg": {
+    "target": "icons/cards/thumbnails/estadio-vicente-calderon-retro-v1.jpg",
+    "fingerprint": "1:360:78:895513:1795250123820.5168"
+  },
+  "icons/cards/fabrik-comun-v1.jpg": {
+    "target": "icons/cards/thumbnails/fabrik-comun-v1.jpg",
+    "fingerprint": "1:360:78:510844:1795250123822.7732"
+  },
+  "icons/cards/felipe-hp-comun-80-v4.jpg": {
+    "target": "icons/cards/thumbnails/felipe-hp-comun-80-v4.jpg",
+    "fingerprint": "1:360:78:440604:1795250123825.969"
+  },
+  "icons/cards/felipe-hp-full-art-87-v4.jpg": {
+    "target": "icons/cards/thumbnails/felipe-hp-full-art-87-v4.jpg",
+    "fingerprint": "1:360:78:697946:1795250123834.204"
+  },
+  "icons/cards/francisco-trigo-vice-city-90-v2.jpg": {
+    "target": "icons/cards/thumbnails/francisco-trigo-vice-city-90-v2.jpg",
+    "fingerprint": "1:360:78:753349:1795250123851.4905"
+  },
+  "icons/cards/fufi-comun-77-v1.jpg": {
+    "target": "icons/cards/thumbnails/fufi-comun-77-v1.jpg",
+    "fingerprint": "1:360:78:556729:1795250123853.5073"
+  },
+  "icons/cards/fufi-vice-city-89-v3.jpg": {
+    "target": "icons/cards/thumbnails/fufi-vice-city-89-v3.jpg",
+    "fingerprint": "1:360:78:858958:1795250123857.316"
+  },
+  "icons/cards/gafas-vision-nocturna-epicas-v1.jpg": {
+    "target": "icons/cards/thumbnails/gafas-vision-nocturna-epicas-v1.jpg",
+    "fingerprint": "1:360:78:514814:1795250123860.8777"
+  },
+  "icons/cards/galicia-legendaria-v1.jpg": {
+    "target": "icons/cards/thumbnails/galicia-legendaria-v1.jpg",
+    "fingerprint": "1:360:78:688606:1795250123863.6655"
+  },
+  "icons/cards/hospital-12-de-octubre-comun-v1.jpg": {
+    "target": "icons/cards/thumbnails/hospital-12-de-octubre-comun-v1.jpg",
+    "fingerprint": "1:360:78:634030:1795250123887.0447"
+  },
+  "icons/cards/ikea-la-gavia-especial-v1.jpg": {
+    "target": "icons/cards/thumbnails/ikea-la-gavia-especial-v1.jpg",
+    "fingerprint": "1:360:78:659039:1795250123889.372"
+  },
+  "icons/cards/jeringuilla-comun-v1.jpg": {
+    "target": "icons/cards/thumbnails/jeringuilla-comun-v1.jpg",
+    "fingerprint": "1:360:78:538836:1795250123902.3457"
+  },
+  "icons/cards/jose-enrique-fernandez-cruz-comun-86-v4.jpg": {
+    "target": "icons/cards/thumbnails/jose-enrique-fernandez-cruz-comun-86-v4.jpg",
+    "fingerprint": "1:360:78:533418:1795250123905.7056"
+  },
+  "icons/cards/jose-enrique-fernandez-cruz-full-art-93-v3.jpg": {
+    "target": "icons/cards/thumbnails/jose-enrique-fernandez-cruz-full-art-93-v3.jpg",
+    "fingerprint": "1:360:78:890359:1795250123913.701"
+  },
+  "icons/cards/jose-enrique-fernandez-cruz-halloween-97-v1.png": {
+    "target": "icons/cards/thumbnails/jose-enrique-fernandez-cruz-halloween-97-v1.jpg",
+    "fingerprint": "1:360:78:2871219:1795250123921.0706"
+  },
+  "icons/cards/jose-enrique-fernandez-cruz-vice-city-98-v2.jpg": {
+    "target": "icons/cards/thumbnails/jose-enrique-fernandez-cruz-vice-city-98-v2.jpg",
+    "fingerprint": "1:360:78:2660606:1795250123931.7603"
+  },
+  "icons/cards/josefa-valcarcel-epica-v1.jpg": {
+    "target": "icons/cards/thumbnails/josefa-valcarcel-epica-v1.jpg",
+    "fingerprint": "1:360:78:623723:1795250123937.2505"
+  },
+  "icons/cards/juan-carlos-vega-quevedo-comun-78-v1.jpg": {
+    "target": "icons/cards/thumbnails/juan-carlos-vega-quevedo-comun-78-v1.jpg",
+    "fingerprint": "1:360:78:517160:1795250123947.6848"
+  },
+  "icons/cards/juan-carlos-vega-quevedo-retro-87-v1.jpg": {
+    "target": "icons/cards/thumbnails/juan-carlos-vega-quevedo-retro-87-v1.jpg",
+    "fingerprint": "1:360:78:826909:1795250123951.3389"
+  },
+  "icons/cards/juan-manuel-perez-saldana-comun-81-v1.jpg": {
+    "target": "icons/cards/thumbnails/juan-manuel-perez-saldana-comun-81-v1.jpg",
+    "fingerprint": "1:360:78:556932:1795250123962.7842"
+  },
+  "icons/cards/juan-manuel-perez-saldana-retro-90-v1.jpg": {
+    "target": "icons/cards/thumbnails/juan-manuel-perez-saldana-retro-90-v1.jpg",
+    "fingerprint": "1:360:78:838825:1795250123966.171"
+  },
+  "icons/cards/justificante-medico-comun-v1.jpg": {
+    "target": "icons/cards/thumbnails/justificante-medico-comun-v1.jpg",
+    "fingerprint": "1:360:78:409027:1795250123978.066"
+  },
+  "icons/cards/la-biblia-epica-v1.jpg": {
+    "target": "icons/cards/thumbnails/la-biblia-epica-v1.jpg",
+    "fingerprint": "1:360:78:533889:1795250123980.7031"
+  },
+  "icons/cards/lata-de-red-bull-comun-v1.jpg": {
+    "target": "icons/cards/thumbnails/lata-de-red-bull-comun-v1.jpg",
+    "fingerprint": "1:360:78:495691:1795250123991.6545"
+  },
+  "icons/cards/lizzy-machado-yong-comun-81-v1.jpg": {
+    "target": "icons/cards/thumbnails/lizzy-machado-yong-comun-81-v1.jpg",
+    "fingerprint": "1:360:78:580832:1795250124003.295"
+  },
+  "icons/cards/lizzy-machado-yong-full-art-85-v1.jpg": {
+    "target": "icons/cards/thumbnails/lizzy-machado-yong-full-art-85-v1.jpg",
+    "fingerprint": "1:360:78:857815:1795250124011.911"
+  },
+  "icons/cards/locker-luca-de-tena-legendario-v1.jpg": {
+    "target": "icons/cards/thumbnails/locker-luca-de-tena-legendario-v1.jpg",
+    "fingerprint": "1:360:78:460389:1795250124042.2249"
+  },
+  "icons/cards/luca-de-tena-especial-v2.jpg": {
+    "target": "icons/cards/thumbnails/luca-de-tena-especial-v2.jpg",
+    "fingerprint": "1:360:78:669134:1795250124062.894"
+  },
+  "icons/cards/mario-salvatierra-medina-comun-81-v1.jpg": {
+    "target": "icons/cards/thumbnails/mario-salvatierra-medina-comun-81-v1.jpg",
+    "fingerprint": "1:360:78:527108:1795250124068.5295"
+  },
+  "icons/cards/mario-salvatierra-medina-full-art-88-v2.jpg": {
+    "target": "icons/cards/thumbnails/mario-salvatierra-medina-full-art-88-v2.jpg",
+    "fingerprint": "1:360:78:869275:1795250124078.6653"
+  },
+  "icons/cards/mesena-retro-v1.jpg": {
+    "target": "icons/cards/thumbnails/mesena-retro-v1.jpg",
+    "fingerprint": "1:360:78:880729:1795250124081.4695"
+  },
+  "icons/cards/miguel-angel-jimenez-sanchez-comun-83-v4.jpg": {
+    "target": "icons/cards/thumbnails/miguel-angel-jimenez-sanchez-comun-83-v4.jpg",
+    "fingerprint": "1:360:78:497450:1795250124094.595"
+  },
+  "icons/cards/miguel-angel-jimenez-sanchez-full-art-92-v1.jpg": {
+    "target": "icons/cards/thumbnails/miguel-angel-jimenez-sanchez-full-art-92-v1.jpg",
+    "fingerprint": "1:360:78:729123:1795250124102.352"
+  },
+  "icons/cards/mochila-carhartt-especial-v1.jpg": {
+    "target": "icons/cards/thumbnails/mochila-carhartt-especial-v1.jpg",
+    "fingerprint": "1:360:78:664658:1795250124132.1562"
+  },
+  "icons/cards/peru-comun-v1.jpg": {
+    "target": "icons/cards/thumbnails/peru-comun-v1.jpg",
+    "fingerprint": "1:360:78:698920:1795250124135.9314"
+  },
+  "icons/cards/pistola-de-balines-especial-v1.jpg": {
+    "target": "icons/cards/thumbnails/pistola-de-balines-especial-v1.jpg",
+    "fingerprint": "1:360:78:565991:1795250124138.6594"
+  },
+  "icons/cards/plaza-eliptica-metro-comun-v1.jpg": {
+    "target": "icons/cards/thumbnails/plaza-eliptica-metro-comun-v1.jpg",
+    "fingerprint": "1:360:78:575159:1795250124145.788"
+  },
+  "icons/cards/raul-culsan-gonzalez-comun-83-v4.jpg": {
+    "target": "icons/cards/thumbnails/raul-culsan-gonzalez-comun-83-v4.jpg",
+    "fingerprint": "1:360:78:509662:1795250124664.75"
+  },
+  "icons/cards/raul-culsan-gonzalez-full-art-92-playa-v5.jpg": {
+    "target": "icons/cards/thumbnails/raul-culsan-gonzalez-full-art-92-playa-v5.jpg",
+    "fingerprint": "1:360:78:737618:1795250124671.5725"
+  },
+  "icons/cards/ruben-king-vice-city-96-v2.jpg": {
+    "target": "icons/cards/thumbnails/ruben-king-vice-city-96-v2.jpg",
+    "fingerprint": "1:360:78:788678:1795250124730.6475"
+  },
+  "icons/cards/satisfyer-comun-v1.jpg": {
+    "target": "icons/cards/thumbnails/satisfyer-comun-v1.jpg",
+    "fingerprint": "1:360:78:380465:1795250124732.2642"
+  },
+  "icons/cards/sombrero-militar-epico-v1.jpg": {
+    "target": "icons/cards/thumbnails/sombrero-militar-epico-v1.jpg",
+    "fingerprint": "1:360:78:567235:1795250124778.39"
+  },
+  "icons/cards/stussy-madrid-epica-v2.jpg": {
+    "target": "icons/cards/thumbnails/stussy-madrid-epica-v2.jpg",
+    "fingerprint": "1:360:78:694537:1795250124791.8877"
+  },
+  "icons/cards/test-de-embarazo-positivo-comun-v1.jpg": {
+    "target": "icons/cards/thumbnails/test-de-embarazo-positivo-comun-v1.jpg",
+    "fingerprint": "1:360:78:409018:1795250124795.0637"
+  },
+  "icons/cards/ticket-de-viaje-a-roma-legendario-v1.jpg": {
+    "target": "icons/cards/thumbnails/ticket-de-viaje-a-roma-legendario-v1.jpg",
+    "fingerprint": "1:360:78:621938:1795250124826.3645"
+  },
+  "icons/cards/titulacion-comun-v2.jpg": {
+    "target": "icons/cards/thumbnails/titulacion-comun-v2.jpg",
+    "fingerprint": "1:360:78:471590:1795250124841.1228"
+  },
+  "icons/cards/trofeo-champions-legendario-v1.jpg": {
+    "target": "icons/cards/thumbnails/trofeo-champions-legendario-v1.jpg",
+    "fingerprint": "1:360:78:537150:1795250124854.3337"
+  },
+  "icons/cards/vater-comun-v1.jpg": {
+    "target": "icons/cards/thumbnails/vater-comun-v1.jpg",
+    "fingerprint": "1:360:78:374188:1795250124877.276"
+  }
+}

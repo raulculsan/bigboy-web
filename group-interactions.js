@@ -1,0 +1,355 @@
+/* Shared plans and group polls. All mutations are checked by Supabase RPCs. */
+(() => {
+  'use strict';
+  let config = null, epoch = 0, composer = null, pollViewer = null, pollMount = null, subscription = null, refreshTimer = 0, planViewer = null, planSubscription = null;
+  const attendance = new Map(), requests = new Map(), locks = new Set();
+  const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const user = () => config?.getUser?.();
+  const userId = () => user()?.id || null;
+  const canWriteChannel = channelId => config?.canWriteChannel?.(channelId) !== false;
+  const labels = {going:'Voy',maybe:'Quizá',declined:'No voy'};
+  const icons = {going:'✓',maybe:'?',declined:'−'};
+  function localDate(value) {
+    if (typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value)) return value;
+    const date = new Date(value);
+    if (!Number.isFinite(date.getTime())) return '';
+    return new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Madrid',year:'numeric',month:'2-digit',day:'2-digit'}).format(date);
+  }
+  function occurrenceFor(event, value) {
+    if (value) return localDate(value);
+    const original = localDate(event.startsAt);
+    if (!event.annual) return original;
+    const today = localDate(new Date()), candidate = `${today.slice(0,4)}${original.slice(4)}`;
+    return candidate >= today ? candidate : `${Number(today.slice(0,4))+1}${original.slice(4)}`;
+  }
+  async function query(builder) {
+    const controller=new AbortController(), timer=setTimeout(()=>controller.abort(),18000);
+    try{return await builder.abortSignal(controller.signal);}finally{clearTimeout(timer);}
+  }
+  function message(error) {
+    const text = String(error?.message || 'No se pudo guardar. Inténtalo de nuevo.');
+    if(/abort|timeout|failed to fetch|load failed|network/i.test(text))return 'La conexión se ha interrumpido. Vuelve a intentarlo.';
+    return /schema cache|does not exist|could not find|PGRST/i.test(text) ? 'Esta función aún no está disponible. Vuelve a intentarlo más tarde.' : text;
+  }
+  function attendanceMarkup(event, occurrenceDate, showPeople=false) {
+    if (!event || event.eventType === 'birthday' || event.event_type === 'birthday') return '';
+    const occurrence = occurrenceFor(event, occurrenceDate);
+    if (!event?.id || !occurrence) return '';
+    const key = `${event.id}:${occurrence}`;
+    if (!attendance.has(key)) attendance.set(key,{eventId:event.id,occurrence,rows:null,fetchedAt:0,error:'',pending:false});
+    return `<div class="plan-attendance" data-plan-attendance="${escape(key)}" ${showPeople?'data-attendance-people':''} aria-label="Asistencia al plan">${attendanceBody(attendance.get(key),showPeople)}</div>`;
+  }
+  function attendancePeople(state) {
+    if (!state.rows) return '';
+    return `<div class="plan-attendance-people">${Object.entries(labels).map(([response,label]) => {
+      const rows=state.rows.filter(row=>row.response===response);
+      return `<section><h3>${label}<span>${rows.length}</span></h3>${rows.length ? `<ul>${rows.map(row=>{
+        const member=config?.getMember?.(row.user_id), name=member?.name || (row.user_id===userId()?'Tú':'Miembro del club');
+        return `<li><span class="plan-person-initial" aria-hidden="true">${escape(name.charAt(0).toUpperCase())}</span><span>${escape(name)}</span>${row.user_id===userId()?'<small>Tú</small>':''}</li>`;
+      }).join('')}</ul>` : '<p>Todavía nadie</p>'}</section>`;
+    }).join('')}</div>`;
+  }
+  function attendanceBody(state, showPeople=false) {
+    const own = state.rows?.find(row => row.user_id === userId())?.response;
+    const counts = Object.fromEntries(Object.keys(labels).map(key => [key,state.rows?.filter(row => row.response===key).length || 0]));
+    const past = state.occurrence < localDate(new Date());
+    return `<div class="plan-attendance-heading"><span>¿Te apuntas?</span><small>${state.rows ? `${counts.going} ${counts.going===1?'confirmado':'confirmados'}` : 'Cargando…'}</small></div><div class="plan-attendance-options">${Object.keys(labels).map(key => `<button type="button" data-attendance-response="${key}" aria-pressed="${own===key}" ${!userId() || state.pending || !state.rows || past ? 'disabled' : ''}><span class="plan-attendance-symbol" aria-hidden="true">${icons[key]}</span><span>${labels[key]}</span><b>${counts[key]}</b></button>`).join('')}</div>${past ? '<small class="plan-attendance-note">Respuestas cerradas</small>' : ''}<p class="group-interaction-status" role="status" ${!state.error?'hidden':''}>${escape(state.error)}${state.error && !state.rows ? ' <button type="button" data-attendance-retry>Reintentar</button>' : ''}</p>${showPeople?attendancePeople(state):''}`;
+  }
+  function renderAttendance(key) {
+    const state = attendance.get(key);
+    if (!state) return;
+    document.querySelectorAll('[data-plan-attendance]').forEach(node => {
+      if(node.dataset.planAttendance!==key)return;
+      const focused=node.contains(document.activeElement)?document.activeElement.dataset.attendanceResponse:null;
+      const scroll=planViewer?.scrollTop;
+      node.innerHTML=attendanceBody(state,node.hasAttribute('data-attendance-people'));
+      if(focused){const button=node.querySelector(`[data-attendance-response="${focused}"]`);if(button&&!button.disabled)button.focus({preventScroll:true});}
+      if(planViewer&&scroll!=null)planViewer.scrollTop=scroll;
+    });
+  }
+  async function hydrateAttendance(root=document) {
+    if (!config?.db || !userId()) return;
+    const mounts=[...(root.matches?.('[data-plan-attendance]')?[root]:[]),...root.querySelectorAll('[data-plan-attendance]')];
+    const pending = [...new Set(mounts.map(node=>node.dataset.planAttendance))].filter(key => attendance.has(key) && (!attendance.get(key).fetchedAt || Date.now()-attendance.get(key).fetchedAt>30000) && !attendance.get(key).pending && !requests.has(key));
+    if (!pending.length) return;
+    const version=epoch;
+    const request=(async()=>{
+      const eventIds=[...new Set(pending.map(key=>attendance.get(key).eventId))];
+      const occurrences=[...new Set(pending.map(key=>attendance.get(key).occurrence).filter(Boolean))];
+      let attendanceQuery=config.db.from('event_attendance').select('event_id,occurrence,user_id,response').in('event_id',eventIds);
+      if(occurrences.length===1&&typeof attendanceQuery.eq==='function')attendanceQuery=attendanceQuery.eq('occurrence',occurrences[0]);
+      else if(occurrences.length>1&&typeof attendanceQuery.in==='function')attendanceQuery=attendanceQuery.in('occurrence',occurrences);
+      const {data,error}=await query(attendanceQuery);
+      if(version!==epoch)return;
+      for(const key of pending){
+        const state=attendance.get(key); if(!state)continue;
+        state.rows=error?null:(data||[]).filter(row=>String(row.event_id)===String(state.eventId)&&row.occurrence===state.occurrence);
+        state.fetchedAt=error?0:Date.now();state.error=error?message(error):'';renderAttendance(key);
+      }
+    })().catch(error=>{if(version!==epoch)return;for(const key of pending){const state=attendance.get(key);if(state){state.error=message(error);renderAttendance(key);}}}).finally(()=>{if(version===epoch)pending.forEach(key=>requests.delete(key));});
+    pending.forEach(key=>requests.set(key,request));
+    return request;
+  }
+  async function respond(node,response) {
+    const key=node.dataset.planAttendance, state=attendance.get(key);
+    if(!state||state.pending||!userId()||!labels[response])return;
+    state.pending=true;state.error='';renderAttendance(key);
+    const version=epoch, id=userId();
+    try{
+      const {error}=await query(config.db.rpc('respond_to_event',{p_event_id:state.eventId,p_occurrence:state.occurrence,p_response:response}));
+      if(error)throw error;if(version!==epoch)return;
+      state.fetchedAt=Date.now();state.rows=[...(state.rows||[]).filter(row=>row.user_id!==id),{user_id:id,response,event_id:state.eventId,occurrence:state.occurrence}];
+      globalThis.DailyPacks?.activityCompleted?.('event');
+    }catch(error){if(version===epoch)state.error=message(error);}finally{if(version===epoch){state.pending=false;renderAttendance(key);}}
+  }
+  function dismissPlan() {
+    if(planSubscription){void config?.db?.removeChannel(planSubscription);planSubscription=null;}
+    const dialog=planViewer;planViewer=null;
+    if(dialog){dialog.close();dialog.remove();}
+  }
+  function planDetailMarkup(event) {
+    const date=new Date(event.startsAt);
+    const schedule=date.toLocaleString('es-ES',{timeZone:'Europe/Madrid',weekday:'long',day:'numeric',month:'long',hour:'2-digit',minute:'2-digit'});
+    return `<p class="plan-detail-date">${escape(schedule)}</p><h2 id="chatPlanTitle">${escape(event.title)}</h2>${event.location?`<p class="plan-detail-location">${escape(event.location)}</p>`:''}${event.description?`<p class="plan-detail-description">${escape(event.description)}</p>`:''}${attendanceMarkup(event,localDate(date),true)}`;
+  }
+  function openPlan(event) {
+    if(!event?.id || !userId())return;
+    dismissPlan();
+    const dialog=document.createElement('dialog');dialog.className='plan-detail-viewer';
+    dialog.dataset.eventId=String(event.id);dialog.dataset.channelId=String(config?.getChannelId?.()??'');
+    dialog.setAttribute('aria-labelledby','chatPlanTitle');
+    dialog.innerHTML='<button type="button" class="plan-detail-close" aria-label="Cerrar plan" autofocus>×</button><div class="plan-detail-content"></div>';
+    dialog.querySelector('.plan-detail-content').innerHTML=planDetailMarkup(event);
+    planViewer=dialog;document.body.append(dialog);
+    dialog.querySelector('.plan-detail-close').addEventListener('click',dismissPlan);
+    dialog.addEventListener('cancel',event=>{event.preventDefault();dismissPlan();});
+    dialog.addEventListener('click',event=>{if(event.target!==dialog)return;const bounds=dialog.getBoundingClientRect();if(event.clientX<bounds.left||event.clientX>bounds.right||event.clientY<bounds.top||event.clientY>bounds.bottom)dismissPlan();});
+    dialog.showModal();
+    const key=dialog.querySelector('[data-plan-attendance]')?.dataset.planAttendance;
+    if(key&&attendance.has(key))attendance.get(key).fetchedAt=0;
+    void hydrateAttendance(dialog);
+    if(config.db?.channel)planSubscription=config.db.channel(`plan-attendance-${event.id}-${epoch}`)
+      .on('postgres_changes',{event:'*',schema:'public',table:'event_attendance',filter:`event_id=eq.${event.id}`},()=>{
+        if(planViewer!==dialog||!key)return;
+        const state=attendance.get(key);if(state)state.fetchedAt=0;
+        const inflight=requests.get(key);
+        if(inflight)void inflight.finally(()=>{if(planViewer===dialog){if(state)state.fetchedAt=0;void hydrateAttendance(dialog);}});
+        else void hydrateAttendance(dialog);
+      }).subscribe();
+  }
+  function refreshPlan(events) {
+    if(!planViewer)return;
+    const event=events.find(event=>String(event.id)===planViewer.dataset.eventId);
+    if(!event || String(config?.getChannelId?.()??'')!==planViewer.dataset.channelId){dismissPlan();return;}
+    const content=planViewer.querySelector('.plan-detail-content');
+    content.innerHTML=planDetailMarkup(event);void hydrateAttendance(planViewer);
+  }
+  const pollIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V11M12 20V4M19 20v-6"/></svg>';
+  const checkIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 12.5 4 4 8-9"/></svg>';
+  function voterStack(votes) {
+    const people = votes.slice(0, 3).map(vote => config?.getMember?.(vote.user_id)).map((member, index) => `<span class="group-poll-voter" style="--i:${index}">${member && config?.avatar ? config.avatar(member) : `<span class="group-poll-voter-initial">${escape((member?.name || '·').charAt(0).toUpperCase())}</span>`}</span>`).join('');
+    return people ? `<span class="group-poll-voters" aria-hidden="true">${people}</span>` : '';
+  }
+  function pollBody(poll) {
+    const votes=poll.group_poll_votes||[], total=votes.length, own=votes.find(vote=>vote.user_id===userId())?.option_id;
+    const closed=Boolean(poll.closed_at), pending=locks.has(poll.id);
+    const writable=canWriteChannel(poll.channel_id), canClose=writable&&(poll.created_by===userId()||user()?.isAdmin);
+    const options=[...(poll.group_poll_options||[])].sort((a,b)=>a.position-b.position);
+    const counts=options.map(option=>votes.filter(vote=>vote.option_id===option.id).length), top=Math.max(0,...counts);
+    const author=config?.getMember?.(poll.created_by)?.name;
+    return `<article class="group-poll-card${own?' has-voted':''}" data-poll-id="${escape(poll.id)}"><header><span class="group-poll-badge" aria-hidden="true">${pollIcon}</span><span class="group-poll-meta"><span class="group-poll-eyebrow">Encuesta${author?` de ${escape(author.split(' ')[0])}`:''}</span><span class="group-poll-state ${closed?'is-closed':''}">${closed?'Cerrada':writable?'Abierta':'Solo lectura'}</span></span></header><h3>${escape(poll.question)}</h3><div class="group-poll-options">${options.map((option,index)=>{
+      const count=counts[index], percentage=total?Math.round(count/total*100):0, selected=own===option.id, leading=total&&count===top;
+      return `<button type="button" class="group-poll-option${selected?' is-chosen':''}${leading?' is-leading':''}" style="--i:${index}" data-poll-vote="${escape(option.id)}" data-poll-count="${count}" data-poll-ratio="${percentage/100}" aria-pressed="${selected}" ${closed||pending||!userId()||!writable?'disabled':''}><span class="group-poll-fill" aria-hidden="true"></span><span class="group-poll-radio" aria-hidden="true">${checkIcon}</span><span class="group-poll-option-label">${escape(option.label)}</span>${voterStack(votes.filter(vote=>vote.option_id===option.id))}<b class="group-poll-percent" data-poll-percent="${percentage}">${percentage}<small>%</small></b><span class="sr-only"> · ${count} ${count===1?'voto':'votos'}</span></button>`;
+    }).join('')}</div><footer><span class="group-poll-total">${total} ${total===1?'voto':'votos'}${own?' · Has votado':''}</span><span class="group-poll-actions">${config?.canCreatePlan?.()&&total?`<button type="button" data-poll-plan>Crear plan</button>`:""}${!closed&&canClose?`<button type="button" data-poll-close ${pending?'disabled':''}>Cerrar</button>`:''}</span></footer></article>`;
+  }
+  // Bars and numbers glide from what was on screen to the new result: the old
+  // values are read before the markup is replaced and animated to the new ones.
+  const reduceMotion = () => globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  function snapshotPolls(root) {
+    const shown = new Map();
+    root.querySelectorAll('[data-poll-vote]').forEach(button => {
+      const card = button.closest('[data-poll-id]')?.dataset.pollId;
+      shown.set(`${card}|${button.dataset.pollVote}`, {ratio: Number(button.style.getPropertyValue('--poll-ratio')) || 0, percent: Number(button.querySelector('[data-poll-percent]')?.dataset.shown ?? button.querySelector('[data-poll-percent]')?.dataset.pollPercent) || 0, chosen: button.classList.contains('is-chosen')});
+    });
+    return shown;
+  }
+  function countUp(node, from, to) {
+    if (from === to || reduceMotion()) { node.dataset.shown = String(to); node.firstChild.textContent = String(to); return; }
+    const start = performance.now(), duration = 650;
+    const step = now => {
+      if (!node.isConnected) return;
+      const t = Math.min(1, (now - start) / duration), eased = 1 - Math.pow(1 - t, 3);
+      const value = Math.round(from + (to - from) * eased);
+      node.firstChild.textContent = String(value); node.dataset.shown = String(value);
+      if (t < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+  function animatePolls(root, shown, entering) {
+    root.querySelectorAll('[data-poll-vote]').forEach(button => {
+      const card = button.closest('[data-poll-id]')?.dataset.pollId, before = shown.get(`${card}|${button.dataset.pollVote}`);
+      const ratio = Number(button.dataset.pollRatio) || 0, percent = button.querySelector('[data-poll-percent]');
+      button.style.setProperty('--poll-ratio', String(before ? before.ratio : 0));
+      if (before && !before.chosen && button.classList.contains('is-chosen')) button.classList.add('just-chosen');
+      percent.dataset.shown = String(before ? before.percent : 0); percent.firstChild.textContent = percent.dataset.shown;
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        button.style.setProperty('--poll-ratio', String(ratio));
+        countUp(percent, before ? before.percent : 0, Number(percent.dataset.pollPercent) || 0);
+      }));
+    });
+    if (entering && !reduceMotion()) root.querySelectorAll('.group-poll-card').forEach(card => card.classList.add('is-entering'));
+  }
+  function dismissPollViewer() {
+    if (pollViewer?.open) pollViewer.close();
+  }
+  function openPollViewer() {
+    if (!pollMount?.polls?.some(poll=>!poll.closed_at) || pollViewer?.open) return;
+    const dialog=document.createElement('dialog');
+    dialog.className='group-poll-viewer';
+    dialog.setAttribute('aria-label','Encuestas activas');
+    dialog.innerHTML='<div class="group-poll-viewer-sheet" tabindex="-1" autofocus><span class="group-poll-grabber" aria-hidden="true"></span><header class="group-poll-viewer-heading"><h2>Encuestas</h2><button type="button" data-poll-viewer-dismiss aria-label="Cerrar encuestas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></header><div class="group-poll-viewer-content"></div></div>';
+    dialog.dataset.entering='1';
+    pollViewer=dialog;
+    document.body.append(dialog);
+    dialog.querySelector('[data-poll-viewer-dismiss]').addEventListener('click',()=>dialog.close());
+    dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close();});
+    dialog.addEventListener('close',()=>{dialog.remove();if(pollViewer===dialog)pollViewer=null;},{once:true});
+    renderPolls();
+    dialog.showModal();
+  }
+  function renderPolls() {
+    const mount=pollMount;if(!mount?.node.isConnected)return;
+    const active=(mount.polls||[]).filter(poll=>!poll.closed_at);
+    // Keep this small notice stable during votes and realtime refreshes.
+    let notice=mount.node.querySelector('[data-poll-open]');
+    if(active.length){
+      if(!notice){notice=document.createElement('button');notice.type='button';notice.className='group-poll-notice';notice.setAttribute('data-poll-open','');notice.setAttribute('aria-haspopup','dialog');notice.innerHTML=`<span class="group-poll-notice-icon" aria-hidden="true">${pollIcon}</span><span class="group-poll-notice-text"><strong></strong><small></small></span><svg class="group-poll-notice-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>`;mount.node.replaceChildren(notice);}
+      const voted=active.filter(poll=>(poll.group_poll_votes||[]).some(vote=>vote.user_id===userId())).length;
+      notice.querySelector('strong').textContent=active.length===1?active[0].question:`${active.length} encuestas activas`;
+      notice.querySelector('small').textContent=voted===active.length?'Ya has votado · Ver resultados':canWriteChannel(mount.channelId)?'Toca para votar':'Ver resultados';
+      notice.classList.toggle('is-pending',voted<active.length&&canWriteChannel(mount.channelId));
+      notice.setAttribute('aria-label',`${active.length===1?'Encuesta activa: '+active[0].question:notice.querySelector('strong').textContent}. ${notice.querySelector('small').textContent}`);
+    }else mount.node.replaceChildren();
+    const content=pollViewer?.querySelector('.group-poll-viewer-content');
+    if(!content)return;
+    const scroll=content.scrollTop;
+    const focused=content.contains(document.activeElement)?document.activeElement:null;
+    const optionId=focused?.dataset.pollVote, closeId=focused?.hasAttribute('data-poll-close')?focused.closest('[data-poll-id]')?.dataset.pollId:null;
+    const shown=snapshotPolls(content), entering=pollViewer.dataset.entering==='1'&&active.length>0;
+    if(entering)delete pollViewer.dataset.entering;
+    content.innerHTML=active.map(pollBody).join('')||'<p class="group-poll-empty" role="status">No quedan encuestas activas.</p>';
+    animatePolls(content,shown,entering);
+    if(mount.error){const status=document.createElement('p');status.className='group-interaction-status';status.setAttribute('role','status');status.textContent=mount.error;content.append(status);}
+    content.scrollTop=scroll;
+    if(focused){const replacement=[...content.querySelectorAll('button')].find(button=>optionId?button.dataset.pollVote===optionId:closeId&&button.hasAttribute('data-poll-close')&&button.closest('[data-poll-id]')?.dataset.pollId===closeId);(replacement&&!replacement.disabled?replacement:pollViewer.querySelector('[data-poll-viewer-dismiss]')).focus({preventScroll:true});}
+  }
+  async function refreshPolls() {
+    const mount=pollMount;if(!mount||!userId())return;if(mount.loading){mount.refreshAgain=true;return;}
+    mount.loading=true;mount.error='';renderPolls();
+    try{
+      const {data,error}=await query(config.db.from('group_polls').select('id,channel_id,created_by,question,created_at,closed_at,group_poll_options(id,label,position),group_poll_votes(user_id,option_id)').eq('channel_id',mount.channelId).is('closed_at',null).order('created_at',{ascending:false}));
+      if(error)throw error;if(pollMount!==mount)return;
+      mount.polls=data||[];
+    }catch(error){if(pollMount===mount)mount.error=message(error);}finally{if(pollMount===mount){mount.loading=false;renderPolls();if(mount.refreshAgain){mount.refreshAgain=false;queueRefresh();}}}
+  }
+  function queueRefresh(){clearTimeout(refreshTimer);refreshTimer=setTimeout(()=>void refreshPolls(),250);}
+  function clearSubscription(){if(subscription){void config?.db?.removeChannel(subscription);subscription=null;}clearTimeout(refreshTimer);}
+  function mountPolls(container,channelId) {
+    const node=typeof container==='string'?document.querySelector(container):container;
+    if(!node||!config?.db)return;
+    if(pollMount?.node===node&&String(pollMount.channelId)===String(channelId)){renderPolls();return;}
+    if(planViewer&&planViewer.dataset.channelId!==String(channelId))dismissPlan();
+    dismissPollViewer();clearSubscription();pollMount={node,channelId,polls:null,loading:false,error:''};renderPolls();void refreshPolls();
+    if(userId()&&config.db.channel)subscription=config.db.channel(`group-polls-${channelId}-${epoch}`)
+      .on('postgres_changes',{event:'*',schema:'public',table:'group_polls',filter:`channel_id=eq.${channelId}`},queueRefresh)
+      .on('postgres_changes',{event:'*',schema:'public',table:'group_poll_votes'},queueRefresh).subscribe();
+  }
+  async function vote(pollId,optionId) {
+    const mount=pollMount;if(!mount||locks.has(pollId)||!userId()||!canWriteChannel(mount.channelId))return;
+    // Show the vote at once; the server result (or a refresh on failure) follows.
+    const poll=mount.polls?.find(item=>String(item.id)===String(pollId)), previous=poll?.group_poll_votes;
+    if(poll)poll.group_poll_votes=[...(previous||[]).filter(row=>row.user_id!==userId()),{user_id:userId(),option_id:optionId}];
+    globalThis.ClubHaptics?.tap?.();
+    locks.add(pollId);mount.error='';renderPolls();
+    let succeeded=false;
+    try{
+      const {error}=await query(config.db.rpc('vote_group_poll',{p_poll_id:pollId,p_channel_id:mount.channelId,p_option_id:optionId}));if(error)throw error;succeeded=true;
+      globalThis.DailyPacks?.activityCompleted?.('poll');
+    }catch(error){if(pollMount===mount){mount.error=message(error);if(poll)poll.group_poll_votes=previous;}}finally{locks.delete(pollId);if(pollMount===mount){renderPolls();if(succeeded)void refreshPolls();}}
+  }
+  async function closePoll(pollId) {
+    const mount=pollMount;if(!mount||locks.has(pollId)||!canWriteChannel(mount.channelId))return;
+    locks.add(pollId);mount.error='';renderPolls();
+    let succeeded=false;
+    try{const {error}=await query(config.db.rpc('close_group_poll',{p_poll_id:pollId,p_channel_id:mount.channelId}));if(error)throw error;succeeded=true;}
+    catch(error){if(pollMount===mount)mount.error=message(error);}finally{locks.delete(pollId);if(pollMount===mount){renderPolls();if(succeeded)void refreshPolls();}}
+  }
+  function openPollComposer(channelId=config?.getChannelId?.()) {
+    if(!userId()||!channelId||composer?.open||!canWriteChannel(channelId))return;
+    composer=document.createElement('dialog');composer.className='group-poll-composer';composer.setAttribute('aria-label','Crear encuesta');
+    composer.innerHTML=`<form id="groupPollDraftForm" class="group-poll-create-form"><header><span class="group-poll-badge" aria-hidden="true">${pollIcon}</span><h2>Nueva encuesta</h2><button type="button" data-poll-dismiss aria-label="Cerrar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></header><label class="group-poll-question-label"><span class="sr-only">Pregunta</span><textarea name="question" autofocus maxlength="180" rows="2" placeholder="Haz una pregunta…" required></textarea></label><p class="group-poll-section">Opciones</p><div class="group-poll-edit-options"></div><button type="button" class="group-poll-add-option" data-poll-add><span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 6v12M6 12h12"/></svg></span>Añadir opción</button><div class="group-interaction-status" role="status" hidden></div><button type="submit" class="group-poll-publish">Publicar encuesta</button><small class="group-poll-create-note">Un voto por persona · se puede cambiar mientras esté abierta</small></form>`;
+    document.body.append(composer);
+    const form=composer.querySelector('form'), options=form.querySelector('.group-poll-edit-options');
+    // Rows grow in and collapse out; the remove button only shows past two.
+    function addOption(animate=false){if(options.children.length>=6)return;const row=document.createElement('label');row.className='group-poll-edit-option';row.innerHTML=`<span class="group-poll-edit-dot" aria-hidden="true"></span><input name="option" aria-label="Opción" maxlength="80" placeholder="Opción" required><button type="button" aria-label="Quitar opción"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7l10 10M17 7 7 17"/></svg></button>`;options.append(row);if(animate&&!reduceMotion())row.classList.add('is-adding');row.addEventListener('animationend',()=>row.classList.remove('is-adding'),{once:true});row.querySelector('button').addEventListener('click',()=>{if(options.querySelectorAll('.group-poll-edit-option:not(.is-removing)').length<=2)return;globalThis.ClubDrafts?.flush();const finish=()=>{row.remove();updateOptions();globalThis.ClubDrafts?.touch(form.id);};if(reduceMotion()){finish();return;}row.classList.add('is-removing');row.querySelector('input').required=false;row.addEventListener('animationend',finish,{once:true});setTimeout(()=>{if(row.isConnected)finish();},400);updateOptions();});updateOptions();}
+    function updateOptions(){const rows=[...options.children].filter(row=>!row.classList.contains('is-removing'));rows.forEach((row,index)=>{row.querySelector('input').setAttribute('aria-label',`Opción ${index+1}`);row.querySelector('input').placeholder=`Opción ${index+1}`;row.querySelector('button').hidden=rows.length<=2;});form.querySelector('[data-poll-add]').hidden=rows.length>=6;}
+    globalThis.ClubDrafts?.register(form.id,['[name="question"]','[name="option"]']);
+    const scope=`channel:${channelId}`;
+    const savedDraft=globalThis.ClubDrafts?.saved(form.id,scope);
+    const optionCount=Math.max(2,Math.min(6,(savedDraft?.length || 3)-1));
+    for(let index=0;index<optionCount;index++)addOption();
+    globalThis.ClubDrafts?.begin(form.id,scope,{reopen:true});
+    const draftToken=globalThis.ClubDrafts?.token(form.id);
+    form.querySelector('[data-poll-add]').addEventListener('click',()=>{addOption(true);globalThis.ClubDrafts?.touch(form.id);options.lastElementChild.querySelector('input').focus({preventScroll:true});});
+    const dialog=composer;let pending=false,requestId=crypto.randomUUID(),fingerprint='';
+    const dismiss=()=>{if(!pending)dialog.close();};form.querySelector('[data-poll-dismiss]').addEventListener('click',dismiss);
+    dialog.addEventListener('cancel',event=>{if(pending)event.preventDefault();});
+    dialog.addEventListener('close',()=>{globalThis.ClubDrafts?.release(form.id);dialog.remove();if(composer===dialog)composer=null;},{once:true});
+    form.addEventListener('submit',async event=>{
+      event.preventDefault();if(pending)return;
+      if(!canWriteChannel(channelId)){dialog.close();return;}
+      const question=form.elements.question.value.trim(), values=[...form.querySelectorAll('.group-poll-edit-option:not(.is-removing) [name="option"]')].map(input=>input.value.trim());
+      const status=form.querySelector('.group-interaction-status'),publish=form.querySelector('[type="submit"]');
+      status.hidden=true;
+      if(new Set(values.map(value=>value.toLocaleLowerCase('es'))).size!==values.length){status.textContent='Escribe opciones diferentes.';status.hidden=false;return;}
+      const nextFingerprint=JSON.stringify([question,values]);if(fingerprint&&fingerprint!==nextFingerprint)requestId=crypto.randomUUID();fingerprint=nextFingerprint;
+      pending=true;publish.disabled=true;publish.textContent='Publicando…';
+      try{
+        const {error}=await query(config.db.rpc('create_group_poll',{p_channel_id:channelId,p_question:question,p_options:values,p_request_id:requestId}));if(error)throw error;
+        globalThis.ClubDrafts?.clear(form.id,draftToken);pending=false;dialog.close();if(String(pollMount?.channelId)===String(channelId)){void refreshPolls();}
+      }catch(error){status.textContent=message(error);status.hidden=false;}finally{pending=false;publish.disabled=false;publish.textContent='Publicar encuesta';}
+    });
+    // Keep focus in the editor in the opening user gesture. Letting showModal
+    // focus the close button first dismisses an already open iOS keyboard, then
+    // tapping a field starts a competing keyboard presentation/layout transition.
+    dialog.showModal();
+    form.elements.question.focus({preventScroll:true});
+    dialog.addEventListener('pointerdown',event=>{
+      const field=event.target.closest?.('input,textarea');
+      if(field&&event.pointerType!=='mouse'&&document.activeElement!==field){
+        field.focus({preventScroll:true});
+      }
+    },{passive:true});
+  }
+  document.addEventListener('click',event=>{
+    const target=event.target.closest?.('button');if(!target)return;
+    const attendanceNode=target.closest('[data-plan-attendance]');
+    if(attendanceNode&&target.dataset.attendanceResponse){void respond(attendanceNode,target.dataset.attendanceResponse);return;}
+    if(attendanceNode&&target.hasAttribute('data-attendance-retry')){void hydrateAttendance(attendanceNode);return;}
+    if(!pollMount||(!pollMount.node.contains(target)&&!pollViewer?.contains(target)))return;
+    if(target.hasAttribute('data-poll-open'))openPollViewer();
+    else if(target.hasAttribute('data-poll-refresh'))void refreshPolls();
+    else if(target.hasAttribute('data-poll-vote'))void vote(target.closest('[data-poll-id]').dataset.pollId,target.dataset.pollVote);
+    else if(target.hasAttribute('data-poll-plan')) {
+      const poll=pollMount.polls.find(p=>String(p.id)===target.closest('[data-poll-id]').dataset.pollId);
+      const options=[...(poll?.group_poll_options||[])];
+      const counts=options.map(option=>({option,count:(poll.group_poll_votes||[]).filter(v=>v.option_id===option.id).length})).sort((a,b)=>b.count-a.count);
+      const winners=counts.filter(row=>row.count===counts[0]?.count).map(row=>row.option.label);
+      dismissPollViewer();config.createPlan?.({title:poll.question,description:`Resultado de la encuesta: ${winners.join(' · ')}. Revisa fecha, hora y lugar antes de publicar.`,location:winners.length===1?winners[0]:''});
+    }
+    else if(target.hasAttribute('data-poll-close'))void closePoll(target.closest('[data-poll-id]').dataset.pollId);
+  });
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden){if(pollMount?.node.isConnected)void refreshPolls();for(const state of attendance.values())state.fetchedAt=0;void hydrateAttendance();}});
+  function reset(){epoch++;dismissPlan();dismissPollViewer();clearSubscription();pollMount?.node.replaceChildren();pollMount=null;attendance.clear();requests.clear();locks.clear();composer?.close();}
+  globalThis.GroupInteractions=Object.freeze({init(options){reset();config=options;},reset,openPlan,refreshPlan,attendanceMarkup,hydrateAttendance,mountPolls,openPollComposer,refreshPolls});
+})();

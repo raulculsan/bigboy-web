@@ -1,0 +1,547 @@
+const CACHE_NAME = "big-boy-rules-v689";
+const APP_SHELL = ["./error-reports.js?v=20261111-errores-624","./pack-diagnostics.js?v=20261111-medidor-619","./pack-extras.js?v=20261116-perf-671","./chota-cloth.js?v=20261112-inicio-627","./chota-interact.js?v=20261110-sede-viva-610","./chota-appearance.js?v=20261114-chota-v8-636","./chota-compositor-worker.js?v=20261114-chota-v8-636","./icons/mascot/chota-v2/tailored-v5/manifest-v1.json","./icons/mascot/chota-v2/illustrated-v8/manifest-v1.json?v=illustrated-v8-636","./icons/mascot/chota-v2/neutral/idle-core-mask-v1.png","./icons/shop/garments-v3/original-shirt.webp","./icons/shop/garments-v3/original-pants.webp","./icons/shop/garments-v3/original-shoes.webp","./icons/shop/club-store-v1/manifest.json?v=20261110-shoe-shelves-v1","./club-store.css?v=20261110-zapatillas-616","./club-store.js?v=20261110-zapatillas-616","./store-sky.js?v=20261108-rain-v2-593","./store-sky.css?v=20261108-rain-v2-593","./store-rooms.css?v=20261110-zapatillas-616","./store-rooms.js?v=20261110-zapatillas-616","./icons/mascot/chota-v2/wardrobe/sleep-static-mask.svg","./icons/mascot/chota-v2/wardrobe/idle-body-mask.svg","./chota-wardrobe.css?v=20261110-entrada-612","./chota-wardrobe.js?v=20261114-chota-v8-636","./icons/mascot/chota-v2/chota-idle-paw-v2.svg","./icons/mascot/chota-v2/chota-idle-core-v2.svg",
+  "./chota-outdoor.js?v=20261030-outdoor-events-448",
+  "./chota-outdoor.css?v=20261030-outdoor-events-448",
+  "./icons/clubhouse/chota-room-occlusion.svg",
+  "./icons/clubhouse/chota-sofa-occlusion.svg",
+  "./icons/clubhouse/chota-depth-front-front.svg",
+  "./icons/clubhouse/chota-depth-front-back.svg",
+  "./icons/clubhouse/chota-depth-back-front.svg",
+  "./icons/clubhouse/chota-depth-back-back.svg",
+  "./icons/clubhouse/chota-depth-seat-front.svg",
+  "./icons/clubhouse/chota-depth-seat-back.svg",
+  "./app-update.js?v=20261116-lineas-674",
+  "./app-update.css?v=20261116-lineas-674",
+  "./ui-motion.js?v=20261116-iphone-672",
+  "./ui-motion.css?v=20261117-menu-685",
+  "./design-system.css?v=20261102-theme-510",
+  "./app-theme.css?v=20261116-nivel-wip-663",
+  "./",
+  "./index.html",
+  "./native-auth.js?v=20261030-native-google-442",
+  "./profile-account-sheet.js?v=20261102-theme-532",
+  "./profile-account-sheet.css?v=20261102-theme-532",
+  "./account-security.js?v=20261102-login-546",
+  "./account-security.css?v=20261102-theme-532",
+  "./account-requests.js?v=20261102-login-546",
+  "./account-requests.css?v=20261030-neutral-interactions-444",
+  "./feature-loader.js?v=20261116-epicos-v2-668",
+  "./app-health.js?v=20261101-chota-pose-478",
+  "./app-health.css?v=20261111-retos-626",
+  "./styles.css?v=20261112-inicio-627",
+  "./visual-system.css?v=20261106-pwa-dock-564",
+  "./notifications.css?v=20261102-theme-532",
+  "./club.css?v=20261115-perfil-vitrina-646",
+  "./clubhouse.css?v=20261110-sede-viva-610",
+  "./chota-shop.js?v=20261113-abrigos-pausa-630",
+  "./chota-shop.css?v=20261111-retos-626",
+  "./coin-missions.js?v=20261116-niveles-661",
+  "./club-day.js?v=20261112-inicio-627",
+  "./club-day.css?v=20261112-inicio-627",
+  "./chota-decisions.css?v=20261109-tailored-v5-609",
+  "./club-life.css?v=20261108-rain-v2-593",
+  "./coin-missions.css?v=20261102-theme-519",
+  "./club-social.js?v=20261115-vitrina-646",
+  "./club-social.css?v=20261115-vitrina-646",
+  "./club-live.js?v=20261111-imagenes-625",
+  "./club-live.css?v=20261102-theme-510",
+  "./chota-games.js?v=20261115-minijuegos-640",
+  "./chota-games.css?v=20261115-minijuegos-640",
+  "./club-experiences.css?v=20261102-theme-510",
+  "./plan-widget.js?v=20261024-social-393",
+  "./icons/clubhouse/club-room-v1.webp",
+  "./icons/clubhouse/decor-halloween-v1.svg",
+  "./icons/clubhouse/decor-christmas-v1.svg",
+  "./icons/clubhouse/decor-valentine-v1.svg",
+  "./icons/clubhouse/props/warm-lights-v1.svg",
+  "./icons/clubhouse/props/club-neon-v1.svg",
+  "./icons/clubhouse/props/club-cushion-v1.svg",
+  "./icons/clubhouse/props/vintage-radio-v1.svg",
+  "./icons/clubhouse/styles/wall-mask.svg",
+  "./icons/clubhouse/styles/floor-mask.svg",
+  "./icons/clubhouse/styles/rug-mask.svg",
+  "./icons/clubhouse/window-sky-mask.svg",
+  "./icons/clubhouse/window-glazing-mask.svg",
+  "./icons/clubhouse/window-daylight-v1.svg",
+  "./icons/mascot/chota-v2/chota-poses.webp",
+  "./icons/mascot/chota-v2/chota-talk.webp",
+  "./icons/mascot/chota-v2/chota-sleep-base-mask.svg",
+  "./icons/mascot/chota-v2/chota-idle-look-v1.webp",
+  "./icons/mascot/chota-v2/chota-idle-stretch-v1.webp",
+  "./icons/mascot/chota-v2/chota-idle-drink-v1.webp",
+  "./icons/mascot/chota-v2/chota-directional-v1.webp",
+  "./icons/mascot/chota-v2/chota-contextual-v1.webp",
+  "./icons/mascot/chota-v2/chota-room-life-v1.webp",
+  "./news.css?v=20261112-inicio-627",
+  "./achievement-admin.css?v=20261103-admin-557",
+  "./achievement-progress.js?v=20261116-wip-662",
+  "./achievement-admin.js?v=20261103-admin-557",
+  "./admin-errors.js?v=20261111-errores-626",
+  "./chat.css?v=20261117-audio-686",
+  "./chat-themes.css?v=20261116-epicos-v2-668",
+  "./chat-themes.js?v=20261116-epicos-v2-668",
+  "./club-plus.js?v=20261112-inicio-627",
+  "./chota-scenes.js?v=20261106-chota-alive-568",
+  "./chota-decisions.js?v=20261111-premios-622",
+  "./club-life.js?v=20261108-rain-v2-593",
+  "./club-night.js?v=20261102-night-507",
+  "./club-night.css?v=20261102-night-507",
+  "./tickets.js?v=20261112-inicio-627",
+  "./tickets.css?v=20261102-theme-510",
+  "./pull-refresh.js?v=20261101-pull-482",
+  "./chat-mentions.js?v=20261101-mentions-481",
+  "./chat-custom.js?v=20261101-chat-custom-473",
+  "./chat-custom.css?v=20261117-audio-686",
+  "./chat-theme-catalog.json?v=20261116-epicos-v2-668",
+  "./icons/chat-backgrounds/big-boy.svg",
+  "./icons/chat-backgrounds/galaxia-lejana-v2.webp",
+  "./icons/chat-backgrounds/lado-oscuro-v2.webp",
+  "./icons/chat-backgrounds/rey-pirata-v2.webp",
+  "./icons/chat-backgrounds/aura-del-rey-v2.webp",
+  "./icons/chat-backgrounds/golden-era-v2.webp",
+  "./icons/chat-backgrounds/west-coast-v2.webp",
+  "./icons/chat-backgrounds/carbono.svg",
+  "./icons/chat-backgrounds/papel.svg",
+  "./icons/chat-backgrounds/oceano.svg",
+  "./icons/chat-backgrounds/bosque.svg",
+  "./icons/chat-backgrounds/arena.svg",
+  "./icons/chat-backgrounds/aurora.svg",
+  "./icons/chat-backgrounds/vice-city.svg",
+  "./icons/chat-backgrounds/orbita.svg",
+  "./chat-keyboard.js?v=20261114-chat-grupo-635",
+  "./vendor/capacitor.js?v=8.5.0",
+  "./chat-motion.js?v=20260902-128",
+  "./club-model.js?v=20260902-126",
+  "./tab-navigation.js?v=20261026-dock-drag-411",
+  "./admin-console.js?v=20261116-wip-662",
+  "./admin-console.css?v=20261112-inicio-627",
+  "./app.js?v=20261118-encuestas-689",
+  "./spotify-player.js?v=20261112-inicio-627",
+  "./spotify-player.css?v=20261103-news-music-554",
+  "./album.js?v=20261116-wip-662",
+  "./album.css?v=20261116-wip-662",
+  "./onboarding.js?v=20261016-improvements-319",
+  "./onboarding.css?v=20261030-neutral-interactions-444",
+  "./admin-grants.js?v=20261103-accounts-558",
+  "./admin-grants.css?v=20261115-perfil-638",
+  "./shop-catalog-media.js?v=20261030-audit-hardening-443",
+  "./pack-opening.js?v=20261116-wip-662",
+  "./banner-shop.js?v=20261117-horillas-684",
+  "./banner-shop.css?v=20261117-horillas-684",
+  "./collection-social.js?v=20261112-inicio-627",
+  "./collection-social.css?v=20261111-retos-626",
+  "./card-economy.css?v=20261107-economy-chota-579",
+  "./card-economy.js?v=20261116-wip-662",
+  "./pending-actions.js?v=20261016-release-322",
+  "./pending-actions.css?v=20261016-release-322",
+  "./group-interactions.js?v=20261118-encuestas-689",
+  "./group-interactions.css?v=20261118-encuestas-689",
+  "./icons/banners/duelo-mirada-v1/poster.jpg",
+  "./icons/banners/duelo-golpe-v1/poster.jpg",
+  "./icons/banners/duelo-cruce-v1/poster.jpg",
+  "./icons/banners/miguel-basket-bano-bg-v1.webp",
+  "./icons/banners/posters/miguel-basket-v1.webp",
+  "./icons/banners/miguel-basket-miguel-00-v1.webp",
+  "./icons/banners/miguel-basket-miguel-00a-v1.webp",
+  "./icons/banners/miguel-basket-miguel-01-v1.webp",
+  "./icons/banners/miguel-basket-miguel-01a-v1.webp",
+  "./icons/banners/miguel-basket-miguel-02-v1.webp",
+  "./icons/banners/miguel-basket-miguel-02a-v1.webp",
+  "./icons/banners/miguel-basket-miguel-03-v1.webp",
+  "./icons/banners/miguel-moto-rider-v2.webp",
+  "./icons/banners/miguel-moto-city-v1.webp",
+  "./icons/banners/miguel-moto-clouds-v1.webp",
+  "./icons/banners/alberto-galicia-bg-v1.webp",
+  "./icons/banners/alberto-galicia-figures-v1.webp",
+  "./icons/banners/alberto-galicia-expression-v2.webp",
+  "./icons/banners/posters/alberto-galicia-v1.webp",
+  "./icons/banners/alberto-galicia-member-v1.png",
+  "./icons/banners/alberto-galicia-member-bg-v1.webp",
+  "./icons/banners/alberto-galicia-member-figures-v1.webp",
+  "./daily-packs.js?v=20261112-inicio-627",
+  "./chota-level.js?v=20261116-nivel-wip-663",
+  "./dev-tools.js?v=20261117-horillas-684",
+  "./dev-tools.css?v=20261117-horillas-684",
+  "./gif-picker.js?v=20261118-gifs-v2-688",
+  "./gif-picker.css?v=20261118-gifs-v2-688",
+  "./packs.css?v=20261117-horillas-684",
+  "./card-thumbnails.js?v=20261023-jose-vice-city-388",
+  "./card-media.js?v=20261025-audit-404",
+  "./card-collection.js?v=20261116-wip-662",
+  "./card-catalog-sync.js?v=20261116-wip-662",
+  "./icons/cards/card-art-unavailable.svg",
+  "./icons/cards/raul-culsan-gonzalez-full-art-92-playa-v5.jpg",
+  "./icons/cards/ruben-king-vice-city-96-v2.jpg",
+  "./icons/cards/cristobal-fabrik-vice-city-91-v2.jpg",
+  "./icons/cards/cristobal-fabrik-comun-75-v1.jpg",
+  "./icons/cards/juan-carlos-vega-quevedo-comun-78-v1.jpg",
+  "./icons/cards/fufi-comun-77-v1.jpg",
+  "./icons/cards/fufi-vice-city-89-v3.jpg",
+  "./icons/cards/azul-comun-77-v1.jpg",
+  "./icons/cards/francisco-trigo-vice-city-90-v2.jpg",
+  "./icons/cards/miguel-angel-jimenez-sanchez-full-art-92-v1.jpg",
+  "./icons/cards/reverso-vice-city-unificado-v1.jpg",
+  "./icons/cards/peru-comun-v1.jpg",
+  "./icons/cards/hospital-12-de-octubre-comun-v1.jpg",
+  "./icons/cards/caonabo-alberto-full-art-88-v1.jpg",
+  "./icons/cards/felipe-hp-full-art-87-v4.jpg",
+  "./icons/cards/carlos-gonzalez-motos-full-art-89-v3.jpg",
+  "./icons/cards/almudena-de-diego-matilla-full-art-91-v4.jpg",
+  "./icons/cards/mario-salvatierra-medina-full-art-88-v2.jpg",
+  "./icons/cards/daniel-gonzalez-motos-full-art-87-v1.jpg",
+  "./icons/cards/justificante-medico-comun-v1.jpg",
+  "./icons/cards/jeringuilla-comun-v1.jpg",
+  "./icons/cards/alberto-velasco-full-art-84-v2.jpg",
+  "./collection-motion.js?v=20261116-wip-662",
+  "./icons/cards/card-touch.json?v=20260905-153",
+  "./icons/cards/card-touch-epic.json?v=20261007-168",
+  "./icons/cards/card-touch-special.json?v=20261012-272",
+  "./icons/cards/card-touch-legendary.json?v=20260905-153",
+  "./icons/cards/card-touch-retro.json?v=20261007-163",
+  "./icons/cards/pack-opening.json?v=20260904-150",
+  "./icons/cards/pack-seal-flare-v2.png",
+  "./icons/cards/jose-enrique-fernandez-cruz-comun-86-v4.jpg",
+  "./icons/cards/jose-enrique-fernandez-cruz-full-art-93-v3.jpg",
+  "./icons/cards/reverso-full-art-unificado-v1.jpg",
+  "./icons/cards/jose-enrique-fernandez-cruz-normal-86-reverso-v1.jpg",
+  "./icons/cards/miguel-angel-jimenez-sanchez-comun-83-v4.jpg",
+  "./icons/cards/miguel-angel-jimenez-sanchez-normal-83-reverso-v1.jpg",
+  "./icons/cards/lizzy-machado-yong-comun-81-v1.jpg",
+  "./icons/cards/lizzy-machado-yong-full-art-85-v1.jpg",
+  "./icons/cards/lizzy-machado-yong-comun-81-reverso-v1.jpg",
+  "./icons/cards/raul-culsan-gonzalez-comun-83-v4.jpg",
+  "./icons/cards/raul-culsan-gonzalez-normal-83-reverso-v2.jpg",
+  "./icons/cards/mario-salvatierra-medina-comun-81-v1.jpg",
+  "./icons/cards/mario-salvatierra-medina-comun-81-reverso-v1.jpg",
+  "./icons/cards/almudena-de-diego-matilla-comun-84-v1.jpg",
+  "./icons/cards/almudena-de-diego-matilla-comun-84-reverso-v1.jpg",
+  "./icons/cards/caonabo-alberto-comun-82-v4.jpg",
+  "./icons/cards/caonabo-alberto-normal-82-reverso-v1.jpg",
+  "./icons/cards/alberto-velasco-comun-79-v4.jpg",
+  "./icons/cards/alberto-velasco-normal-79-reverso-v1.jpg",
+  "./icons/cards/carlos-gonzalez-motos-comun-82-v4.jpg",
+  "./icons/cards/carlos-gonzalez-motos-normal-82-reverso-v3.jpg",
+  "./icons/cards/felipe-hp-comun-80-v4.jpg",
+  "./icons/cards/felipe-hp-normal-80-reverso-v1.jpg",
+  "./icons/cards/daniel-gonzalez-motos-comun-80-v4.jpg",
+  "./icons/cards/daniel-gonzalez-motos-normal-80-reverso-v1.jpg",
+  "./icons/cards/borox-legendaria-v3.jpg",
+  "./icons/cards/borox-legendaria-reverso-v3.jpg",
+  "./icons/cards/luca-de-tena-especial-v2.jpg",
+  "./icons/cards/luca-de-tena-especial-reverso-v1.jpg",
+  "./icons/cards/abelias-comun-v1.jpg",
+  "./icons/cards/abelias-comun-reverso-v1.jpg",
+  "./icons/cards/castellana-legendaria-v1.jpg",
+  "./icons/cards/castellana-legendaria-reverso-v1.jpg",
+  "./icons/cards/borox-legendaria-v4.jpg",
+  "./icons/cards/borox-legendaria-v5.jpg",
+  "./icons/cards/castellana-legendaria-v2.jpg",
+  "./icons/cards/carabanchel-legendaria-v1.jpg",
+  "./icons/cards/galicia-legendaria-v1.jpg",
+  "./icons/cards/josefa-valcarcel-epica-v1.jpg",
+  "./icons/cards/stussy-madrid-epica-v2.jpg",
+  "./icons/cards/abrantes-metro-comun-v1.jpg",
+  "./icons/cards/plaza-eliptica-metro-comun-v1.jpg",
+  "./icons/cards/fabrik-comun-v1.jpg",
+  "./icons/cards/cuba-epica-v1.jpg",
+  "./icons/cards/juan-manuel-perez-saldana-retro-90-v1.jpg",
+  "./icons/cards/juan-carlos-vega-quevedo-retro-87-v1.jpg",
+  "./icons/cards/carlos-sanchez-rodriguez-retro-88-v2.jpg",
+  "./icons/cards/mesena-retro-v1.jpg",
+  "./icons/cards/estadio-vicente-calderon-retro-v1.jpg",
+  "./icons/cards/estadio-santiago-bernabeu-retro-v1.jpg",
+  "./icons/cards/contrato-de-trabajo-comun-v1.jpg",
+  "./icons/cards/titulacion-comun-v2.jpg",
+  "./icons/cards/lata-de-red-bull-comun-v1.jpg",
+  "./icons/cards/cafe-del-santander-comun-v1.jpg",
+  "./icons/cards/test-de-embarazo-positivo-comun-v1.jpg",
+  "./icons/cards/vater-comun-v1.jpg",
+  "./icons/cards/satisfyer-comun-v1.jpg",
+  "./icons/cards/la-biblia-epica-v1.jpg",
+  "./icons/cards/sombrero-militar-epico-v1.jpg",
+  "./icons/cards/gafas-vision-nocturna-epicas-v1.jpg",
+  "./icons/cards/bote-de-nutella-epico-v1.jpg",
+  "./icons/cards/ceviche-epico-v1.jpg",
+  "./icons/cards/locker-luca-de-tena-legendario-v1.jpg",
+  "./icons/cards/cruz-anticristo-legendaria-v1.jpg",
+  "./icons/cards/big-mac-legendario-v1.jpg",
+  "./icons/cards/cubo-de-alitas-kfc-legendario-v1.jpg",
+  "./icons/cards/trofeo-champions-legendario-v1.jpg",
+  "./icons/cards/ticket-de-viaje-a-roma-legendario-v1.jpg",
+  "./icons/cards/reverso-retro-unificado-v1.jpg",
+  "./icons/cards/reverso-comun-unificado-v1.jpg",
+  "./icons/cards/reverso-especial-unificado-v1.jpg",
+  "./icons/cards/reverso-especial-unificado-v2.jpg",
+  "./icons/cards/el-retiro-especial-v1.jpg",
+  "./icons/cards/bajos-de-arguelles-especial-v1.jpg",
+  "./icons/cards/ikea-la-gavia-especial-v1.jpg",
+  "./icons/cards/pistola-de-balines-especial-v1.jpg",
+  "./icons/cards/mochila-carhartt-especial-v1.jpg",
+  "./icons/cards/reverso-legendario-unificado-v1.jpg",
+  "./icons/cards/sobre-coleccion-01-v3.png",
+  "./icons/cards/sobre-coleccion-02-proximamente-v1.png",
+  "./icons/clubhouse/props/darts-board-v1.svg",
+  "./icons/clubhouse/props/jar-plant-mask.png",
+  "./trophy-motion.js?v=20260904-150",
+  "./trophy-unlock.js?v=20261103-ladders-552",
+  "./vendor/lottie-light.min.js?v=5.13.0",
+  ...["bronze", "silver", "gold", "platinum"].flatMap(tier => [
+    `./icons/trophies/${tier}.svg?v=20260903-132`,
+    `./icons/trophies/${tier}.json?v=20260903-132`,
+    `./icons/trophies/${tier}-unlock.json?v=20260903-138`
+  ]),
+  "./vendor/supabase.js?v=20260901-125",
+  "./vendor/fonts/anton-latin.woff2",
+  "./config.js?v=20261008-210",
+  "./manifest.webmanifest?v=20260901-125",
+  "./icons/icon.svg",
+  "./icons/icon-192.png",
+  "./icons/icon-512.png",
+  "./icons/icon-maskable-512.png",
+  "./icons/apple-touch-icon.png"
+];
+
+// Card illustrations, banner sprites and trophy renders are downloaded only
+// when viewed. They must never delay installing/updating the executable shell.
+const CORE_SHELL = APP_SHELL.filter(asset => !["./icons/cards/", "./icons/banners/", "./icons/trophies/", "./icons/mascot/", "./icons/clubhouse/", "./icons/chat-backgrounds/"].some(prefix => asset.startsWith(prefix)));
+
+// Reuse exact versioned executable URLs across releases. HTML and unversioned
+// configuration always come from the network so a release cannot inherit old entrypoints.
+async function installShell() {
+  const cache = await caches.open(CACHE_NAME);
+  const previousNames = (await caches.keys()).filter(key => /^big-boy-rules-v\d+$/.test(key) && key !== CACHE_NAME)
+    .sort((a,b) => Number(b.split('-v').at(-1)) - Number(a.split('-v').at(-1)));
+  const previousCaches = await Promise.all(previousNames.map(name => caches.open(name)));
+  let cursor = 0;
+  // Keep update traffic below the foreground app's own requests.
+  await Promise.all(Array.from({length:2}, async () => {
+    while (cursor < CORE_SHELL.length) {
+      const asset = CORE_SHELL[cursor++], url = new URL(asset, self.registration.scope);
+      let response;
+      if (url.searchParams.has('v')) {
+        for (const oldCache of previousCaches) {
+          response = await oldCache.match(url.href);
+          if (response?.ok) break;
+        }
+      }
+      if (!response?.ok) response = await fetch(new Request(url.href, {cache:'reload'}));
+      if (!response.ok) throw new Error(`Shell unavailable: ${url.pathname}`);
+      await cache.put(url.href, response);
+    }
+  }));
+  // Make this release available on the next navigation, even if another tab
+  // stays open. Do not claim existing documents or reload an active session.
+  await self.skipWaiting();
+}
+self.addEventListener("install", event => event.waitUntil(installShell().catch(async error => {
+  // A failed update leaves the previous complete release available offline.
+  await caches.delete(CACHE_NAME);
+  throw error;
+})));
+
+// Public illustrations are independent of executable release caches. Exact
+// URLs include the artwork version; user uploads/API responses never enter it.
+const MEDIA_CACHE_NAME = "big-boy-rules-public-media-v1";
+const MEDIA_MAX_ENTRIES = 120, MEDIA_MAX_BYTES = 48 * 1024 * 1024;
+const MEDIA_MAX_FILE_BYTES = 6 * 1024 * 1024, MEDIA_FRESH_MS = 24 * 60 * 60 * 1000;
+const workerScope = () => new URL(self.registration?.scope || "./", self.location?.href || self.location.origin);
+const mediaPath = request => {
+  const scopeUrl = workerScope();
+  const url = new URL(request.url || request, scopeUrl);
+  if (url.origin !== scopeUrl.origin || !url.pathname.startsWith(scopeUrl.pathname)) return false;
+  const path = url.pathname.slice(scopeUrl.pathname.length);
+  return /^icons\/(?:cards|banners|trophies|chat-backgrounds|mascot|clubhouse|shop)\/[^?]+\.(?:png|webp|jpg|jpeg|svg|json)$/i.test(path);
+};
+let shellUrls;
+let mediaWrite = Promise.resolve();
+// A stale illustration can be requested by several cards/views at once. Share
+// its refresh so each frame does not start another download and cache rewrite.
+const mediaRevalidations = new Map();
+function revalidatePublicMedia(request) {
+  const key = request.url;
+  if (mediaRevalidations.has(key)) return mediaRevalidations.get(key);
+  const pending = fetch(request).then(response => savePublicMedia(request, response))
+    .catch(() => {}).finally(() => mediaRevalidations.delete(key));
+  mediaRevalidations.set(key, pending);
+  return pending;
+}
+let mediaEntries = new Map();
+let mediaIndexReady = false;
+// Reconcile keys cheaply on writes, but read response metadata only for entries
+// this worker has not seen. Worker restarts rebuild this index lazily once.
+async function reconcileMediaEntries(cache) {
+  const keys = await cache.keys(), entries = new Map(), duplicates = new Set(), uniqueKeys = [];
+  for (const key of keys) {
+    if (entries.has(key.url)) { duplicates.add(key.url); continue; }
+    entries.set(key.url, mediaEntries.get(key.url) || null);
+    uniqueKeys.push(key);
+  }
+  await Promise.all(uniqueKeys.map(async key => {
+    if (duplicates.has(key.url) || entries.get(key.url)) return;
+    const cached = await cache.match(key);
+    if (!cached) { entries.delete(key.url); return; }
+    const recorded = cached.headers.get("x-big-boy-cache-bytes");
+    let bytes = Number(recorded);
+    // Older or malformed entries must not silently count as zero bytes.
+    if (recorded === null || !Number.isSafeInteger(bytes) || bytes < 0) bytes = (await cached.blob()).size;
+    if (!mediaPath(key) || /(?:private|no-store)/i.test(cached.headers.get("cache-control") || "") || bytes > MEDIA_MAX_FILE_BYTES) {
+      await cache.delete(key);
+      entries.delete(key.url);
+      return;
+    }
+    entries.set(key.url, {request:key, bytes});
+  }));
+  // Static artwork needs one version per exact URL; remove legacy Vary
+  // duplicates rather than undercounting multiple responses for one URL.
+  for (const url of duplicates) {
+    await cache.delete(url,{ignoreVary:true});
+    entries.delete(url);
+  }
+  for (const [url, entry] of entries) {
+    if (!entry) entries.delete(url);
+  }
+  mediaEntries = entries;
+}
+function savePublicMedia(request, response) {
+  const copy = response.clone();
+  mediaWrite = mediaWrite.catch(() => {}).then(async () => {
+    if (!response.ok || !mediaPath(request) || /(?:private|no-store)/i.test(response.headers.get("cache-control") || "")) return;
+    const blob = await copy.blob();
+    if (blob.size > MEDIA_MAX_FILE_BYTES) return;
+    const headers = new Headers(copy.headers);
+    headers.set("x-big-boy-cache-bytes", String(blob.size));
+    headers.set("x-big-boy-cache-time", String(Date.now()));
+    const cache = await caches.open(MEDIA_CACHE_NAME);
+    // A worker can process several image requests in one session. Rebuilding
+    // the whole Cache API index for every image made pack reveals expensive.
+    if (!mediaIndexReady) {
+      await reconcileMediaEntries(cache);
+      mediaIndexReady = true;
+    }
+    // Reinsertion refreshes FIFO order without a costly write on each hit.
+    const mediaUrl = new URL(request.url || request, workerScope()).href;
+    const mediaRequest = typeof Request === "function" ? new Request(mediaUrl) : {url:mediaUrl};
+    await cache.delete(mediaRequest,{ignoreVary:true});
+    mediaEntries.delete(mediaRequest.url);
+    let bytes = Array.from(mediaEntries.values()).reduce((sum,entry) => sum + entry.bytes, 0);
+    // Make room before put: a quota/write failure cannot leave us over budget.
+    for (const [url,entry] of mediaEntries) {
+      if (bytes + blob.size <= MEDIA_MAX_BYTES && mediaEntries.size < MEDIA_MAX_ENTRIES) break;
+      await cache.delete(entry.request,{ignoreVary:true});
+      bytes -= entry.bytes;
+      mediaEntries.delete(url);
+    }
+    await cache.put(mediaRequest, new Response(blob, {status:copy.status,statusText:copy.statusText,headers}));
+    mediaEntries.set(mediaRequest.url,{request:mediaRequest,bytes:blob.size});
+  }).catch(error => {
+    // A partial Cache API failure may invalidate the index. Rebuild next time.
+    mediaEntries = new Map();
+    mediaIndexReady = false;
+    throw error;
+  });
+  // Cache failures must not break rendering or prevent an update activating.
+  return mediaWrite.catch(() => {});
+}
+self.addEventListener("activate", event => {
+  event.waitUntil((async () => {
+    // An open document can still use its previous controller. Keep only the
+    // immediately preceding release's exact dependencies.
+    const previousKeys = (await caches.keys()).filter(key => /^big-boy-rules-v\d+$/.test(key) && key !== CACHE_NAME)
+      .sort((a,b) => Number(b.split('-v').at(-1)) - Number(a.split('-v').at(-1)));
+    const currentVersion = Number(CACHE_NAME.split('-v').at(-1));
+    const oldKeys = previousKeys.filter(key => Number(key.split('-v').at(-1)) !== currentVersion - 1);
+    // One bounded migration covers users updating from the old image-in-shell
+    // scheme. Once the dedicated media cache has artwork, skip the scan on
+    // every later app update.
+    if (oldKeys.length) {
+      const mediaCache = await caches.open(MEDIA_CACHE_NAME);
+      if (!(await mediaCache.keys()).length) {
+        const oldCache = await caches.open(oldKeys[0]);
+        const requests = (await oldCache.keys()).filter(mediaPath).slice(0, 8);
+        for (const request of requests) {
+          const response = await oldCache.match(request);
+          if (response) await savePublicMedia(request, response);
+        }
+      }
+    }
+    await Promise.all(oldKeys.map(key => caches.delete(key)));
+  })());
+});
+
+self.addEventListener("message", event => {
+  if (event.data?.type === "BB_GET_RELEASE") event.ports[0]?.postMessage({release:CACHE_NAME});
+});
+
+self.addEventListener("fetch", event => {
+  const request = event.request;
+  if (request.method !== "GET") return;
+  const url = new URL(request.url);
+  if (url.origin !== self.location.origin) return;
+
+  if (request.mode === "navigate") {
+    // A refresh must not revert a network-loaded page to an older installed
+    // release. Versioned scripts remain exact; the installed HTML is reserved
+    // for offline use and is not overwritten by a partly downloaded release.
+    event.respondWith((async () => {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 3000);
+      try {
+        const response = await fetch(request, {cache:"no-store", signal:controller.signal});
+        if (response.ok) return response;
+      } catch { /* Use the complete installed release when offline. */ }
+      finally { clearTimeout(timeout); }
+      const cache = await caches.open(CACHE_NAME);
+      return await cache.match(new URL("./index.html", self.registration.scope).href) || fetch(request);
+    })());
+    return;
+  }
+  if (mediaPath(request)) {
+    event.respondWith((async () => {
+      const cache = await caches.open(MEDIA_CACHE_NAME), cached = await cache.match(request);
+      const fresh = cached && Date.now() - Number(cached.headers.get("x-big-boy-cache-time")) < MEDIA_FRESH_MS;
+      if (cached) {
+        if (!fresh) event.waitUntil(revalidatePublicMedia(request));
+        return cached;
+      }
+      const response = await fetch(request);
+      if (response.ok) event.waitUntil(savePublicMedia(request,response));
+      return response;
+    })());
+    return;
+  }
+  // Never retain arbitrary same-origin images or media: these may be private
+  // attachments. Only the explicit executable/static shell is cacheable here.
+  shellUrls ||= new Set(CORE_SHELL.map(asset => new URL(asset, workerScope()).href));
+  if (!shellUrls.has(url.href)) return;
+  event.respondWith(caches.open(CACHE_NAME).then(async cache => {
+    const cached = await cache.match(request);
+    if (cached) return cached;
+    const response = await fetch(request);
+    if (response.ok) event.waitUntil(cache.put(request,response.clone()).catch(() => {}));
+    return response;
+  }));
+});
+
+self.addEventListener("push", event => {
+  let payload = {};
+  try { payload = event.data?.json() || {}; } catch { payload = {body: event.data?.text() || "Tienes una notificación nueva."}; }
+  event.waitUntil(self.registration.showNotification(payload.title || "The Big Boy Rules", {
+    body: payload.body || "Tienes una notificación nueva.",
+    icon: payload.icon || "./icons/icon-192.png",
+    badge: "./icons/icon-192.png",
+    tag: payload.tag || "big-boy-notification",
+    renotify: true,
+    data: {url: payload.url || "./"}
+  }));
+});
+
+self.addEventListener("notificationclick", event => {
+  event.notification.close();
+  const requested = new URL(event.notification.data?.url || "./", self.registration.scope);
+  const targetUrl = requested.origin === self.location.origin ? requested.href : self.registration.scope;
+  event.waitUntil(clients.matchAll({type: "window", includeUncontrolled: true}).then(openClients => {
+    const existing = openClients.find(client => new URL(client.url).origin === new URL(targetUrl).origin);
+    if (existing) return existing.navigate(targetUrl).then(client => client?.focus());
+    return clients.openWindow(targetUrl);
+  }));
+});
