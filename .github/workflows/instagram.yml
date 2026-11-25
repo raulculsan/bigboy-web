@@ -1,5 +1,5 @@
 # Keeps the website's carrete in step with Instagram (@thebigboyrules).
-# Every 3 hours it copies the latest posts into fotos/instagram/ and instagram.json
+# Every 2 hours it copies the latest posts into fotos/instagram/ and instagram.json
 # and commits them, which republishes GitHub Pages.
 # Secrets (Settings → Secrets and variables → Actions):
 #   IG_TOKEN  system-user token of the business portfolio "The Big Boy Rules"
@@ -9,7 +9,7 @@ name: Carrete de Instagram
 
 on:
   schedule:
-    - cron: '23 */3 * * *'
+    - cron: '7 */2 * * *'
   workflow_dispatch:
 
 permissions:
