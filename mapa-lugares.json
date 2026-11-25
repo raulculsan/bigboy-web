@@ -1,0 +1,131 @@
+{
+  "nota": "Tiendas y campos que salen en el mapa del club, además de las reseñas y los planes. Posiciones del localizador oficial de The North Face, de OpenStreetMap y de las fichas de plairsoft.com (noviembre de 2026). Para añadir uno: tipo tienda o airsoft, marca si es tienda, nombre, dirección, lat y lng; después, python3 scripts/build-map-tiles.py para el detalle de calle alrededor.",
+  "lugares": [
+    {
+      "tipo": "tienda",
+      "marca": "The North Face",
+      "nombre": "The North Face Madrid",
+      "direccion": "Calle del Carmen, 14, 28013 Madrid",
+      "lat": 40.41862,
+      "lng": -3.70443
+    },
+    {
+      "tipo": "tienda",
+      "marca": "The North Face",
+      "nombre": "The North Face Fuencarral",
+      "direccion": "Calle de Fuencarral, 26, 28004 Madrid",
+      "lat": 40.42215,
+      "lng": -3.70051
+    },
+    {
+      "tipo": "tienda",
+      "marca": "The North Face",
+      "nombre": "The North Face Las Rozas (outlet)",
+      "direccion": "The Style Outlets, calle Pablo Neruda, local 26, 28232 Las Rozas de Madrid",
+      "lat": 40.5175,
+      "lng": -3.88952
+    },
+    {
+      "tipo": "tienda",
+      "marca": "The North Face",
+      "nombre": "The North Face Las Rozas Village (outlet)",
+      "direccion": "Calle Juan Ramón Jiménez, 3, local 5, 28232 Las Rozas de Madrid",
+      "lat": 40.51886,
+      "lng": -3.90273
+    },
+    {
+      "tipo": "tienda",
+      "marca": "Carhartt WIP",
+      "nombre": "Carhartt WIP Tribunal",
+      "direccion": "Calle de Fuencarral, 90, 28004 Madrid",
+      "lat": 40.42707,
+      "lng": -3.7015
+    },
+    {
+      "tipo": "tienda",
+      "marca": "Carhartt WIP",
+      "nombre": "Carhartt WIP Xanadú",
+      "direccion": "Centro Comercial Madrid Xanadú, planta 1, local 234, 28939 Arroyomolinos",
+      "lat": 40.29815,
+      "lng": -3.92674
+    },
+    {
+      "tipo": "tienda",
+      "marca": "Stüssy",
+      "nombre": "Stüssy Madrid",
+      "direccion": "Calle de Argensola, 10, 28004 Madrid",
+      "lat": 40.42524,
+      "lng": -3.69482
+    },
+    {
+      "tipo": "airsoft",
+      "nombre": "El Enclave",
+      "direccion": "Calle Regordoño, 7, 28936 Móstoles",
+      "lat": 40.316543,
+      "lng": -3.844419
+    },
+    {
+      "tipo": "airsoft",
+      "nombre": "Distrito 9 Airsoft",
+      "direccion": "Camino Viejo de Móstoles, 9, 28970 Humanes de Madrid",
+      "lat": 40.262382,
+      "lng": -3.827962
+    },
+    {
+      "tipo": "airsoft",
+      "nombre": "Fortuna Airsoft",
+      "direccion": "M-528, carretera de Galapagar a Villalba, 28290",
+      "lat": 40.602596,
+      "lng": -4.003541
+    },
+    {
+      "tipo": "airsoft",
+      "nombre": "Valhalla Airsoft Madrid",
+      "direccion": "Calle Villanueva de Córdoba, Cubas de la Sagra",
+      "lat": 40.199404,
+      "lng": -3.857496
+    },
+    {
+      "tipo": "airsoft",
+      "nombre": "Airsoft El Cortijo",
+      "direccion": "Polígono 7, parcela 28, 28978 Cubas de la Sagra",
+      "lat": 40.188756,
+      "lng": -3.808158
+    },
+    {
+      "tipo": "airsoft",
+      "nombre": "Valleingrado Airsoft",
+      "direccion": "Polígono 12, 27, 28670 Villaviciosa de Odón",
+      "lat": 40.35015,
+      "lng": -3.91461
+    },
+    {
+      "tipo": "airsoft",
+      "nombre": "Warzone Airsoft Indoor",
+      "direccion": "Avenida Europa, 38, 28971 Griñón",
+      "lat": 40.209796,
+      "lng": -3.857688
+    },
+    {
+      "tipo": "airsoft",
+      "nombre": "Navy 7 Airsoft",
+      "direccion": "M-300, Arganda del Rey",
+      "lat": 40.3526,
+      "lng": -3.42393
+    },
+    {
+      "tipo": "airsoft",
+      "nombre": "Ocius Park Airsoft",
+      "direccion": "Carretera M-104, km 10, 28770 Colmenar Viejo",
+      "lat": 40.67298,
+      "lng": -3.70043
+    },
+    {
+      "tipo": "airsoft",
+      "nombre": "Airshoft",
+      "direccion": "Calle de Jorge Luis Borges, Los Santos de la Humosa",
+      "lat": 40.49918,
+      "lng": -3.25411
+    }
+  ]
+}

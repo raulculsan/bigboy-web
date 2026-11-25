@@ -1,0 +1,16 @@
+/* Privacy and terms pages: same dark, warm look as the login. */
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+html { background: #100e0d; }
+body { margin: 0; background: #100e0d; color: #e9e1d8; font: 400 16px/1.6 -apple-system, system-ui, "Segoe UI", Roboto, sans-serif; -webkit-text-size-adjust: 100%; }
+@font-face { font-family: Anton; src: url("vendor/fonts/anton-latin.woff2") format("woff2"); font-display: swap; }
+.legal { width: min(100%, 680px); margin: 0 auto; padding: max(20px, env(safe-area-inset-top)) max(22px, env(safe-area-inset-right)) max(40px, env(safe-area-inset-bottom)) max(22px, env(safe-area-inset-left)); }
+.legal-back { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: #c7bab0; font-size: 15px; text-decoration: none; -webkit-tap-highlight-color: transparent; }
+.legal-back:focus { outline: none; } .legal-back:focus-visible { outline: 2px solid #e4e4e7; outline-offset: 3px; border-radius: 6px; }
+.legal h1 { margin: 18px 0 4px; font: 400 clamp(30px, 8vw, 42px)/1.1 Anton, sans-serif; letter-spacing: .02em; text-transform: uppercase; color: #f4eee6; }
+.legal .updated { margin: 0 0 28px; color: #8f857c; font-size: 13px; }
+.legal h2 { margin: 30px 0 8px; color: #f4eee6; font-size: 18px; font-weight: 650; }
+.legal p, .legal li { color: #d5cbc1; }
+.legal ul { padding-left: 20px; } .legal li + li { margin-top: 6px; }
+.legal a { color: #f4eee6; }
+.legal footer { margin-top: 40px; padding-top: 18px; border-top: 1px solid #ffffff14; color: #8f857c; font-size: 13px; }

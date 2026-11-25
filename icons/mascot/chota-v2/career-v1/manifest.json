@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "cell": 256,
+  "poses": 67,
+  "looks": {
+    "hosteleria": {
+      "slot": "topwear",
+      "type": "atlas",
+      "atlases": {
+        "base": "icons/mascot/chota-v2/career-v1/hosteleria-base.webp",
+        "directional": "icons/mascot/chota-v2/career-v1/hosteleria-directional.webp",
+        "contextual": "icons/mascot/chota-v2/career-v1/hosteleria-contextual.webp",
+        "room": "icons/mascot/chota-v2/career-v1/hosteleria-room.webp",
+        "talk": "icons/mascot/chota-v2/career-v1/hosteleria-talk.webp"
+      }
+    },
+    "negocios": {
+      "slot": "topwear",
+      "type": "atlas",
+      "atlases": {
+        "base": "icons/mascot/chota-v2/career-v1/negocios-base.webp",
+        "directional": "icons/mascot/chota-v2/career-v1/negocios-directional.webp",
+        "contextual": "icons/mascot/chota-v2/career-v1/negocios-contextual.webp",
+        "room": "icons/mascot/chota-v2/career-v1/negocios-room.webp",
+        "talk": "icons/mascot/chota-v2/career-v1/negocios-talk.webp"
+      }
+    },
+    "oficios": {
+      "slot": "topwear",
+      "type": "atlas",
+      "atlases": {
+        "base": "icons/mascot/chota-v2/career-v1/oficios-base.webp",
+        "directional": "icons/mascot/chota-v2/career-v1/oficios-directional.webp",
+        "contextual": "icons/mascot/chota-v2/career-v1/oficios-contextual.webp",
+        "room": "icons/mascot/chota-v2/career-v1/oficios-room.webp",
+        "talk": "icons/mascot/chota-v2/career-v1/oficios-talk.webp"
+      }
+    },
+    "transporte": {
+      "slot": "careerAccessory",
+      "type": "atlas",
+      "atlases": {
+        "base": "icons/mascot/chota-v2/career-v1/transporte-base.webp",
+        "directional": "icons/mascot/chota-v2/career-v1/transporte-directional.webp",
+        "contextual": "icons/mascot/chota-v2/career-v1/transporte-contextual.webp",
+        "room": "icons/mascot/chota-v2/career-v1/transporte-room.webp",
+        "talk": "icons/mascot/chota-v2/career-v1/transporte-talk.webp"
+      }
+    },
+    "musica": {
+      "slot": "careerAccessory",
+      "type": "atlas",
+      "atlases": {
+        "base": "icons/mascot/chota-v2/career-v1/musica-base.webp",
+        "directional": "icons/mascot/chota-v2/career-v1/musica-directional.webp",
+        "contextual": "icons/mascot/chota-v2/career-v1/musica-contextual.webp",
+        "room": "icons/mascot/chota-v2/career-v1/musica-room.webp",
+        "talk": "icons/mascot/chota-v2/career-v1/musica-talk.webp"
+      }
+    },
+    "seguridad": {
+      "slot": "careerAccessory",
+      "type": "atlas",
+      "atlases": {
+        "base": "icons/mascot/chota-v2/career-v1/seguridad-base.webp",
+        "directional": "icons/mascot/chota-v2/career-v1/seguridad-directional.webp",
+        "contextual": "icons/mascot/chota-v2/career-v1/seguridad-contextual.webp",
+        "room": "icons/mascot/chota-v2/career-v1/seguridad-room.webp",
+        "talk": "icons/mascot/chota-v2/career-v1/seguridad-talk.webp"
+      }
+    }
+  }
+}

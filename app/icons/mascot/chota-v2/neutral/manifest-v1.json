@@ -1,0 +1,188 @@
+{
+  "version": 1,
+  "approved": true,
+  "cell": 256,
+  "poseCount": 67,
+  "neutral": {
+    "base": "icons/mascot/chota-v2/neutral/neutral-base-v1.webp",
+    "directional": "icons/mascot/chota-v2/neutral/neutral-directional-v1.webp",
+    "contextual": "icons/mascot/chota-v2/neutral/neutral-contextual-v1.webp",
+    "room": "icons/mascot/chota-v2/neutral/neutral-room-v1.webp",
+    "talk": "icons/mascot/chota-v2/neutral/neutral-talk-v1.webp"
+  },
+  "defaults": {
+    "base": "icons/mascot/chota-v2/wardrobe-originals/default-composed-base-v1.webp",
+    "directional": "icons/mascot/chota-v2/wardrobe-originals/default-composed-directional-v1.webp",
+    "contextual": "icons/mascot/chota-v2/wardrobe-originals/default-composed-contextual-v1.webp",
+    "room": "icons/mascot/chota-v2/wardrobe-originals/default-composed-room-v1.webp",
+    "talk": "icons/mascot/chota-v2/wardrobe-originals/default-composed-talk-v1.webp"
+  },
+  "originals": [
+    {
+      "slot": "topwear",
+      "key": "original-stussy",
+      "sheet": "base",
+      "path": "icons/mascot/chota-v2/wardrobe-originals/original-stussy-base-v2.webp",
+      "cell": 256,
+      "cols": 6,
+      "rows": 4,
+      "count": 24,
+      "bytes": 108168
+    },
+    {
+      "slot": "bottomwear",
+      "key": "original-jeans",
+      "sheet": "base",
+      "path": "icons/mascot/chota-v2/wardrobe-originals/original-jeans-base-v2.webp",
+      "cell": 256,
+      "cols": 6,
+      "rows": 4,
+      "count": 24,
+      "bytes": 122010
+    },
+    {
+      "slot": "footwear",
+      "key": "original-jordan-chicago",
+      "sheet": "base",
+      "path": "icons/mascot/chota-v2/wardrobe-originals/original-jordan-chicago-base-v1.webp",
+      "cell": 256,
+      "cols": 6,
+      "rows": 4,
+      "count": 24,
+      "bytes": 166400
+    },
+    {
+      "slot": "topwear",
+      "key": "original-stussy",
+      "sheet": "directional",
+      "path": "icons/mascot/chota-v2/wardrobe-originals/original-stussy-directional-v2.webp",
+      "cell": 256,
+      "cols": 5,
+      "rows": 4,
+      "count": 20,
+      "bytes": 31986
+    },
+    {
+      "slot": "bottomwear",
+      "key": "original-jeans",
+      "sheet": "directional",
+      "path": "icons/mascot/chota-v2/wardrobe-originals/original-jeans-directional-v2.webp",
+      "cell": 256,
+      "cols": 5,
+      "rows": 4,
+      "count": 20,
+      "bytes": 42660
+    },
+    {
+      "slot": "footwear",
+      "key": "original-jordan-chicago",
+      "sheet": "directional",
+      "path": "icons/mascot/chota-v2/wardrobe-originals/original-jordan-chicago-directional-v1.webp",
+      "cell": 256,
+      "cols": 5,
+      "rows": 4,
+      "count": 20,
+      "bytes": 44000
+    },
+    {
+      "slot": "topwear",
+      "key": "original-stussy",
+      "sheet": "contextual",
+      "path": "icons/mascot/chota-v2/wardrobe-originals/original-stussy-contextual-v2.webp",
+      "cell": 256,
+      "cols": 4,
+      "rows": 4,
+      "count": 16,
+      "bytes": 15916
+    },
+    {
+      "slot": "bottomwear",
+      "key": "original-jeans",
+      "sheet": "contextual",
+      "path": "icons/mascot/chota-v2/wardrobe-originals/original-jeans-contextual-v2.webp",
+      "cell": 256,
+      "cols": 4,
+      "rows": 4,
+      "count": 16,
+      "bytes": 16770
+    },
+    {
+      "slot": "footwear",
+      "key": "original-jordan-chicago",
+      "sheet": "contextual",
+      "path": "icons/mascot/chota-v2/wardrobe-originals/original-jordan-chicago-contextual-v1.webp",
+      "cell": 256,
+      "cols": 4,
+      "rows": 4,
+      "count": 16,
+      "bytes": 18472
+    },
+    {
+      "slot": "topwear",
+      "key": "original-stussy",
+      "sheet": "room",
+      "path": "icons/mascot/chota-v2/wardrobe-originals/original-stussy-room-v2.webp",
+      "cell": 256,
+      "cols": 4,
+      "rows": 1,
+      "count": 4,
+      "bytes": 6884
+    },
+    {
+      "slot": "bottomwear",
+      "key": "original-jeans",
+      "sheet": "room",
+      "path": "icons/mascot/chota-v2/wardrobe-originals/original-jeans-room-v2.webp",
+      "cell": 256,
+      "cols": 4,
+      "rows": 1,
+      "count": 4,
+      "bytes": 10708
+    },
+    {
+      "slot": "footwear",
+      "key": "original-jordan-chicago",
+      "sheet": "room",
+      "path": "icons/mascot/chota-v2/wardrobe-originals/original-jordan-chicago-room-v1.webp",
+      "cell": 256,
+      "cols": 4,
+      "rows": 1,
+      "count": 4,
+      "bytes": 8160
+    },
+    {
+      "slot": "topwear",
+      "key": "original-stussy",
+      "sheet": "talk",
+      "path": "icons/mascot/chota-v2/wardrobe-originals/original-stussy-talk-v2.webp",
+      "cell": 256,
+      "cols": 3,
+      "rows": 1,
+      "count": 3,
+      "bytes": 9920
+    },
+    {
+      "slot": "bottomwear",
+      "key": "original-jeans",
+      "sheet": "talk",
+      "path": "icons/mascot/chota-v2/wardrobe-originals/original-jeans-talk-v2.webp",
+      "cell": 256,
+      "cols": 3,
+      "rows": 1,
+      "count": 3,
+      "bytes": 8460
+    },
+    {
+      "slot": "footwear",
+      "key": "original-jordan-chicago",
+      "sheet": "talk",
+      "path": "icons/mascot/chota-v2/wardrobe-originals/original-jordan-chicago-talk-v1.webp",
+      "cell": 256,
+      "cols": 3,
+      "rows": 1,
+      "count": 3,
+      "bytes": 15534
+    }
+  ],
+  "review": "artwork/chota/modular-body-v1/mixed-outfits-review.png"
+}

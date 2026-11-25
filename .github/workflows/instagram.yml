@@ -1,0 +1,48 @@
+# Keeps the website's carrete in step with Instagram (@thebigboyrules).
+# Every 3 hours it copies the latest posts into fotos/instagram/ and instagram.json
+# and commits them, which republishes GitHub Pages.
+# Secrets (Settings → Secrets and variables → Actions):
+#   IG_TOKEN  system-user token of the business portfolio "The Big Boy Rules"
+#             (user BBR web, permission instagram_basic, never expires).
+#             See docs/INSTAGRAM.md in the app repo.
+name: Carrete de Instagram
+
+on:
+  schedule:
+    - cron: '23 */3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: instagram
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+      - name: Copiar publicaciones
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: '17841455562961211'
+          TOKEN_FILE: ${{ runner.temp }}/ig_token
+        run: node .github/instagram-sync.mjs
+      - name: Publicar cambios
+        run: |
+          git add fotos/instagram instagram.json 2>/dev/null || true
+          if git diff --cached --quiet; then exit 0; fi
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -qm 'Carrete: Instagram'
+          git push -q
+      - name: Guardar el token renovado
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          f='${{ runner.temp }}/ig_token'
+          if [ -s "$f" ] && [ -n "$GH_TOKEN" ]; then gh secret set IG_TOKEN -R "$GITHUB_REPOSITORY" < "$f" && echo 'IG_TOKEN guardado.'; fi
