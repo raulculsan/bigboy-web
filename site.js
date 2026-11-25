@@ -17,9 +17,8 @@
   const PLATAFORMAS = ['PC', 'PS5', 'PS4', 'Xbox', 'Nintendo Switch', 'Móvil', 'Otro'];
   const JUEGOS = [];
 
-  const FOTOS = [
-    {carrete: 'Noches', label: 'Jekes', alto: 1.3333, src: 'fotos/carrete/jekes-noche.jpg', alt: 'Uno del grupo en la terraza de Jekes de noche, con el móvil tapándole la cara'},
-  ];
+  // Fixed photos besides Instagram's; the Jekes one now comes from Instagram (25-11).
+  const FOTOS = [];
 
   // calidad, precioEstrellas y servicio: de 1 a 5, con medias (4.5). La nota general es su media.
   // precio: 1 a 4 €, opcional
