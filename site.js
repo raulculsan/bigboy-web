@@ -25,6 +25,7 @@
   const SITIOS = [
     {nombre: 'Cafetería el Rincón', tipo: 'Bar', zona: 'Ciudad Lineal', direccion: 'C. de José María Cavero, 15', lat: 40.44815, lng: -3.64795, calidad: 4, precioEstrellas: 5, servicio: 4, dice: 'Mejor calidad que los otros bares.', quien: 'Kike', fecha: '2026-07-28', mapa: 'https://maps.app.goo.gl/1tcR2HNsdzG3hmbW8', fotos: ['fotos/sitios/cafeteria-el-rincon-1.jpg', 'fotos/sitios/cafeteria-el-rincon-2.jpg']},
     {nombre: 'Tierra Burrito', tipo: 'Restaurante', zona: 'Ópera', direccion: 'Plaza de Isabel II, 5', lat: 40.418481, lng: -3.709416, calidad: 4, precioEstrellas: 3.5, servicio: 4, dice: 'Te llena bien, un poco caro para solo un burrito.', quien: 'Raúl', fecha: '2026-11-25', mapa: 'https://www.google.com/maps/search/?api=1&query=Tierra+Burrito+Plaza+de+Isabel+II+5+Madrid', fotos: ['fotos/sitios/tierra-burrito-opera-1.jpg', 'fotos/sitios/tierra-burrito-opera-2.jpg']},
+    {nombre: 'Steakburger', tipo: 'Restaurante', zona: 'Malasaña', direccion: 'Calle de Fuencarral, 73', lat: 40.42487, lng: -3.70085, calidad: 5, precioEstrellas: 4, servicio: 4.5, dice: 'Buena calidad y servicio.', quien: 'Raúl', fecha: '2026-11-12', mapa: 'https://www.google.com/maps/search/?api=1&query=Steakburger+Calle+de+Fuencarral+73+Madrid', fotos: ['fotos/sitios/steakburger-fuencarral-1.jpg', 'fotos/sitios/steakburger-fuencarral-2.jpg']},
   ];
 
   const average = marks => Math.round(marks.reduce((a, b) => a + b, 0) / marks.length * 100) / 100;
